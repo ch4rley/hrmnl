@@ -1,0 +1,32 @@
+:root {
+    --pink: #edadab;
+    --blue: #abcfed;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+}
+
+h1 {
+    text-transform: lowercase;
+    mix-blend-mode: multiply;
+    font-size: 12em;
+    position: fixed;
+    /* transform: rotate(-90deg) translate(30%,-40%);transform-origin: left; */
+}
+
+.pink{
+    color: var(--pink);
+}
+
+.blue{
+    color: var(--blue);
+}
+
+.first {
+    transform: translate(5%);
+}
+
+.second {
+    transform: translate(2.5%, 5%);
+}
