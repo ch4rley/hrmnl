@@ -1,15 +1,23 @@
 /* note to self: make use of transition css property! */
 
 :root {
+    /* -- lightmode colors -- */
+    --lightmode-background: #ffffff;
     --pink: #edadab;
     --blue: #abcfed;
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
+    /* -- darkmode colors -- */
+    --darkmode-background: #181818;
+    --darkmode-icons: #cccccc;
+    --darkmode-pink: #ff0084;
+    --darkmode-blue: #0099ff;
 
 }
 
 body {
     font-family: 'Arimo', sans-serif;
+    background-color: var(--lightmode-background);
 } 
 
 h1 {
@@ -42,4 +50,27 @@ h1 {
 
 .second {
     transform: translate(2.5%, 5%);
+}
+
+
+/* --- DARKMODE CODE ---*/
+
+.darkmode {
+    background-color: var(--darkmode-background);
+}
+
+.darkmode h1 {
+    mix-blend-mode: lighten;
+}
+
+.darkmode .pink {
+    color: var(--darkmode-pink);
+}
+
+.darkmode .blue {
+    color: var(--darkmode-blue);
+}
+
+.darkmode .fa-solid {
+    color: var(--darkmode-icons);
 }
