@@ -1,11 +1,16 @@
+/* note to self: make use of transition css property! */
+
 :root {
     --pink: #edadab;
     --blue: #abcfed;
+    /* --yellow: #f9d508;
+    --purple: #d55cf7; */
+
 }
 
 body {
     font-family: 'Arimo', sans-serif;
-}
+} 
 
 h1 {
     text-transform: lowercase;
@@ -15,12 +20,20 @@ h1 {
     /* transform: rotate(-90deg) translate(30%,-40%);transform-origin: left; */
 }
 
-.pink{
+.pink {
     color: var(--pink);
 }
 
 .blue{
     color: var(--blue);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.purple {
+    color: var(--purple);
 }
 
 .first {
