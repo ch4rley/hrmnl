@@ -8,7 +8,7 @@
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
     /* -- darkmode colors -- */
-    --darkmode-background: #181818;
+    --darkmode-background: #030303;
     --darkmode-icons: #cccccc;
     --darkmode-pink: #ff0084;
     --darkmode-blue: #0099ff;
@@ -60,7 +60,10 @@ h1 {
 }
 
 .darkmode h1 {
+    /* mix-blend-mode: screen; */
     mix-blend-mode: lighten;
+    /* mix-blend-mode: difference; */
+    /* mix-blend-mode: exclusion; */
 }
 
 .darkmode .pink {
@@ -73,4 +76,9 @@ h1 {
 
 .darkmode .fa-solid {
     color: var(--darkmode-icons);
+}
+
+.isolate {
+    isolation: isolate;  /* without isolation, the background color will be taken into account */
+    position: relative;
 }
