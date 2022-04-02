@@ -13,7 +13,9 @@ body {
     color: #030303;
 } 
 
-h1 {
+
+/* --- hrmnl logo --- */
+h1.mix {
     text-transform: lowercase;
     mix-blend-mode: multiply;
     font-size: 12em;
@@ -25,7 +27,7 @@ h1 {
     color: var(--pink);
 }
 
-.blue{
+.blue {
     color: var(--blue);
 }
 
