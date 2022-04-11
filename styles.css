@@ -1,10 +1,18 @@
 /* note to self: make use of transition css property! */
 
 :root {
+    /* -- lightmode colors -- */
+    --lightmode-background: #ffffff;
+    --lightmode-icons: #030303;
     --pink: #edadab;
     --blue: #abcfed;
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
+    /* -- darkmode colors -- */
+    --darkmode-background: #030303;
+    --darkmode-icons: #cccccc;
+    --darkmode-pink: #ff0084;
+    --darkmode-blue: #0099ff;
 
 }
 
@@ -16,6 +24,16 @@ body {
 
 /* --- hrmnl logo --- */
 h1.mix {
+    background-color: var(--lightmode-background);
+} 
+
+.fa-solid {
+    color: var(--lightmode-icons);
+}
+
+/* --- LOGO --- */
+
+h1 {
     text-transform: lowercase;
     mix-blend-mode: multiply;
     font-size: 12em;
@@ -46,3 +64,37 @@ h1.mix {
 .second {
     transform: translate(2.5%, 5%);
 }
+
+
+/* --- DARKMODE CODE --- */
+
+.darkmode {
+    background-color: var(--darkmode-background);
+}
+
+/* --- DARKMODE LOGO --- */
+.darkmode h1 {
+    /* mix-blend-mode: screen; */
+    mix-blend-mode: lighten;
+    /* mix-blend-mode: difference; */
+    /* mix-blend-mode: exclusion; */
+    background-color: var(--darkmode-background);
+}
+
+.darkmode .pink {
+    color: var(--darkmode-pink);
+}
+
+.darkmode .blue {
+    color: var(--darkmode-blue);
+}
+
+.darkmode .fa-solid {
+    color: var(--darkmode-icons);
+}
+
+.isolate {
+    isolation: isolate;  /* without isolation, the background color will be taken into account */
+    position: relative;
+}
+
