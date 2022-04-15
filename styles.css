@@ -11,6 +11,7 @@
     /* -- darkmode colors -- */
     --darkmode-background: #030303;
     --darkmode-icons: #cccccc;
+    --darkmode-text: #cccccc;
     --darkmode-pink: #ff0084;
     --darkmode-blue: #0099ff;
 
@@ -70,6 +71,11 @@ h1 {
 
 .darkmode {
     background-color: var(--darkmode-background);
+    color: var(--darkmode-text);
+}
+
+.darkmode ul {
+    color: var(--darkmode-text);
 }
 
 /* --- DARKMODE LOGO --- */
