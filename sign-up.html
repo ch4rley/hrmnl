@@ -26,16 +26,19 @@
                 <li>
                     <!-- <label for="pronouns">pronouns</label>
                     <input type="text" id="pronouns" name="user_pronouns" value="pronouns"> -->
-                    <!-- !! NEEDS LABEL: PRONOUNS -->
-                    <input type="checkbox" id="pronouns-they" name="pronouns-they" value="they">
-                    <label for="pronouns-they">they/them/theirs</label><br>
-                    <input type="checkbox" id="pronouns-she" name="pronouns-she" value="she">
-                    <label for="pronouns-she">she/her/hers</label><br>
-                    <input type="checkbox" id="pronouns-he" name="pronouns-he" value="he">
-                    <label for="pronouns-he">he/him/his</label><br>
-                    <input type="checkbox" id="pronouns-expand" name="pronouns-expand" value="expand">
-                    <label for="pronouns-expand">+ expand</label><!--opens more pronoun options-->
+                    <fieldset name="pronouns" id="pronouns">
+                    <legend>pronouns</legend>
+                        <input type="checkbox" id="pronouns-they" name="pronouns-they" value="they">
+                        <label for="pronouns-they">they/them/theirs</label><br>
+                        <input type="checkbox" id="pronouns-she" name="pronouns-she" value="she">
+                        <label for="pronouns-she">she/her/hers</label><br>
+                        <input type="checkbox" id="pronouns-he" name="pronouns-he" value="he">
+                        <label for="pronouns-he">he/him/his</label><br>
+                        <input type="checkbox" id="pronouns-expand" name="pronouns-expand" value="expand">
+                        <label for="pronouns-expand">+ expand</label><!--opens more pronoun options-->
+                    </fieldset>
                     <!-- maybe these should be mini buttons that stay clicked, update a pronouns array???-->
+
                 </li>
                 <li>
                     <label for="mail">email</label>
