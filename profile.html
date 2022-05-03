@@ -17,6 +17,53 @@
 <body>
 <!-- NAV PARTIAL -->
     <main>
+        <form action="#" method="post" class="profile" name="profile-form" id="profile-form">
+           <h2>profile / create profile/ user name</h2>
+           <button type="btn">edit profile</button>
+           <ul>
+               <li>
+                   <label for="name">name</label>   <input type="text" id="name" name="user_name" value="name entered in sign-up form, ejs" required>
+               </li> 
+               <li>
+                   <!--pronouns-->
+               </li>
+               <li>
+                   <!--add details-->
+               </li>
+               <li>
+                  <!--hormone type-->
+                  <fieldset name="hrt-details" id="hrt-details">
+                  <legend>hormone replacement therapy</legend>   
+                      <input type="radio" id="estrogen" name="hormone" value="estrogen">
+                      <label for="estrogen">estrogen</label>
+                      <input type="radio" id="testosterone" name="hormone" value="testosterone">
+                      <label for="testosterone">testosterone</label>
+                  </fieldset>
+                  <fieldset>
+                    <legend>hrt details</legend>
+                    <!--DELIVERY METHOD-->
+                    <!--pill-->
+                    <!--patch-->
+                    <!--topical gel-->
+                    <!--injection-->
+                    <!--add details ++ -->
+                        <!--dose-->
+                        <!--manufacturer-->
+                        <!--prescriber-->
+                        <!--prescriber contact-->
+                        <!--pharmacy-->
+                    <!--FREQUENCY-->
+                    <!--should this be dependent on whether user wants reminder emails?-->
+                    <!--daily-->
+                    <!--every other day-->
+                    <!--weekly-->
+                  </fieldset>
+
+               </li>
+
+           </ul> 
+
+        </form>
 
     </main>
 <!-- FOOTER PARTIAL -->    
