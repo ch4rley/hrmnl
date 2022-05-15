@@ -23,9 +23,13 @@ body {
 }
 
 header {
+    width: 100%;
+    /* flexbox */
     display: flex;
     flex-direction: row;
-    width: 100%;
+    justify-content: center;
+    /* diagnostics */
+    border: 1px solid blue;
 }
 
 .logo img {
@@ -39,6 +43,8 @@ header {
 
 nav {
     display: flex;
+    border: 1px solid red;
+
     /* for desktop */
     /* display: inline-flex; */
 }
@@ -52,7 +58,7 @@ ul.navigation {
     /* flexbox */
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
