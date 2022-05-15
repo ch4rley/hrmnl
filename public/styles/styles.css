@@ -22,14 +22,42 @@ body {
     color: #030303;
 }
 
-ul {
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.logo img {
+    max-width: 1000px;
+    width: 70vw;
+}
+
+.hamburger {
+    display: none;
+}
+
+nav {
+    display: flex;
+    /* for desktop */
+    /* display: inline-flex; */
+}
+
+ul,
+ul.navigation {
+    /* list styline */
     list-style-type: none;
     list-style: none;
     list-style-position: unset;
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
 }
 
-
 /* --- hrmnl logo --- */
+
 h1.mix {
     background-color: var(--lightmode-background);
 } 
