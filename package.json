@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/ch4rley/hrmnl#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.7",
     "express": "^4.18.1",
