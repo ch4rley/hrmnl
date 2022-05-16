@@ -1,4 +1,7 @@
 /* note to self: make use of transition css property! */
+* {
+    box-sizing: border-box;
+}
 
 :root {
     /* -- lightmode colors -- */
@@ -20,21 +23,30 @@
 body {
     font-family: 'Arimo', sans-serif;
     color: #030303;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     /* flexbox */
     display: flex;
     flex-direction: row;
     justify-content: center;
     /* diagnostics */
     border: 1px solid blue;
+    padding: 2em;
+}
+
+.header-content {
+    margin: auto;
+    border: 1px solid green;
 }
 
 .logo img {
     max-width: 1000px;
-    width: 70vw;
+    width: 80vw;
 }
 
 .hamburger {
@@ -57,9 +69,23 @@ ul.navigation {
     list-style-position: unset;
     /* flexbox */
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    display: block;
+    border: 1px solid yellow;
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
 }
 
 /* --- hrmnl logo --- */
