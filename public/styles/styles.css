@@ -162,33 +162,7 @@ a.menu-icon:active {
     /* border: 1px solid yellow; */
 }
 
-.navigation a {
-    text-decoration: none;
-    color: var(--lightmode-icons);
-    display: inline-block;
-    line-height: 2;
-    text-align: center;
-    padding: 0 2vw;
-}
-.navigation a:link {
 
-}
-.navigation a:visited {
-
-}
-.navigation a:focus {
-
-}
-.navigation a:hover {
-
-}
-.navigation a:active {
-
-}
-
-
-
-/* link colors for nav */
 .pinkbg {
     background-color: var(--pink);
 }
@@ -204,6 +178,90 @@ a.menu-icon:active {
 .bluebg {
     background-color: var(--blue);
 }
+
+.navigation a {
+    text-decoration: none;
+    color: var(--lightmode-icons);
+    display: inline-block;
+    line-height: 2;
+    text-align: center;
+    padding: 0 2vw;
+    font-weight: 500;
+    color: var(--white);
+    box-sizing: border-box;
+    transition: background-color 1s, color 1s, border 1s;
+}
+.navigation a:link {
+
+}
+
+.navigation a:visited {
+    color: var(--white);
+}
+
+
+/* -- navigation link  color-specific-- */
+a.pinklink:focus {
+    color: var(--pink);
+    border-color:var(--pink);
+    background: none;
+}
+a.pinkpurplelink:focus {
+    color: var(--pinkpurple);
+    border-color: var(--pinkpurple);
+    background: none;
+}
+a.purplelink:focus {
+    color: var(--purple);
+    border-color: var(--purple);
+    background: none;
+}
+a.bluelink:focus {
+    color: var(--blue);
+    border-color: var(--blue);
+    background: none;
+}
+
+.navigation a:focus {
+    border: 2px solid;
+    background: none;
+}
+
+a.pinklink:hover {
+    color: var(--pink);
+    border-color: var(--pink);
+    background: none;
+}
+a.pinkpurplelink:hover {
+    color: var(--pinkpurple);
+    border-color: var(--pinkpurple);
+    background: none;
+}
+a.purplelink:hover {
+    color: var(--purple);
+    border-color: var(--purple);
+    background: none;
+}
+a.bluelink:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+    background: none;
+}
+
+.navigation a:hover {
+    border: none;
+    border-bottom: 2px solid;
+    
+}
+.navigation a:active {
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+}
+
+
+
+/* link colors for nav */
+
 
 main {
     width: 80vw;
