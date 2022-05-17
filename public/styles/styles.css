@@ -45,8 +45,8 @@ header {
     flex-direction: row;
     justify-content: center;
     padding: 2em 0em 2em 0em;
-    /* border-bottom: 1px dotted var(--dark-grey); */
-    border-image: linear-gradient(to right, #f5f5f5, #998cdd, #f5f5f5) 1;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, #f5f5f5 10%, #998cdd, #f5f5f5 90%) 1;
     /* diagnostics */
     /* border: 1px solid blue; */
 }
@@ -267,11 +267,33 @@ h2 {
     font-size: 2em;
   }
 
+h2.welcome {
+    padding-top: .5em;
+    margin: 0;
+}
+p.pronunciation {
+    margin: 0;
+    padding: 0;
+    color: var(--pinkpurple);
+}
+.emphasis {
+    font-weight: bold;
+}
+
 .gradient {
+    /* gradient text! */
     background: -webkit-linear-gradient(45deg, #9eccff, #ffb3cd 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.main-heading {
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid red; */
+}
+
 
 /* FOOTER */
 footer {
