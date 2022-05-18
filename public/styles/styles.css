@@ -25,6 +25,7 @@
     --darkmode-blue: #3399ff; /*#0099ff;*/
     /* -- gradients -- */
     --gradient-text: -webkit-linear-gradient(45deg, var(--blue), var(--pink) 100%);
+    --gradient-rev-text: -webkit-linear-gradient(45deg, var(--pink), var(--blue) 100%);
     --gradient-background-purples: linear-gradient(0deg, var(--deeppurple) 0%, var(--purple) 100%);
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
@@ -189,7 +190,7 @@ a.menu-icon:active {
     font-weight: 500;
     color: var(--white);
     box-sizing: border-box;
-    transition: background-color 1s, color 1s, border 1s;
+    transition: background-color .75s, color .75s, border .5s, border-bottom 1s, border-top 0s;
 }
 .navigation a:link {
 
@@ -265,6 +266,7 @@ a.bluelink:hover {
 
 main {
     width: 80vw;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -374,6 +376,14 @@ h2.welcome {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.gradient-rev-text {
+    /* gradient text! */
+    font-weight: bold;
+    background: var(--gradient-rev-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .main-heading {
     display: flex;
     flex-direction: column;
@@ -384,7 +394,7 @@ h2.welcome {
 
 /* FOOTER */
 footer {
-    background-color: var(--purple);
+    background-color: var(--deeppurple);
     color: var(--white);
     width: 100%;
     max-width: 100vw;
@@ -405,6 +415,7 @@ footer {
 .footer-content {
     color: var(--footer-text);
     width: 80vw;
+    max-width: 1000px;
     margin: auto;
     display: flex;
     flex-direction: row-reverse;
@@ -438,7 +449,8 @@ footer {
 
 .footer-content a:hover {
     border-bottom: 1px solid;
-    background: var(--white);
+    /* background: var(--white); */
+    color: 
 
 }
 
@@ -448,7 +460,6 @@ footer {
 
 .embiggen {
     font-size: 3em;
-    color: var(--white);
 }
 
 /* --- HISTORY PAGE --- */
