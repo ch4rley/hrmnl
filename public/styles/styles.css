@@ -16,7 +16,7 @@
     --pinkpurple: #c6a0cc;
     --deeppurple: #9c8ccc;
     --darkblue: #7da2c9;
-    --footer-text: #030303;
+    --footer-text: #ffffff;
     /* -- darkmode colors -- */
     --darkmode-background: #030303;
     --darkmode-icons: #cccccc;
@@ -29,10 +29,17 @@
     --gradient-background-purples: linear-gradient(0deg, var(--deeppurple) 0%, var(--purple) 100%);
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
+    /*-- FONTS --*/
+    --body: 'Arimo', sans-serif;
+    --serif: 'Roboto Slab', serif;
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Bitter', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 body {
-    font-family: 'Arimo', sans-serif;
+    font-family: var(--body);
     color: var(--lightmode-text);
     margin: 0px;
     padding: 0px;
@@ -187,7 +194,9 @@ a.menu-icon:active {
     line-height: 2;
     text-align: center;
     padding: 0 2vw;
-    font-weight: 500;
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: .05rem;
     color: var(--white);
     box-sizing: border-box;
     transition: background-color .75s, color .75s, border .5s, border-bottom 1s, border-top 0s;
@@ -420,46 +429,51 @@ footer {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: space-between;  
+    justify-content: space-between;
+    font-family: var(--serif);
+    font-weight: 200;
 }
 
 /* -- links in footer -- */
-.footer-content a {
+.footer-content a,
+.footer-content a:link {
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
     line-height: 1.4;
-
-}
-
-.footer-content a:link {
     color: var(--white);
+    font-family: var(--body);
+
+
 }
 
 .footer-content a:visited {
-    color: var(--white);
 
 }
 
 .footer-content a:focus {
-    color: var(--deeppurple);
+    color: var(--dark-grey);
     border-bottom: 1px solid;
-    background: var(--white);
+    /* background: var(--white); */
 }
 
 .footer-content a:hover {
     border-bottom: 1px solid;
     /* background: var(--white); */
-    color: 
+    color: var(--gradient-text);
 
 }
 
 .footer-content a:active {
-
+    color: var(--pink);
 }
 
 .embiggen {
     font-size: 3em;
+}
+
+.inline-block {
+    display: inline-block;
 }
 
 /* --- HISTORY PAGE --- */
