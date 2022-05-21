@@ -15,10 +15,11 @@
     <title>hrmnl // </title><!--can i use ejs here to fill with page name?-->
 </head>
 <body>
-<!-- NAV PARTIAL -->
+<!-- NAV PARTIAL GOES HERE -->
     <main>
         <h2 class="gradient-text">// sign up</h2>
-        <form class="signUp" action="#" method="POST" name="sign-up-form" id="sign-up-form">
+        <!-- SIGN UP FORM -->
+        <form class="signUp form-border short-form" action="#" method="POST" name="sign-up-form" id="sign-up-form">
             <input type="hidden" name="redirect" value="./log-in" ><!-- should redirect to login page-->
             <ul class="flex-form">
                 <li>
@@ -53,7 +54,7 @@
                     <input type="submit" value="Sign up"/>
                 </li>
                </ul>
-               <div>
+               <div class="auth">
                 <button>
                   <a href="/auth/google" role="button" class="btn">Login or Register with Google</a>
                 </button>

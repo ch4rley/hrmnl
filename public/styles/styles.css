@@ -50,16 +50,6 @@ body {
     justify-content: space-between;
 }
 
-.BORDRR {
-    /* border: 1px solid green; */
-}
-/* .background-pattern {
-    background-color: #f3f8ff;
-    opacity: 1;
-    background-size: 15px 15px;
-    background-image: repeating-linear-gradient(45deg, #fffafc 0, #fffafc 1.5px, #f3f8ff 0, #f3f8ff 50%);
-} */
-
 header {
     width: 100vw;
     /* flexbox */
@@ -73,7 +63,7 @@ header {
 }
 
 .gradient-border {
-    /* note: target element muust have border for this to work */
+    /* note: target element must have border for this to work */
     border-image: linear-gradient(to right, var(--lightmode-background) 10%, var(--purple), var(--lightmode-background) 90%) 1;
 }
 
@@ -85,6 +75,7 @@ header {
     align-items: center;
 }
 
+/*--- LOGO ---*/
 .logo img {
     max-width: 1000px;
     width: 80vw;
@@ -94,6 +85,7 @@ header {
     margin: auto;
 }
 
+/*--- NAVIGATION ---*/
 nav {
     display: flex;
     /* border: 1px solid red; */
@@ -101,7 +93,6 @@ nav {
     /* display: inline-flex; */
 }
 
-ul,
 ul.navigation {
     margin: auto;
     padding: 0;
@@ -170,7 +161,7 @@ a.menu-icon:active {
     /* border: 1px solid yellow; */
 }
 
-
+/* button/link styling */
 .pinkbg {
     background-color: var(--pink);
 }
@@ -268,96 +259,14 @@ a.bluelink:hover {
     border-top: 2px solid;
 }
 
-
-
-/* link colors for nav */
-
-
 main {
     width: 80vw;
     max-width: 1000px;
     margin: auto;
 }
 
-/* --- hrmnl logo --- */
-
-h1.mix {
-    background-color: var(--lightmode-background);
-} 
-
 .fa-solid {
     color: var(--lightmode-icons);
-}
-
-/* --- LOGO --- */
-
-h1.mix {
-    text-transform: lowercase;
-    mix-blend-mode: multiply;
-    font-size: 12em;
-    position: fixed;
-    /* transform: rotate(-90deg) translate(30%,-40%);transform-origin: left; */
-}
-
-.pink {
-    color: var(--pink);
-}
-
-.blue {
-    color: var(--blue);
-}
-
-.yellow {
-    color: var(--yellow);
-}
-
-.purple {
-    color: var(--purple);
-}
-
-.first {
-    transform: translate(5%);
-}
-
-.second {
-    transform: translate(2.5%, 5%);
-}
-
-/* --- DARKMODE CODE --- */
-
-.darkmode {
-    background-color: var(--darkmode-background);
-    color: var(--darkmode-text);
-}
-
-.darkmode ul {
-    color: var(--darkmode-text);
-}
-
-/* --- DARKMODE LOGO --- */
-.darkmode h1 {
-    /* mix-blend-mode: screen; */
-    mix-blend-mode: lighten;
-    /* mix-blend-mode: difference; */
-    /* mix-blend-mode: exclusion; */
-    background-color: var(--darkmode-background);
-}
-
-.darkmode .pink {
-    color: var(--darkmode-pink);
-}
-
-.darkmode .blue {
-    color: var(--darkmode-blue);
-}
-
-.darkmode .fa-solid {
-    color: var(--darkmode-icons);
-}
-
-.isolate {
-    isolation: isolate;  /* without isolation, the background color will be taken into account */
-    position: relative;
 }
 
 h2 {
@@ -396,12 +305,11 @@ h2.welcome {
 .main-heading {
     display: flex;
     flex-direction: column;
-
     /* border: 1px solid red; */
 }
 
 
-/* FOOTER */
+/*--- FOOTER ---*/
 footer {
     background-color: var(--deeppurple);
     color: var(--white);
@@ -443,8 +351,6 @@ footer {
     line-height: 1.4;
     color: var(--white);
     font-family: var(--body);
-
-
 }
 
 .footer-content a:visited {
@@ -461,7 +367,6 @@ footer {
     border-bottom: 1px solid;
     /* background: var(--white); */
     color: var(--gradient-text);
-
 }
 
 .footer-content a:active {
@@ -476,10 +381,47 @@ footer {
     display: inline-block;
 }
 
-/* --- HISTORY PAGE --- */
-/* --- accordion ---*/
-/* from w3schools */
-/* Style the buttons that are used to open and close the accordion panel */
+/*--- FORM STYLING ---*/
+ul.flex-form {
+    margin: auto;
+    padding: 0;
+    padding-top: 10px;
+    /* list styling */
+    list-style-type: none;
+    list-style: none;
+    /* list-style-position: unset; */
+    /* flexbox */
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    align-items: stretch;
+    justify-content: flex-start;
+    align-content: stretch;
+    /* border: 1px solid pink; */
+    width: 100%;
+    width: 80vw;
+}
+
+.form-border {
+    border: 1px var(--purple) solid;
+}
+
+.flex-form li,
+.auth {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+    padding: 1rem;
+}
+
+
+/*--- HISTORY PAGE ---*/
+
+/* - accordion - from w3schools - */
+/* style the buttons that are used to open and close the accordion panel */
 .accordion {
     background-color: #eee;
     color: #444;
@@ -518,21 +460,69 @@ footer {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
   }
 
-.flex-form {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    align-items: stretch;
-    justify-content: flex-start;
-    align-content: stretch;
+/* ----------------------------------------------- */
+
+/* FOR TESTING ONLY */
+.BORDRR {
+    border: 1px solid green;
+}
+/* .background-pattern {
+    background-color: #f3f8ff;
+    opacity: 1;
+    background-size: 15px 15px;
+    background-image: repeating-linear-gradient(45deg, #fffafc 0, #fffafc 1.5px, #f3f8ff 0, #f3f8ff 50%);
+} */
+
+
+/* --- MIX-BLEND-MODE LOGO --- */
+h1.mix {
+    background-color: var(--lightmode-background);
+    text-transform: lowercase;
+    mix-blend-mode: multiply;
+    font-size: 12em;
+    position: fixed;
+    /* transform: rotate(-90deg) translate(30%,-40%);transform-origin: left; */
+}
+.pink {
+    color: var(--pink);
+}
+.blue {
+    color: var(--blue);
+}
+.first {
+    transform: translate(5%);
+}
+.second {
+    transform: translate(2.5%, 5%);
 }
 
-.flex-form li {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    justify-content: center;
-    align-content: stretch;
-    padding: 2rem;
+/* --- DARKMODE CODE --- */
+.darkmode {
+    background-color: var(--darkmode-background);
+    color: var(--darkmode-text);
+}
+.darkmode ul {
+    color: var(--darkmode-text);
+}
+
+/* --- DARKMODE LOGO --- */
+.darkmode h1 {
+    /* mix-blend-mode: screen; */
+    mix-blend-mode: lighten;
+    /* mix-blend-mode: difference; */
+    /* mix-blend-mode: exclusion; */
+    background-color: var(--darkmode-background);
+}
+.darkmode .pink {
+    color: var(--darkmode-pink);
+}
+.darkmode .blue {
+    color: var(--darkmode-blue);
+}
+.darkmode .fa-solid {
+    color: var(--darkmode-icons);
+}
+.isolate {
+    isolation: isolate;  /* without isolation, the background color will be taken into account */
+    position: relative;
 }
