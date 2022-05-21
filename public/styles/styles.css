@@ -1,5 +1,5 @@
 /* note to self: make use of transition css property! */
-* {
+*, *:after, *:before {
     box-sizing: border-box;
 }
 
@@ -517,3 +517,22 @@ footer {
   .active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
   }
+
+.flex-form {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-content: stretch;
+}
+
+.flex-form li {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+    padding: 2rem;
+}
