@@ -14,7 +14,7 @@
     --blue: #9eccff; /*#abcfed*/
     --purple: #998cdd; /*#7869bb;*/
     --pinkpurple: #c6a0cc;
-    --deeppurple: #9c8ccc;
+    --deeppurple: #6143bd;
     --darkblue: #7da2c9;
     --footer-text: #ffffff;
     /* -- darkmode colors -- */
@@ -31,8 +31,8 @@
     --purple: #d55cf7; */
     /*-- FONTS --*/
     --body: 'Arimo', sans-serif;
+    --sans: 'Arimo', sans-serif;
     --serif: 'Roboto Slab', serif;
-    font-family: 'Arimo', sans-serif;
     font-family: 'Bitter', serif;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto Slab', serif;
@@ -61,6 +61,23 @@ header {
     /* diagnostics */
     /* border: 1px solid blue; */
 }
+
+a {
+    cursor:pointer;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+}
+
 
 .gradient-border {
     /* note: target element must have border for this to work */
@@ -117,42 +134,6 @@ ul.navigation {
     text-align: center;
 }
 
-/* hamburger nav */
-a.menu-icon {
-    background-color: transparent;
-    border: 0;
-    color: var(--blue);
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-.hamburger:focus {
-    outline: none;
-}
-.hamburger {
-    /* doesn't take up space */
-    display: none;
-}
-
-/* navigation menu */
-a.menu-icon:link, 
-a.menu-icon:visited {
-    color: var(--blue);
-    text-decoration: none;
-}
-
-a.menu-icon:hover {
-    color: var(--white);
-    text-decoration: none;
-}
-
-a.menu-icon:active {
-    color: var(--darkmode-pink);
-    text-decoration: none;
-    background-color: transparent;
-}
-/* end hamburger nav */
-
 .navigation li {
     display: inline;
     margin: 1vw;
@@ -188,14 +169,15 @@ a.menu-icon:active {
     color: var(--white);
     box-sizing: border-box;
     border: 2px solid var(--lightmode-background);
-    transition: background-color .75s, color .75s, border .5s, border-bottom .75s, border-top .5s;
+    transition: background-color .75s, color .75s, border .75s, border-bottom .75s, border-top .5s;
 }
 
 /* -- navigation link  color-specific-- */
 
 /* hover state */
 a.pinklink:hover,
-a.pinklink:focus {
+a.pinklink:focus,
+a.pinklink:active  {
     color: var(--pink);
     border-color: var(--pink);
     background: var(--lightmode-background);
@@ -208,13 +190,15 @@ a.pinkpurplelink:active {
     background: none;
 }
 a.purplelink:hover,
-a.purplelink:focus {
+a.purplelink:focus,
+a.purplelink:active  {
     color: var(--purple);
     border-color: var(--purple);
     background: none;
 }
 a.bluelink:hover,
-a.bluelink:focus {
+a.bluelink:focus,
+a.bluelink:active  {
     color: var(--blue);
     border-color: var(--blue);
     background: none;
@@ -238,6 +222,40 @@ a.bluelink:focus {
     border-left-color: var(--lightmode-background);
     border-right-color: var(--lightmode-background);
 }
+
+/* hamburger nav */
+a.menu-icon {
+    background-color: transparent;
+    border: 0;
+    color: var(--blue);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.hamburger:focus {
+    outline: none;
+}
+.hamburger {
+    /* doesn't take up space */
+    display: none;
+}
+/* navigation menu */
+a.menu-icon:link, 
+a.menu-icon:visited {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a.menu-icon:hover {
+    color: var(--white);
+    text-decoration: none;
+}
+
+a.menu-icon:active {
+    color: var(--darkmode-pink);
+    text-decoration: none;
+    background-color: transparent;
+}
+/* end hamburger nav */
 
 /* end navigation styling */
 
@@ -290,6 +308,32 @@ h2.welcome {
     /* border: 1px solid red; */
 }
 
+/* --- LINK STYLING --- */
+/* -- in text -- */
+
+a {
+    font-family: var(--sans);
+    text-decoration: none;
+}
+/* unvisited link */
+a:link {
+    color: var(--purple);
+}
+  /* visited link */
+a:visited {
+    color: var(--pinkpurple);
+}
+  /* mouse over link */
+a:hover {
+    color: var(--blue);
+}
+  /* selected link */
+a:active {
+    color: var(--pink);
+}
+
+/* -- on forms -- */
+
 
 /*--- FOOTER ---*/
 footer {
@@ -339,16 +383,16 @@ footer {
 
 }
 
-.footer-content a:focus {
-    color: var(--dark-grey);
-    border-bottom: 1px solid;
-    /* background: var(--white); */
-}
-
 .footer-content a:hover {
     border-bottom: 1px solid;
     /* background: var(--white); */
     color: var(--gradient-text);
+}
+
+.footer-content a:focus {
+    color: var(--pink);
+    border-bottom: 1px solid;
+    /* background: var(--white); */
 }
 
 .footer-content a:active {
@@ -359,9 +403,6 @@ footer {
     font-size: 3em;
 }
 
-.inline-block {
-    display: inline-block;
-}
 
 /*--- FORM STYLING ---*/
 ul.flex-form {
@@ -382,6 +423,7 @@ ul.flex-form {
     /* border: 1px solid pink; */
     width: 100%;
     width: 80vw;
+    text-align: left;
 }
 
 .form-border {
@@ -396,8 +438,55 @@ ul.flex-form {
     align-items: stretch;
     justify-content: center;
     align-content: stretch;
-    padding: 1rem;
+    padding: .75rem 2rem;
 }
+
+label {
+    font: var(--sans);
+    color: var(--lightmode-text);
+    font-size: .875rem;
+    padding-bottom: .375rem;
+}
+::placeholder {
+    color: var(--purple);
+    font-size: small;
+   
+}
+
+fieldset {
+    color: var(--purple);
+    font-size: .875rem;
+}
+
+input {
+    width: 100%;
+    padding: 7px 14px;
+    font-size: 1.125rem;
+    color: var(--deeppurple);
+    border: none;
+    border-bottom: 2px solid var(--purple);
+    background-color: var(--lightmode-background)
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+    outline: none;
+    border-bottom-color: var(--pink);
+    
+}
+
+input[type=submit]{
+    border: 2px solid;
+}
+
+input[type=checkbox] {
+    width: auto;
+}
+
+
+
+
 
 
 /*--- HISTORY PAGE ---*/
