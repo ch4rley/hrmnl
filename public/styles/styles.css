@@ -482,8 +482,8 @@ input[type=email]:focus::placeholder {
     color: transparent;
 }
 
-input[type=submit]{
-    border: 1.5px solid;
+input[type=submit] {
+    border: 1.5px solid var(--lightmode-background);
     color: var(--white);
     font-weight: 400;
     letter-spacing: .05rem;
@@ -493,16 +493,19 @@ input[type=submit]{
     background-clip: padding-box;
     -webkit-background-clip: padding-box;
 }
-input[type=submit]:hover{
-    border: 1.5px solid;
+input[type=submit]:hover {
+    border: 1.5px solid var(--lightmode-background);
     color: var(--white);
     font-weight: 400;
     letter-spacing: .05rem;
     border-radius: 4px;
     text-transform: lowercase;
-    background-image: var(--gradient-text-rev);
-    background-clip: padding-box;
-    -webkit-background-clip: padding-box;
+    background-image: var(--gradient-rev-text);
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+}
+input[type=submit]:active {
+    border: 1.5px solid var(--purple);
 }
 
 input[type=checkbox] {
@@ -511,6 +514,33 @@ input[type=checkbox] {
 
 form p {
     text-align: center;
+}
+
+form a button {
+    width: 100%;
+    padding: 7px 14px;
+    font-size: .925rem;
+    color: var(--purple);
+    background-color: var(--lightmode-background);
+    font-family: var(--sans);
+    border: 1.5px solid;
+    font-weight: 400;
+    border-radius: 4px;
+    text-transform: lowercase;
+}
+
+form a button:hover {
+    color: var(--blue);
+    background-color: var(--lightmode-background);
+    font-family: var(--sans);
+    border: 1.5px solid;
+}
+
+form a button:active {
+    color: var(--pink);
+    background-color: var(--lightmode-background);
+    font-family: var(--sans);
+    border: 1.5px solid;
 }
 
 
