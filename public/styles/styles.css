@@ -151,34 +151,31 @@ a.menu-icon:active {
     text-decoration: none;
     background-color: transparent;
 }
-
-.navigation li {
-    margin: 1vw;
- }
+/* end hamburger nav */
 
 .navigation li {
     display: inline;
-    /* border: 1px solid yellow; */
+    margin: 1vw;
+    /* border: 1px solid var(--pink); */
 }
 
 /* button/link styling */
 .pinkbg {
     background-color: var(--pink);
 }
-
 .pinkpurplebg {
     background-color: var(--pinkpurple);
 }
-
 .purplebg {
     background-color: var(--purple);
 }
-
 .bluebg {
     background-color: var(--blue);
 }
 
-.navigation a {
+.navigation a,
+.navigation a:link,
+.navigation a:visited {
     text-decoration: none;
     color: var(--lightmode-icons);
     display: inline-block;
@@ -190,37 +187,44 @@ a.menu-icon:active {
     letter-spacing: .05rem;
     color: var(--white);
     box-sizing: border-box;
-    transition: background-color .75s, color .75s, border .5s, border-bottom 1s, border-top 0s;
+    border: 2px solid var(--lightmode-background);
+    transition: background-color .75s, color .75s, border .5s, border-bottom .75s, border-top .5s;
 }
-.navigation a:link {
-
-}
-
-.navigation a:visited {
-    color: var(--white);
-}
-
 
 /* -- navigation link  color-specific-- */
+
+/* hover state */
+a.pinklink:hover,
 a.pinklink:focus {
     color: var(--pink);
-    border-color:var(--pink);
-    background: none;
+    border-color: var(--pink);
+    background: var(--lightmode-background);
 }
-a.pinkpurplelink:focus {
+a.pinkpurplelink:hover,
+a.pinkpurplelink:focus,
+a.pinkpurplelink:active {
     color: var(--pinkpurple);
     border-color: var(--pinkpurple);
     background: none;
 }
+a.purplelink:hover,
 a.purplelink:focus {
     color: var(--purple);
     border-color: var(--purple);
     background: none;
 }
+a.bluelink:hover,
 a.bluelink:focus {
     color: var(--blue);
     border-color: var(--blue);
     background: none;
+}
+
+.navigation a:hover {
+    border: 2px solid;
+    border-top-color: var(--lightmode-background);
+    border-left-color: var(--lightmode-background);
+    border-right-color: var(--lightmode-background); 
 }
 
 .navigation a:focus {
@@ -228,36 +232,14 @@ a.bluelink:focus {
     background: none;
 }
 
-a.pinklink:hover {
-    color: var(--pink);
-    border-color: var(--pink);
+.navigation a:active {
     background: none;
-}
-a.pinkpurplelink:hover {
-    color: var(--pinkpurple);
-    border-color: var(--pinkpurple);
-    background: none;
-}
-a.purplelink:hover {
-    color: var(--purple);
-    border-color: var(--purple);
-    background: none;
-}
-a.bluelink:hover {
-    color: var(--blue);
-    border-color: var(--blue);
-    background: none;
+    border: 2px solid;
+    border-left-color: var(--lightmode-background);
+    border-right-color: var(--lightmode-background);
 }
 
-.navigation a:hover {
-    border: none;
-    border-bottom: 2px solid;
-    
-}
-.navigation a:active {
-    border-bottom: 2px solid;
-    border-top: 2px solid;
-}
+/* end navigation styling */
 
 main {
     width: 80vw;
