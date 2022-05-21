@@ -442,15 +442,16 @@ ul.flex-form {
 }
 
 label {
-    font: var(--sans);
-    color: var(--lightmode-text);
+    font-family: var(--sans);
+    font-weight: 400;
+    color: var(--purple);
     font-size: .875rem;
     padding-bottom: .375rem;
 }
 ::placeholder {
-    color: var(--purple);
-    font-size: small;
-   
+    color: var(--darkmode-icons);
+    font-size: 1.125rem;
+    font-family: var(--sans);
 }
 
 fieldset {
@@ -462,10 +463,11 @@ input {
     width: 100%;
     padding: 7px 14px;
     font-size: 1.125rem;
-    color: var(--deeppurple);
+    color: var(--lightmode-text);
     border: none;
-    border-bottom: 2px solid var(--purple);
-    background-color: var(--lightmode-background)
+    border-bottom: 1.5px solid var(--darkmode-icons);
+    background-color: var(--lightmode-background);
+    font-family: var(--serif);
 }
 
 input[type=text]:focus,
@@ -473,15 +475,42 @@ input[type=email]:focus,
 input[type=password]:focus {
     outline: none;
     border-bottom-color: var(--pink);
-    
+}
+
+input[type=text]:focus::placeholder,
+input[type=email]:focus::placeholder {
+    color: transparent;
 }
 
 input[type=submit]{
-    border: 2px solid;
+    border: 1.5px solid;
+    color: var(--white);
+    font-weight: 400;
+    letter-spacing: .05rem;
+    border-radius: 4px;
+    text-transform: lowercase;
+    background-image: var(--gradient-text);
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+}
+input[type=submit]:hover{
+    border: 1.5px solid;
+    color: var(--white);
+    font-weight: 400;
+    letter-spacing: .05rem;
+    border-radius: 4px;
+    text-transform: lowercase;
+    background-image: var(--gradient-text-rev);
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
 }
 
 input[type=checkbox] {
     width: auto;
+}
+
+form p {
+    text-align: center;
 }
 
 
