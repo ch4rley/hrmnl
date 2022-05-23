@@ -370,17 +370,14 @@ footer {
 
 /* -- links in footer -- */
 .footer-content a,
-.footer-content a:link {
+.footer-content a:link,
+.footer-content a:visited {
     outline: none;
     text-decoration: none;
     padding: 2px 1px 0;
     line-height: 1.4;
     color: var(--white);
     font-family: var(--body);
-}
-
-.footer-content a:visited {
-
 }
 
 .footer-content a:hover {
@@ -412,7 +409,7 @@ ul.flex-form {
     /* list styling */
     list-style-type: none;
     list-style: none;
-    /* list-style-position: unset; */
+    list-style-position: unset;
     /* flexbox */
     display: flex;
     flex-direction: column;
@@ -421,8 +418,8 @@ ul.flex-form {
     justify-content: flex-start;
     align-content: stretch;
     /* border: 1px solid pink; */
-    width: 100%;
-    width: 80vw;
+    /* width: 100%; */
+    max-width: 80vw;
     text-align: left;
 }
 
@@ -514,6 +511,7 @@ input[type=checkbox] {
 
 form p {
     text-align: center;
+    padding: 0;
 }
 
 form a button {
@@ -562,74 +560,87 @@ form a button:active {
     border: none;
     outline: none;
     transition: 0.4s;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .accordion:hover {
-    background-color: #ccc;
-  }
-  
-  /* Style the accordion panel. Note: hidden by default */
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-  }
+}
 
-  /* accordion icons to indicate open and closed */
-  .accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #777;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+background-color: #ccc;
+}
 
-  /* MODAL */
-  .modal {
-    display: none;
-    position: fixed; 
-    padding-top: 50px;
-    left: 0; 
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .modal-content {
-    position: relative; 
-    background-color: white;
-    padding: 20px; 
-    margin: auto; 
-    width: 75%;  
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-  }
-  .close-btn {
-    float: right; 
-    color: lightgray; 
-    font-size: 24px;  
-    font-weight: bold;
-  }
-  .close-btn:hover {
-    color: darkgray;
-  }
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+padding: 0 18px;
+background-color: white;
+display: none;
+overflow: hidden;
+}
+
+/* accordion icons to indicate open and closed */
+.accordion:after {
+content: '\02795'; /* Unicode character for "plus" sign (+) */
+font-size: 13px;
+color: #777;
+float: right;
+margin-left: 5px;
+}
+
+.active:after {
+content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* MODAL */
+.modal {
+display: none;
+position: fixed; 
+padding-top: 50px;
+left: 0; 
+top: 0;
+width: 100%;
+height: 100%; 
+background-color: rgb(0, 0, 0);
+background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+position: relative; 
+background-color: var(--lightmode-background);
+padding: 20px; 
+margin: auto; 
+width: 75%;
+max-width: 500px;  
+-webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.4s;
+animation-name: animatetop;
+animation-duration: 0.4s
+}
+
+.modal-content p {
+text-align: left;
+}
+
+.modal-content h2 {
+margin: 0;
+padding: 0;
+}
+
+.close-btn {
+float: right; 
+color: var(--darkmode-icons); 
+font-size: 24px;  
+font-weight: bold;
+
+}
+.close-btn:hover {
+color: var(--purple);
+}
+
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0} 
+to {top:0; opacity:1}
+}
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
 /* ----------------------------------------------- */
 
 /* FOR TESTING ONLY */
