@@ -27,6 +27,8 @@
     --gradient-text: -webkit-linear-gradient(45deg, var(--blue), var(--pink) 100%);
     --gradient-rev-text: -webkit-linear-gradient(45deg, var(--pink), var(--blue) 100%);
     --gradient-background-purples: linear-gradient(0deg, var(--deeppurple) 0%, var(--purple) 100%);
+    --gradient-pink-purple: linear-gradient(to right, rgb(255, 179, 205) 0%, rgb(198, 160, 204) 85%, rgb(174,149,204) 110%);
+    --gradient-purple-blue: linear-gradient(to right, rgb(174,149,204) -10%, rgb(153, 140, 221) 15%, rgb(158, 204, 255) 100%);
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
     /*-- FONTS --*/
@@ -105,6 +107,7 @@ a {
 /*--- NAVIGATION ---*/
 nav {
     display: flex;
+    flex-direction: column;
     /* border: 1px solid red; */
     /* for desktop */
     /* display: inline-flex; */
@@ -152,6 +155,31 @@ ul.navigation {
 }
 .bluebg {
     background-color: var(--blue);
+}
+
+.gradient-button {
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: var(--white);
+    /* box-shadow: 0 0 20px #eee; */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: inline-block;
+
+}
+.gradient-pinkpurple-bg {
+    background-image: var(--gradient-pink-purple);
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-border-fill-color: transparent;
+}
+
+.gradient-purpleblue-bg {
+    background-image: var(--gradient-purple-blue);
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -webkit-border-fill-color: transparent;
 }
 
 .navigation a,
@@ -203,6 +231,19 @@ a.bluelink:active  {
     border-color: var(--blue);
     background: none;
 }
+
+a.gradient-pinkpurple-link:hover {
+    color: var(--pinkpurple);
+    border: var(--pinkpurple);
+    background: var(--lightmode-background);
+}
+
+a.gradient-purpleblue-link:hover {
+    color: var(--purple);
+    border: var(--purple);
+    background: var(--lightmode-background);
+}
+
 
 .navigation a:hover {
     border: 2px solid;
@@ -274,7 +315,7 @@ h2 {
   }
 
 h2.welcome {
-    padding-top: .5em;
+    padding-top: 1.75rem;
     margin: 0;
 }
 .pronunciation {
