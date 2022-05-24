@@ -444,6 +444,10 @@ ul.flex-form {
     padding: .75rem 2rem;
 }
 
+.first-button {
+    margin-top: 1rem;
+}
+
 label {
     font-family: var(--sans);
     font-weight: 400;
@@ -632,8 +636,6 @@ animation-duration: 0.4s
     margin: 0;
     padding: 0;
 }
-
-
 
 .modal-heading {
     padding: 0;
