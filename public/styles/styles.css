@@ -428,7 +428,8 @@ ul.flex-form {
 }
 
 .flex-form li,
-.auth {
+.auth,
+.form-button {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -518,7 +519,8 @@ form p {
     padding: 0;
 }
 
-form a button {
+/* form a button, */
+.simple-btn {
     width: 100%;
     padding: 7px 14px;
     font-size: .925rem;
@@ -531,14 +533,16 @@ form a button {
     text-transform: lowercase;
 }
 
-form a button:hover {
+/* form a button:hover, */
+.simple-btn:hover {
     color: var(--blue);
     background-color: var(--lightmode-background);
     font-family: var(--sans);
     border: 1.5px solid;
 }
 
-form a button:active {
+/* form a button:active, */
+.simple-btn:active {
     color: var(--pink);
     background-color: var(--lightmode-background);
     font-family: var(--sans);
@@ -617,13 +621,32 @@ animation-name: animatetop;
 animation-duration: 0.4s
 }
 
-.modal-content p {
-text-align: left;
+.modal-content p,
+.modal-content h2 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
 }
 
-.modal-content h2 {
-margin: 0;
-padding: 0;
+
+
+.modal-heading {
+    padding: 0;
+    margin-top: .5rem;
+    margin-bottom: .75rem;
+}
+.modal-p {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.thicc {
+    font-weight: 500;
+}
+
+.light-grey {
+    color: var(--darkmode-icons)
 }
 
 .close-btn {

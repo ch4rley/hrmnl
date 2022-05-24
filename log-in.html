@@ -20,35 +20,45 @@
 <body>
 <!-- NAV PARTIAL -->
     <main>
-        <h2 class="gradient-text">log in to your account</h2>
-        <p>are you new to <span class="gradient-text">hrmnl</span>? // <a href="/login">create an account</a></p>
-        <form class="signUp form-border short-form" action="#" method="POST" name="log-in-form" id="log-in-form">
-            <ul class="flex-form">
-                <!-- <li>
-                    <label for="name">name</label>
-                    <input type="text" id="name" name="user_name" value="name" required>
-                </li> -->
-                <li>
-                    <label for="mail">email address</label>
-                    <input type="user_email" id="email" name="user_email" placeholder="yourname@email.com" required />
-                </li>
-                <li>
-                    <label for="password">password</label>
-                    <input type="password" id="password" name="user_password" placeholder="type your unique password" required />
-                </li>
-                <div class="form-buttons">
-                    <li class="button">
-                        <button type="submit" class="submit">log in</button>
-                    </li>
-                    <li class="button hidden">
-                        <button type="#">forgot password?</button>
-                    </li>
-                    <li>
-                        <p>are you new to <span class="gradient-text">hrmnl</span>? // <a href="/login">create an account</a></p>
-                    </li>
-                </div>
-               </ul>
-        </form>
+        <!-- <div class="modal"> -->
+            <!-- <div class="modal-content"> -->
+                <!-- <span class="close-btn">&times;</span> -->
+                <h2 class="gradient-text modal-heading">log in to your account</h2>
+                <p class="modal-p">are you new to <span class="gradient-text">hrmnl</span>? <span class="light-grey">//</span> <a href="/sign-up"><span class="thicc">create an account</span></a></p>
+                <form class="signUp form-border short-form" action="#" method="POST" name="log-in-form" id="log-in-form">
+                    <ul class="flex-form">
+                        <!-- <li>
+                            <label for="name">name</label>
+                            <input type="text" id="name" name="user_name" value="name" required>
+                        </li> -->
+                        <li>
+                            <label for="mail">email address</label>
+                            <input type="user_email" id="email" name="user_email" placeholder="yourname@email.com" required />
+                        </li>
+                        <li>
+                            <label for="password">password</label>
+                            <input type="password" id="password" name="user_password" placeholder="type your unique password" required />
+                        </li>
+                        <div class="form-buttons">
+                            <li class="button">
+                                <button type="submit" class="submit">log in</button>
+                            </li>
+                            <li class="button hidden">
+                                <button type="#" class="simple-btn">forgot password?</button>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="form-button auth">
+                        <a href="/auth/google" role="button" class="btn">
+                            <button class="simple-btn">
+                                log in with google
+                             </button>
+                         </a>  
+                   </div>
+                   <p>are you new to <span class="gradient-text">hrmnl</span>? <span class="light-grey">//</span> <a href="/sign-up"><span class="thicc">create an account</span></a></p>
+                </form>
+            <!-- </div> -->
+        <!-- </div> -->
 
     </main>
 <!-- FOOTER PARTIAL -->    
