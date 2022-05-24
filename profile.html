@@ -19,14 +19,15 @@
     <main>
         
         <form action="#" method="POST" class="profile" name="profile-form" id="profile-form">
-           <h2>profile / create profile/ user name</h2>
-           <button type="btn">edit profile</button>
+           <h2>create profile / user name</h2>
            <ul>
                <li>
-                   <label for="name">name</label>   <input type="text" id="name" name="user_name" value="name entered in sign-up form, ejs" required>
+                   <label for="name">name</label>
+                   <input type="text" id="name" name="name" value="<%= user.name %>" required>
                </li> 
                <li>
-                   <!--pronouns-->
+                <label for="pronouns">what are your pronouns?</label>
+                <input type="text" id="pronouns" name="user_pronouns" value="<%= user.pronouns %>" required>
                </li>
                <li>
                    <!--add details-->
@@ -79,13 +80,9 @@
                         <!--prescriber contact info-->
                     
                   </fieldset>
-
-               </li>
-
-           </ul> 
-
+                </li>
+            </ul>
         </form>
-
     </main>
 <!-- FOOTER PARTIAL -->
 </body>
