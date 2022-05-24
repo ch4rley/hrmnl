@@ -427,6 +427,11 @@ ul.flex-form {
     border: 1px var(--purple) solid;
 }
 
+.short-form {
+    margin-top: 1.5rem;
+    padding-bottom: .75rem;
+}
+
 .flex-form li,
 .auth,
 .form-button {
@@ -634,11 +639,13 @@ animation-duration: 0.4s
     padding: 0;
     margin-top: .5rem;
     margin-bottom: .75rem;
+    text-align: left;
 }
 .modal-p {
     padding: 0;
     margin-top: 0;
     margin-bottom: 1.25rem;
+    text-align: left;
 }
 
 .thicc {
