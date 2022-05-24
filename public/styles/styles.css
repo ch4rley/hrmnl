@@ -456,7 +456,8 @@ fieldset {
     font-size: .875rem;
 }
 
-input {
+input,
+.submit {
     width: 100%;
     padding: 7px 14px;
     font-size: 1.125rem;
@@ -479,7 +480,8 @@ input[type=email]:focus::placeholder {
     color: transparent;
 }
 
-input[type=submit] {
+input[type=submit],
+.submit {
     border: 1.5px solid var(--lightmode-background);
     color: var(--white);
     font-weight: 400;
@@ -490,7 +492,8 @@ input[type=submit] {
     background-clip: padding-box;
     -webkit-background-clip: padding-box;
 }
-input[type=submit]:hover {
+input[type=submit]:hover,
+.submit:hover {
     border: 1.5px solid var(--lightmode-background);
     color: var(--white);
     font-weight: 400;
@@ -501,7 +504,8 @@ input[type=submit]:hover {
     background-clip: border-box;
     -webkit-background-clip: border-box;
 }
-input[type=submit]:active {
+input[type=submit]:active,
+.submit:active {
     border: 1.5px solid var(--purple);
 }
 
