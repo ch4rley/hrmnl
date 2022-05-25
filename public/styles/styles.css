@@ -604,6 +604,41 @@ form p {
     display: none;
 }
 
+.input-clone {
+    border: none;
+    margin-top: .25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+div.checkbox {
+    display: inline-block;
+}
+
+.large-label {
+    font-family: var(--serif);
+    color: var(--lightmode-text);
+    font-size: 1.125rem;
+    padding-right: .75rem;
+}
+
+h4.form-header {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    background: var(--gradient-rev-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+.flex-form:last-child {
+    padding-bottom: 1rem;
+}
+
 
 
 
@@ -791,6 +826,7 @@ h1.mix {
 }
 
 /* MAYBE USE FOR SELECTS IN THE FUTURE */
+/* FANCY DROP DOWN WITH ICONS */
 /* .select {
     position: relative;
     overflow: hidden;
