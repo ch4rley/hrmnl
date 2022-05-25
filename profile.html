@@ -1,53 +1,83 @@
 <!-- HEAD PARTIAL -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
-    <!-- Google Fonts -->
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/4d734547c5.js" crossorigin="anonymous"></script>
-    <!-- Javascript -->
-    <script defer src="/public/scripts/scripts.js"></script>
-    <title>// hrmnl // profile</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/4d734547c5.js" crossorigin="anonymous"></script>
+        <!-- Javascript -->
+        <script defer src="/public/scripts/scripts.js"></script>
+        <title>// hrmnl // profile</title><!--can i use ejs here to fill with page name, if not home/index? --><!-- maybe if condition / switch condition? check out url property of window object if url is ___, then use ____ inside of title -->
+    </head>
 <body>
 <!-- NAV PARTIAL -->
     <main>
-        
-        <form action="#" method="POST" class="profile" name="profile-form" id="profile-form">
-           <h2>create profile / user name</h2>
-           <ul>
+        <h2 class="gradient-text">create profile / user name</h2>
+        <form action="#" method="POST" class="profile form-border" name="profile-form" id="profile-form"> 
+           <ul class="flex-form">
                <li>
+                   <h4 class="form-header">about me</h4>
                    <label for="name">name</label>
                    <input type="text" id="name" name="name" value="<%= user.name %>" required>
                </li> 
                <li>
-                <label for="pronouns">what are your pronouns?</label>
-                <input type="text" id="pronouns" name="user_pronouns" value="<%= user.pronouns %>" required>
+                    <label for="pronouns">what are your pronouns?</label>
+                    <input type="text" id="pronouns" name="pronouns" value="<%= user.pronouns %>">
                </li>
                <li>
-                   <!--add details-->
-               </li>
-               <li>
-                  <!--hormone type-->
-                  <fieldset name="hrt-details" id="hrt-details">
-                  <legend>hormone replacement therapy</legend>   
-                      <input type="radio" id="estrogen" name="hormone" value="estrogen">
-                      <label for="estrogen">estrogen</label>
-                      <input type="radio" id="testosterone" name="hormone" value="testosterone">
-                      <label for="testosterone">testosterone</label>
-                  </fieldset>
-                  <fieldset>
-                    <legend>hrt details</legend>
-                    <!--DELIVERY METHOD-->
+                    <!--hormone type-->
+                    <h4 class="form-header">my HRT</h4>
+                    <fieldset name="hormone" id="hormone">
+                    <legend>hormone replacement therapy</legend>   
+                        <input type="checkbox" id="estrogen" name="hormone" value="estrogen">
+                        <label for="estrogen">estrogen</label>
+                        <input type="checkbox" id="testosterone" name="hormone" value="testosterone">
+                        <label for="testosterone">testosterone</label>
+                        <input type="checkbox" id="progesterone" name="hormone" value="progesterone">
+                        <label for="progesterone">progesterone</label>
+                    </fieldset>
+                </li>
+                <li>
+                    <!-- add onclick method to get whichever of these is appropriate to show up if one of those boxes is selected-->
+                    <div class="hidden delivery-method">
+                        <label for="t_delivery">testosterone delivery method</label>
+                        <input type="text" id="t_delivery" name="t_delivery" value="<%= user.t_delivery %>">
+                    </div>
+                    <div class="hidden delivery-method">
+                        <label for="e_delivery">estrogen delivery method</label>
+                        <input type="text" id="e_delivery" name="e_delivery" value="<%= user.e_delivery %>">
+                    </div>
+                    <div class="hidden delivery-method">
+                        <label for="p_delivery">progesterone delivery method</label>
+                        <input type="text" id="p_delivery" name="p_delivery" value="<%= user.p_delivery %>">
+                    </div>
+                    <div class="delivery-method">
+                        <label for="delivery">hormone delivery method</label>
+                        <input type="text" id="delivery" name="delivery" value="<%= user.delivery %>">
+                    </div>
+                        <!--DELIVERY METHOD-->
                         <!--pill-->
                         <!--patch-->
                         <!--topical gel-->
                         <!--injection-->
+                        <!--estradiol can be taken in many ways, including: oral, buccal, sublingual, intranasal, transdermal (gels, creams, patches), vaginal (tablets, creams, rings, suppositories), rectal, by intramuscular or subcutaneous injection (in oil or aqueous), and as a subcutaneous implant-->
+                        <!--testosterone can be taken as a gel, solution, skin patch, injection, pellet implanted under the skin and an oral buccal system-->
+                </li>
+                <li>
+                    <label for="dose">dose and concentration</label>
+                    <input type="text" id="dose" name="dose" placeholder="dose">
+                    <input type="text" id="concentration" name="concentration" placeholder="concentration">
+                </li>
+                <li>
+                    
                     <!--add details ++ -->
                         <!--dose-->
                         <!--manufacturer-->
@@ -79,7 +109,31 @@
                         <!--prescriber name-->
                         <!--prescriber contact info-->
                     
-                  </fieldset>
+                </li>
+                <li>
+                    <div class="select">
+                        <!-- You can toggle select (disabled) -->
+                        <input type="radio" name="option">
+                        <i class="toggle icon icon-arrow-down"></i>
+                        <i class="toggle icon icon-arrow-up"></i>
+                        <span class="placeholder">Choose...</span>
+                        <label class="option">
+                            <input type="radio" name="option">
+                            <span class="title animated fadeIn"><i class="icon icon-speedometer"></i>Speedometer</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="option">
+                            <span class="title animated fadeIn"><i class="icon icon-fire"></i>Fire</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="option" disabled>
+                            <span class="title animated fadeIn"><i class="icon icon-handbag"></i>Handbag</span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="option">
+                            <span class="title animated fadeIn"><i class="icon icon-badge"></i>Badge</span>
+                        </label>
+                    </div>
                 </li>
             </ul>
         </form>
