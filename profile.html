@@ -70,14 +70,45 @@
                         <!--injection-->
                         <!--estradiol can be taken in many ways, including: oral, buccal, sublingual, intranasal, transdermal (gels, creams, patches), vaginal (tablets, creams, rings, suppositories), rectal, by intramuscular or subcutaneous injection (in oil or aqueous), and as a subcutaneous implant-->
                         <!--testosterone can be taken as a gel, solution, skin patch, injection, pellet implanted under the skin and an oral buccal system-->
+                        <!--dropdown with delivery methods, tagged with which hormones they are used, for, and when user selects hormone, populate list list with possible options?-->
                 </li>
                 <li>
-                    <label for="dose">dose and concentration</label>
-                    <input type="text" id="dose" name="dose" placeholder="dose">
-                    <input type="text" id="concentration" name="concentration" placeholder="concentration">
+                    <label for="dose">dose</label>
+                    <input type="text" id="dose" name="dose" placeholder="mL or whatever">
+                </li>
+                <li>    
+                    <label for="concentration">concentration</label>
+                    <input type="text" id="concentration" name="concentration" placeholder="# mg/mL or whatever">
                 </li>
                 <li>
-                    
+                    <label for="frequency">frequency</label>
+                    <input type="text" id="frequency" name="frequency" placeholder="ex. 1x / week"> 
+                </li>
+                <li>
+                    <div class="custom-select">
+                        <label for="frequency_interval">every&nbsp;&nbsp;</label>
+                        <select name="frequency_interval" id="frequency_interval">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select name="frequency_unit" id="frequency_unit">
+                            <option value="hours">hour(s)</option>
+                            <option value="days">day(s)</option>
+                            <option value="weeks">week(s)</option>
+                            <option value="months">month(s)</option>
+                        </select>
+                    </div>
+                </li>
                     <!--add details ++ -->
                         <!--dose-->
                         <!--manufacturer-->
@@ -108,8 +139,6 @@
                     <!--PRESCRIBER INFO-->
                         <!--prescriber name-->
                         <!--prescriber contact info-->
-                    
-                </li>
                 <li>
                     <div class="select">
                         <!-- You can toggle select (disabled) -->
