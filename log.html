@@ -1,24 +1,65 @@
 <!-- HEAD PARTIAL -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
-    <!-- Google Fonts -->
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/4d734547c5.js" crossorigin="anonymous"></script>
-    <!-- Javascript -->
-    <script defer src="/public/scripts/scripts.js"></script>
-    <title>// hrmnl // log</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/4d734547c5.js" crossorigin="anonymous"></script>
+        <!-- Javascript -->
+        <script defer src="/public/scripts/scripts.js"></script>
+        <title>hrmnl // log</title><!--can i use ejs here to fill with page name?-->
+    </head>
 <body>
 <!-- NAV PARTIAL -->
     <main>
-
+        <h2 class="gradient-text">log HRT</h2>
+        <!-- HRT LOG FORM -->
+        <form class="form-border short-form" action="./history.html" method="POST" name="log-form" id="log-form">
+            <ul class="flex-form">
+                <li>
+                    <label for="hrtDate">date</label>
+                    <input type="text" id="hrtDate" name="hrtDate" value="<%= new.Date().getFullYear %>" required>
+                </li>
+                <li>
+                    <label for="hrtHormone">hormone</label>
+                    <input type="text" id="hrtHormone" name="hrtHormone" value="<%=user.hrtHormone %>" required>
+                </li>
+                <li>
+                    <label for="hrtDelivery">delivery method</label>
+                        <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDelivery %>">
+                </li>
+                <li>
+                    <label for="hrtDose">dose</label>
+                    <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDose %>">
+                </li>
+                <li>    
+                    <label for="hrtConcentration">concentration</label>
+                    <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentration %>">
+                </li>
+                <li>
+                    <h3 class="form-header">notes</h3>
+                    <label for="hrtNotes" class="hidden">notes</label>
+                    <textarea id="hrtNotes" name="hrtNotes"
+                    rows="7" autofocus>   
+                    </textarea>
+                </li>
+                <li>
+                    <input type="submit" value="add to log" class="submit first-button" />
+                </li>
+            </ul>
+            <!-- <p>already have a <span class="gradient-text">hrmnl</span> account? <span class="light-grey">//</span> <a href="/login"><span class="embolden">log in</span></a></p> -->
+        </form>
+        </main>
     </main>
+
 <!-- FOOTER PARTIAL -->    
 </body>
 </html>

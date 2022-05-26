@@ -24,7 +24,7 @@
         <form action="#" method="POST" class="profile form-border" name="profile-form" id="profile-form"> 
            <ul class="flex-form">
                <li>
-                   <h4 class="form-header">about me</h4>
+                   <h3 class="form-header">about me</h3>
                    <label for="name">name</label>
                    <input type="text" id="name" name="name" value="<%= user.name %>" required>
                </li> 
@@ -34,7 +34,7 @@
                </li>
                <li>
                     <!--hormone type-->
-                    <h4 class="form-header">my HRT</h4>
+                    <h3 class="form-header">my HRT</h3>
                     <label>hormone replacement therapy</label>
                     <fieldset name="hormone" id="hormone" class="input-clone">
                     <legend class="hidden">hormone replacement therapy</legend>   
@@ -55,20 +55,20 @@
                 <li>
                     <!-- add onclick method to get whichever of these is appropriate to show up if one of those boxes is selected-->
                     <div class="hidden delivery-method">
-                        <label for="t_delivery">testosterone delivery method</label>
-                        <input type="text" id="t_delivery" name="t_delivery" value="<%= user.t_delivery %>">
+                        <label for="hrtDeliveryT">testosterone delivery method</label>
+                        <input type="text" id="hrtDeliveryT" name="hrtDeliveryT" value="<%= user.hrtDeliveryT %>">
                     </div>
                     <div class="hidden delivery-method">
-                        <label for="e_delivery">estrogen delivery method</label>
-                        <input type="text" id="e_delivery" name="e_delivery" value="<%= user.e_delivery %>">
+                        <label for="hrtDeliveryE">estrogen delivery method</label>
+                        <input type="text" id="hrtDeliveryE" name="hrtDeliveryE" value="<%= user.hrtDeliveryE %>">
                     </div>
                     <div class="hidden delivery-method">
-                        <label for="p_delivery">progesterone delivery method</label>
-                        <input type="text" id="p_delivery" name="p_delivery" value="<%= user.p_delivery %>">
+                        <label for="hrtDeliveryP">progesterone delivery method</label>
+                        <input type="text" id="hrtDeliveryP" name="hrtDeliveryP" value="<%= user.hrtDeliveryP %>">
                     </div>
                     <div class="delivery-method">
-                        <label for="delivery">hormone delivery method</label>
-                        <input type="text" id="delivery" name="delivery" value="<%= user.delivery %>">
+                        <label for="hrtDelivery">hormone delivery method</label>
+                        <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDelivery %>">
                     </div>
                         <!--DELIVERY METHOD-->
                         <!--pill-->
@@ -80,12 +80,12 @@
                         <!--dropdown with delivery methods, tagged with which hormones they are used, for, and when user selects hormone, populate list list with possible options?-->
                 </li>
                 <li>
-                    <label for="dose">dose</label>
-                    <input type="text" id="dose" name="dose" placeholder="# mL or mg or packet or pill">
+                    <label for="hrtDose">dose</label>
+                    <input type="text" id="hrtDose" name="hrtDose" placeholder="# mL or mg or packet or pill">
                 </li>
                 <li>    
-                    <label for="concentration">concentration</label>
-                    <input type="text" id="concentration" name="concentration" placeholder="# mg/mL if applicable">
+                    <label for="hrtConcentration">concentration</label>
+                    <input type="text" id="hrtConcentration" name="hrtConcentration" placeholder="# mg/mL if applicable">
                 </li>
                 <li>
                     <label for="frequency">frequency</label>

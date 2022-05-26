@@ -623,7 +623,7 @@ div.checkbox {
     padding-right: .75rem;
 }
 
-h4.form-header {
+h3.form-header {
     font-family: var(--serif);
     font-size: 1.25rem;
     font-weight: 500;
@@ -639,10 +639,17 @@ h4.form-header {
     padding-bottom: 1rem;
 }
 
+textarea {
+    border-color: var(--purple);
+    background-color: var(--lightmode-background);
+    font-family: var(--serif);
+    color: var(--lightmode-text);
+}
 
-
-
-
+textarea:focus {
+    outline: none;
+    border-color: var(--pink);
+}
 
 /*--- HISTORY PAGE ---*/
 
