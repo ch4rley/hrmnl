@@ -132,6 +132,11 @@ ul.navigation {
     width: 100%;
 }
 
+ul.simpleNav {
+    justify-content: center;
+    width: 100%;
+}
+
 .nav-link {
     /* display: block; */
     text-align: center;
@@ -142,6 +147,7 @@ ul.navigation {
     margin: 1vw;
     /* border: 1px solid var(--pink); */
 }
+
 
 /* button/link styling */
 
@@ -154,6 +160,7 @@ ul.navigation {
     line-height: 2;
     text-align: center;
     padding: 0 2vw;
+    white-space: nowrap;
     font-family: var(--serif);
     font-weight: 400;
     letter-spacing: .05rem;
@@ -161,6 +168,13 @@ ul.navigation {
     box-sizing: border-box;
     border: 2px solid var(--lightmode-background);
     transition: background-color .75s, color .75s, border .75s, border-bottom .75s, border-top .5s;
+}
+
+.simpleNav a,
+.simpleNav a:link,
+.simpleNav a:visited {
+    padding: 0 3rem;
+    max-width: 40vw;
 }
 
 .gradient-button {
