@@ -45,11 +45,13 @@ body {
     color: var(--lightmode-text);
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
+    height: 100vh;
+    overflow: scroll;
     background-color: var(--lightmode-background);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 header {
@@ -319,7 +321,6 @@ main {
     width: 80vw;
     max-width: 1000px;
     margin: auto;
-    overflow: scroll;
 }
 
 .fa-solid {
