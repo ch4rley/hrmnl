@@ -1,4 +1,5 @@
 const siteData = require('../data/siteData');
+const userData = require('../data/userData');
 //const SchemaName = require('../models/schemanameModel');
 
 module.exports = {
@@ -12,10 +13,15 @@ module.exports = {
     },
     // handler that will show login page
     login: (req, res) => {
-        res.render('pages/login', {});
+        res.render('/pages/login', {
+            signedIn: siteData.signedIn
+        });
     },
     
     profile: (req, res) => {
-        res.render('pages/profile', {});
+        res.render('pages/profile', {
+            signedIn: siteData.signedIn,
+            user: userData.user
+        });
     },
 }
