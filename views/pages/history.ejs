@@ -1,58 +1,38 @@
 <!-- HEAD PARTIAL -->
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="/public/styles/styles.css">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/4d734547c5.js" crossorigin="anonymous"></script>
-        <!-- Javascript -->
-        <script defer src="/public/scripts/scripts.js"></script>
-        <title>// hrmnl // profile</title><!--can i use ejs here to fill with page name, if not home/index? --><!-- maybe if condition / switch condition? check out url property of window object if url is ___, then use ____ inside of title -->
-    </head>
-<body>
-<!-- NAV PARTIAL -->
-    <header></header>
-    <nav></nav>
-    <main>
-        <h2 class="gradient-text"><%= user.name %>'s HRT log</h2>
-        <button class="accordion history"><%= user.HRT.date %> // <%= user.HRT.date.hormone %></button>
-        <div class="panel">
-            <!--this will be a partial with information from the log page-->
-            <table>
-                <thead>
-                    <tr>
-                        <th>table title</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            yup there is some data here
-                        </td>
-                    </tr>
+<%- include('../partials/head') %> 
+    <!-- NAV PARTIAL -->
+    <%- include('../partials/nav') %> 
+        <!-- MAIN BODY -->
+        <main>
+            <h2 class="gradient-text"><%= user.name %>'s HRT log</h2>
+            <button class="accordion history"><%= user.HRT.date %> // <%= user.HRT.date.hormone %></button>
+            <div class="panel">
+                <!--this will be a partial with information from the log page-->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>table title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                yup there is some data here
+                            </td>
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-        </div>
-        <button class="accordion">entry 2</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
-        </div>
-        <button class="accordion">entry 3</button>
-        <div class="panel">
-            <p>Lorem ipsum...</p>
-        </div>
-    </main>
-<!-- FOOTER PARTIAL -->
-    <footer></footer>
-</body>
-</html>
+            </div>
+            <button class="accordion">entry 2</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div>
+            <button class="accordion">entry 3</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div>
+        </main>
+    <!-- FOOTER PARTIAL -->
+    <%- include('../partials/footer') %>

@@ -6,4 +6,12 @@ const router = express.Router();
 router.route('/')
   .get(siteCtrl.index);
 
+router.route('/login')
+  .get(siteCtrl.login);
+
+router.route('/profile')
+  .get(siteCtrl.profile);
+
+router.route('/user/HRT')
+
 module.exports = router;
