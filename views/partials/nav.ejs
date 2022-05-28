@@ -1,0 +1,41 @@
+<header class="gradient-border BORDRR">
+    <div class="header-content">
+        <!-- LOGO -->
+        <%- include('../partials/logo')  %> 
+        <nav>
+            <!-- HAMBURGER NAV, CURRENTLY NOT USING -->
+            <a href="javascript:void(0);"
+            class="menu-icon hamburger">
+            <i class="fa fa-bars"></i>
+            </a>
+            <!-- NAVIGATION LINKS -->
+            <ul class="navigation" id="navigation" role="list">
+                <li>
+                    <a href="#" class="nav-link pinkbg pinklink" title="profile">profile</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link pinkpurplebg pinkpurplelink" title="log-treatment">log treatment</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link purplebg purplelink" title="history">history</a>
+                </li>
+                <!-- this link should say log in / log out / sign up, depending on user, and correspond to the appropriate link -->
+                <!-- MODAL (LOGIN/SIGNUP) HERE -->
+                <li>
+                    <a href="#" class="nav-link bluebg bluelink" title="log out" id="modal-btn">log out<!--// log in // sign up --></a>
+                </li>
+            </ul>
+            <!-- REGISTER MODAL -->
+            <%- include('../partials/register') %> 
+            <!-- IF USER IS NOT LOGGED IN -->
+            <ul class="navigation simpleNav" id="navigation" role="list">
+                <li>
+                    <a href="#" class="nav-link  gradient-button gradient-pinkpurple-bg gradient-pinkpurple-link" title="sign up">sign up</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link gradient-button gradient-purpleblue-bg gradient-purpleblue-link" title="log in">log in</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
