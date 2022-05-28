@@ -7,7 +7,7 @@ module.exports = {
     hrtDelivery: 'subcutaneous injection',
     hrtDose: '.09mL',
     hrtConcentration: '200mg/mL',
-    frequency: '1x/week',
-    email_newFeatures: true,
+    hrtFrequency: '1x/week',
+    email_newFeatures: false,
   }
 }

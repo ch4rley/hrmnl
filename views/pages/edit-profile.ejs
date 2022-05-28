@@ -1,0 +1,91 @@
+<!-- HEAD PARTIAL -->
+<%- include('../partials/head') %> 
+    <!-- NAV PARTIAL -->
+    <%- include('../partials/nav') %> 
+        <!-- MAIN BODY -->
+        <main>
+            <h2 class="gradient-text">create profile</h2>
+            <form action="#" method="POST" class="profile form-border" name="profile-form" id="profile-form"> 
+            <ul class="flex-form">
+                <li>
+                    <h3 class="form-header">about me</h3>
+                    <label for="name">name</label>
+                    <input type="text" id="name" name="name" value="<%= user.name %>" required>
+                </li> 
+                <li>
+                        <label for="pronouns">what are your pronouns?</label>
+                        <input type="text" id="pronouns" name="pronouns" value="<%= user.pronouns %>">
+                </li>
+                <li>
+                        <!--hormone type-->
+                        <h3 class="form-header">my HRT</h3>
+                        <label>hormone replacement therapy</label>
+                        <fieldset name="hormone" id="hormone" class="input-clone">
+                        <legend class="hidden">hormone replacement therapy</legend>   
+                            <div class="checkbox">
+                                <input type="checkbox" id="estrogen" name="hormone" value="estrogen">
+                                <label for="estrogen" class="large-label">estrogen</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="testosterone" name="hormone" value="testosterone">
+                                <label for="testosterone" class="large-label">testosterone</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="progesterone" name="hormone" value="progesterone">
+                                <label for="progesterone" class="large-label">progesterone</label>
+                            </div>
+                        </fieldset>
+                    </li>
+                    <li>
+                        <!-- add onclick method to get whichever of these is appropriate to show up if one of those boxes is selected-->
+                        <% if(user.hormone === 'estrogen') { %>
+                            <div class="hidden delivery-method">
+                                <label for="hrtDeliveryE">estrogen delivery method</label>
+                                <input type="text" id="hrtDeliveryE" name="hrtDeliveryE" value="<%= user.hrtDeliveryE %>">
+                            </div>
+                        <% } else if(user.hormone === 'testosterone') { %>
+                            <div class="delivery-method">
+                                <label for="hrtDeliveryT">testosterone delivery method</label>
+                                <input type="text" id="hrtDeliveryT" name="hrtDeliveryT" value="<%= user.hrtDeliveryT %>">
+                            </div>
+                        <% } else if(user.hormone === 'progesterone') { %> 
+                            <div class="hidden delivery-method">
+                                <label for="hrtDeliveryP">progesterone delivery method</label>
+                                <input type="text" id="hrtDeliveryP" name="hrtDeliveryP" value="<%= user.hrtDeliveryP %>">
+                            </div>
+                        <% } else { %> 
+                            <div class="delivery-method">
+                                <label for="hrtDelivery">hormone delivery method</label>
+                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDelivery %>">
+                            </div>
+                        <% } %>
+                    </li>
+                    <li>
+                        <label for="hrtDose">dose</label>
+                        <input type="text" id="hrtDose" name="hrtDose" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDose %>">
+                    </li>
+                    <li>    
+                        <label for="hrtConcentration">concentration</label>
+                        <input type="text" id="hrtConcentration" name="hrtConcentration" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentration %>">
+                    </li>
+                    <li>
+                        <label for="hrtFrequency">frequency</label>
+                        <input type="text" id="hrtFrequency" name="hrtFrequency" placeholder="ex. 1x / week" value="<%= user.hrtFrequency %>"> 
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" id="email_yes" name="email_newFeatures"
+                                <% if(user.email_newFeatures == true) { %>
+                                    checked
+                                <% } %>
+                                >
+                            <label for="email_newFeatures">please notify me about new features by email</label>
+                    </li>
+                    <li>
+                        <input type="submit" value="create profile" class="submit" />
+                    </li>
+                </ul>
+            </form>
+        </main>
+    <!-- FOOTER PARTIAL -->
+    <%- include('../partials/footer') %>

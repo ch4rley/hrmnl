@@ -19,7 +19,7 @@ module.exports = {
     },
     
     profile: (req, res) => {
-        res.render('pages/profile', {
+        res.render('pages/edit-profile', {
             signedIn: siteData.signedIn,
             user: userData.user
         });
