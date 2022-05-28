@@ -7,7 +7,9 @@ const siteRouter = require('./siteRouter')
 const router = express.Router();
 
 router.use('/', siteRouter);
+    
 //router.use('/other', otherRouter);
 
 
+// expose this to the rest of the app
 module.exports = router;
