@@ -9,9 +9,17 @@ router.route('/')
 router.route('/login')
   .get(siteCtrl.login);
 
-router.route('/profile')
+router.route('/_id')
   .get(siteCtrl.profile);
 
-router.route('/user/HRT')
+router.route('/_id/HRT');
+
+router.route('/_id/edit-profile')
+  .get(siteCtrl.edit_profile_get)
+  .post(siteCtrl.edit_profile_update);
+
+router.route('/_id/create-profile')
+  .get(siteCtrl.create_profile_get)
+  .post(siteCtrl.create_profile_post);
 
 module.exports = router;

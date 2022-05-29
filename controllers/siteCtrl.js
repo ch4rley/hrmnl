@@ -24,4 +24,36 @@ module.exports = {
             user: userData.user
         });
     },
+
+    create_profile_get: (req, res) => {
+        res.render('pages/create-profile', {
+            signedIn: siteData.signedIn,
+            user: userData.user
+        });
+    },
+
+    create_profile_post: (req, res) => {
+        res.redirect('pages/profile', {
+            signedIn: siteData.signedIn,
+            user: userData.user
+        });
+    },
+
+    edit_profile_get: (req, res) => {
+        res.render('pages/edit-profile', {
+            signedIn: siteData.signedIn,
+            user: userData.user
+        });
+    },
+
+    edit_profile_update: (req, res) => {
+        res.redirect('pages/profile', {
+            signedIn: siteData.signedIn,
+            user: userData.user
+        });
+    },
+
+
+
+
 }
