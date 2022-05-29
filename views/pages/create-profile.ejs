@@ -24,7 +24,7 @@
                             <label>hormone replacement therapy</label>
                             <fieldset name="hormone" id="hormone" class="input-clone">
                             <legend class="hidden">hormone replacement therapy</legend>   
-                                <div class="checkbox">
+                                <div class="checkbox" id="checkboxE">
                                     <input type="checkbox" id="estrogen" name="hormone" value="estrogen">
                                     <label for="estrogen" class="large-label">estrogen</label>
                                 </div>
@@ -39,84 +39,92 @@
                             </fieldset>
                         </li>
                         <!-- onclick function here: when user clicks estrogen, show these fields-->
-                        <li>
-                            <div class="delivery-method">
-                                <label for="hrtDeliveryE">estrogen delivery method</label>
-                                <input type="text" id="hrtDeliveryE" name="hrtDeliveryE" placeholder="ex. pill, injection" value="<%= user.hrtDeliveryE %>">
-                            </div>
-                        </li>
-                        <li>
-                            <label for="hrtDoseE">dose</label>
-                            <input type="text" id="hrtDoseE" name="hrtDoseE" placeholder="# mL or mg or pill" value="<%= user.hrtDoseE %>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentrationE">concentration</label>
-                            <input type="text" id="hrtConcentrationE" name="hrtConcentrationE" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentrationE %>">
-                        </li>
-                        <li>
-                            <label for="hrtFrequencyE">frequency</label>
-                            <input type="text" id="hrtFrequencyE" name="hrtFrequencyE" placeholder="ex. 1x / week" value="<%= user.hrtFrequencyE %>"> 
-                        </li>
+                        <div id="hrtDetailsE" class="hrtDetails hidden">
+                            <li>
+                                <div class="delivery-method">
+                                    <label for="hrtDeliveryE">estrogen delivery method</label>
+                                    <input type="text" id="hrtDeliveryE" name="hrtDeliveryE" placeholder="ex. pill, injection" value="<%= user.hrtDeliveryE %>">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="hrtDoseE">dose</label>
+                                <input type="text" id="hrtDoseE" name="hrtDoseE" placeholder="# mL or mg or pill" value="<%= user.hrtDoseE %>">
+                            </li>
+                            <li>
+                                <label for="hrtConcentrationE">concentration</label>
+                                <input type="text" id="hrtConcentrationE" name="hrtConcentrationE" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentrationE %>">
+                            </li>
+                            <li>
+                                <label for="hrtFrequencyE">frequency</label>
+                                <input type="text" id="hrtFrequencyE" name="hrtFrequencyE" placeholder="ex. 1x / week" value="<%= user.hrtFrequencyE %>">
+                            </li>
+                        </div>
                         <!-- /estrogen -->
                         <!-- onclick function here: when user clicks testosterone, show these fields-->
-                        <li>
-                            <div class="delivery-method">
-                                <label for="hrtDeliveryT">testosterone delivery method</label>
-                                <input type="text" id="hrtDeliveryT" name="hrtDeliveryT" placeholder="ex. injection, patch, gel" value="<%= user.hrtDeliveryT %>">
-                            </div>
-                        </li>
-                        <li>
-                            <label for="hrtDoseT">dose</label>
-                            <input type="text" id="hrtDoseT" name="hrtDoseT" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDoseT %>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentrationT">concentration</label>
-                            <input type="text" id="hrtConcentrationT" name="hrtConcentrationT" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentrationT %>">
-                        </li>
-                        <li>
-                            <label for="hrtFrequencyT">frequency</label>
-                            <input type="text" id="hrtFrequencyT" name="hrtFrequencyT" placeholder="ex. 1x / week" value="<%= user.hrtFrequencyT %>"> 
-                        </li>
+                        <div id="hrtDetailsT" class="hrtDetails hidden">
+                            <li>
+                                <div class="delivery-method">
+                                    <label for="hrtDeliveryT">testosterone delivery method</label>
+                                    <input type="text" id="hrtDeliveryT" name="hrtDeliveryT" placeholder="ex. injection, patch, gel" value="<%= user.hrtDeliveryT %>">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="hrtDoseT">dose</label>
+                                <input type="text" id="hrtDoseT" name="hrtDoseT" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDoseT %>">
+                            </li>
+                            <li>
+                                <label for="hrtConcentrationT">concentration</label>
+                                <input type="text" id="hrtConcentrationT" name="hrtConcentrationT" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentrationT %>">
+                            </li>
+                            <li>
+                                <label for="hrtFrequencyT">frequency</label>
+                                <input type="text" id="hrtFrequencyT" name="hrtFrequencyT" placeholder="ex. 1x / week" value="<%= user.hrtFrequencyT %>">
+                            </li>
+                        </div>
                         <!-- /testosterone -->
                         <!-- onclick function here: when user clicks progesterone, show these fields-->
-                        <li>
-                            <div class="delivery-method">
-                                <label for="hrtDeliveryP">progesterone delivery method</label>
-                                <input type="text" id="hrtDeliveryP" name="hrtDeliveryP" value="<%= user.hrtDeliveryP %>">
-                            </div>
-                        </li>
-                        <li>
-                            <label for="hrtDoseP">dose</label>
-                            <input type="text" id="hrtDoseP" name="hrtDoseP" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDoseP %>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentrationP">concentration</label>
-                            <input type="text" id="hrtConcentrationP" name="hrtConcentrationP" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentrationP %>">
-                        </li>
-                        <li>
-                            <label for="hrtFrequencyP">frequency</label>
-                            <input type="text" id="hrtFrequencyP" name="hrtFrequencyP" placeholder="ex. 1x / week" value="<%= user.hrtFrequencyP %>"> 
-                        </li>
+                        <div id="hrtDetailsP" class="hrtDetails hidden">
+                            <li>
+                                <div class="delivery-method">
+                                    <label for="hrtDeliveryP">progesterone delivery method</label>
+                                    <input type="text" id="hrtDeliveryP" name="hrtDeliveryP" value="<%= user.hrtDeliveryP %>">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="hrtDoseP">dose</label>
+                                <input type="text" id="hrtDoseP" name="hrtDoseP" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDoseP %>">
+                            </li>
+                            <li>
+                                <label for="hrtConcentrationP">concentration</label>
+                                <input type="text" id="hrtConcentrationP" name="hrtConcentrationP" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentrationP %>">
+                            </li>
+                            <li>
+                                <label for="hrtFrequencyP">frequency</label>
+                                <input type="text" id="hrtFrequencyP" name="hrtFrequencyP" placeholder="ex. 1x / week" value="<%= user.hrtFrequencyP %>">
+                            </li>
+                        </div>
                         <!-- /progesterone -->
                         <!-- default to show if user does not click any hormone -->
-                        <li> 
-                            <div class="delivery-method">
-                                <label for="hrtDelivery">hormone delivery method</label>
-                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDelivery %>">
-                            </div>
-                        </li>
-                        <li>
-                            <label for="hrtDose">dose</label>
-                            <input type="text" id="hrtDose" name="hrtDose" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDose %>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentration">concentration</label>
-                            <input type="text" id="hrtConcentration" name="hrtConcentration" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentration %>">
-                        </li>
-                        <li>
-                            <label for="hrtFrequency">frequency</label>
-                            <input type="text" id="hrtFrequency" name="hrtFrequency" placeholder="ex. 1x / week" value="<%= user.hrtFrequency %>"> 
-                        </li>
+                        <div id="hrtDetails" class="hrtDetails">
+                            <li>
+                                <div class="delivery-method">
+                                    <label for="hrtDelivery">hormone delivery method</label>
+                                    <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDelivery %>">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="hrtDose">dose</label>
+                                <input type="text" id="hrtDose" name="hrtDose" placeholder="# mL or mg or packet or pill" value="<%= user.hrtDose %>">
+                            </li>
+                            <li>
+                                <label for="hrtConcentration">concentration</label>
+                                <input type="text" id="hrtConcentration" name="hrtConcentration" placeholder="# mg/mL if applicable" value="<%= user.hrtConcentration %>">
+                            </li>
+                            <li>
+                                <label for="hrtFrequency">frequency</label>
+                                <input type="text" id="hrtFrequency" name="hrtFrequency" placeholder="ex. 1x / week" value="<%= user.hrtFrequency %>">
+                            </li>
+                        </div>
                         <!-- /default -->
                         <li>
                             <div class="checkbox">

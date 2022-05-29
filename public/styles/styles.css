@@ -620,6 +620,11 @@ form p {
     display: none;
 }
 
+.open {
+    display: flex;
+    flex-direction: column;
+}
+
 .input-clone {
     border: none;
     margin-top: .25rem;
