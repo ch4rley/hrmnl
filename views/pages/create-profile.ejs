@@ -5,7 +5,13 @@
         <!-- MAIN BODY -->
         <!-- i prioritzed providing an accessible user experience while i'm learning, within the scope and limits of what i've learned so far -->
         <main>
-            <h2>// <%= user.name %>'s profile</h2>
+            <h2 class="gradient-text">
+                <% if(user.name) { %>
+                    <%= user.name + '\'s' %> 
+                <% } else { %> 
+                    your
+                <% } %>
+                    profile</h2>
             <form class="create-profile profile form-border" action="/profile" method="POST" name="set-up-form" id="set-up-form">
                 <input type="hidden" name="redirect" value="./profile" /><!-- should redirect to profile page-->
                 <ul class="flex-form">
