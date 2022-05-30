@@ -23,3 +23,9 @@ router.route('/user/_id/create-profile')
   .post(siteCtrl.create_profile_post);
 
 module.exports = router;
+
+// /user/_id/log = HRT
+
+// /user/_id/history
+
+// do i need admin to be able to help people with their profiles?

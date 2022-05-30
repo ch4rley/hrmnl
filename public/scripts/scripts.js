@@ -56,8 +56,6 @@ const showHrtDetailsT = function(e) {
   console.log(e);
 };
 
-T.addEventListener('click', showHrtDetailsT);
-
 const showHrtDetailsP = function(e) {
   detailsP.classList.toggle('open');
   hideDefaultHrtDetails();

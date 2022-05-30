@@ -5,6 +5,14 @@
         <!-- MAIN BODY -->
         <main>
             <h2 class="gradient-text">THIS IS YOUR PROFILE HELLO</h2>
+            <p class="profile">name: <span class="profile-information"><%= user.name %> </span></p>
+            <p class="profile"><span class="profile_pronouns"><%= user.pronouns %> </span></p>
+            <div class="profile loopy">
+            <% for (let i = 0; i < user.hormone.length; i++) { %>
+                <span class="profile_HRT"><%= user.hormone[i] %></span>
+            <% } %>
+            <p class="profile"><span class="profile_delivery"><%= user.pronouns %> </span></p>
+
             
         </main>
     <!-- FOOTER PARTIAL -->
