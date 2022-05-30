@@ -9,5 +9,5 @@ module.exports = {
     hrtConcentrationT: '200mg/mL',
     hrtFrequencyT: '1x/week',
     email_newFeatures: true,
-  }
+  },
 }

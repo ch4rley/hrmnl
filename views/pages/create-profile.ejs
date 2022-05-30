@@ -3,7 +3,6 @@
     <!-- NAV PARTIAL -->
     <%- include('../partials/nav') %> 
         <!-- MAIN BODY -->
-        <!-- i prioritzed providing an accessible user experience while i'm learning, within the scope and limits of what i've learned so far -->
         <main>
             <h2 class="gradient-text">
                 <% if(user.name) { %>
@@ -12,8 +11,8 @@
                     your
                 <% } %>
                     profile</h2>
-            <form class="create-profile profile form-border" action="/profile" method="POST" name="set-up-form" id="set-up-form">
-                <input type="hidden" name="redirect" value="./profile" /><!-- should redirect to profile page-->
+            <form class="create-profile profile form-border" action="/user/_id" method="POST" name="set-up-form" id="set-up-form">
+                <!-- <input type="hidden" name="redirect" value="./profile" />should redirect to profile page -->
                 <ul class="flex-form">
                     <li>
                         <h3 class="form-header">about me</h3>
@@ -21,8 +20,8 @@
                         <input type="text" id="name" name="name" value="<%= user.name %>" required>
                     </li> 
                     <li>
-                            <label for="pronouns">what are your pronouns?</label>
-                            <input type="text" id="pronouns" name="pronouns" value="<%= user.pronouns %>">
+                        <label for="pronouns">what are your pronouns?</label>
+                        <input type="text" id="pronouns" name="pronouns" value="<%= user.pronouns %>">
                     </li>
                     <li>
                             <!--hormone type-->

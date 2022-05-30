@@ -23,8 +23,8 @@ let detailsP = document.querySelector('#hrtDetailsP');
 let details = document.querySelector('#hrtDetails');
 
 let E = document.querySelector('#checkboxE');
-let T = document.querySelector('#testosterone');
-let P = document.querySelector('#progesterone');
+let T = document.querySelector('#checkboxT');
+let P = document.querySelector('#checkboxP');
 
 // function will hide hrt details by default when other details show
 const hideDefaultHrtDetails = () => {

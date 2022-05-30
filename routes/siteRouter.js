@@ -9,16 +9,16 @@ router.route('/')
 router.route('/login')
   .get(siteCtrl.login);
 
-router.route('/_id')
-  .get(siteCtrl.profile);
+router.route('/user/_id')
+  .get(siteCtrl.profile)
 
-router.route('/_id/HRT');
+router.route('/user/_id/HRT');
 
-router.route('/_id/edit-profile')
+router.route('/user/_id/edit-profile')
   .get(siteCtrl.edit_profile_get)
-  .post(siteCtrl.edit_profile_update);
+  .put(siteCtrl.edit_profile_update);
 
-router.route('/_id/create-profile')
+router.route('/user/_id/create-profile')
   .get(siteCtrl.create_profile_get)
   .post(siteCtrl.create_profile_post);
 

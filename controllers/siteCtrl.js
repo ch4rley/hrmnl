@@ -19,7 +19,7 @@ module.exports = {
     },
     
     profile: (req, res) => {
-        res.render('pages/edit-profile', {
+        res.render('pages/profile', {
             signedIn: siteData.signedIn,
             user: userData.user
         });
@@ -47,7 +47,13 @@ module.exports = {
     },
 
     edit_profile_update: (req, res) => {
-        res.redirect('pages/profile', {
+        const {_id} = req.params;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+
+        const matchUser = userData.find(user => user._id === String(_id));
+        const index = userData.indexOf(matchUser);
+        userData.splice(index, 1);
+        res.redirect('/user/_id', {
             signedIn: siteData.signedIn,
             user: userData.user
         });
