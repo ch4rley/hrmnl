@@ -11,8 +11,7 @@
                     your
                 <% } %>
                     profile</h2>
-            <!-- ADD METHOD OVERRIDE SO THIS IS AN UPDATE METHOD -->
-            <form action="/user/<%= user._id %>?_method=PUT" method="POST" class="profile form-border" name="profile-form" id="profile-form">
+            <form action="/user/<%= user._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded" class="profile form-border" name="profile-form" id="profile-form">
                 <!-- FORM FROM OTHER PAGE -->
                 <ul class="flex-form">
                     <li>

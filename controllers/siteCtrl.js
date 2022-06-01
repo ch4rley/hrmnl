@@ -59,6 +59,19 @@ module.exports = {
         });
     },
 
+    history_get: (req, res) => {
+        res.render('pages/history', {
+            singedIn: siteData.signedIn,
+            user: userData.user
+        });
+    },
+    log_get: (req, res) => {
+        res.render('pages/log', {
+            singedIn: siteData.signedIn,
+            user: userData.user
+        });
+    },
+
 
 
 
