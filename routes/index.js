@@ -7,6 +7,7 @@ const siteRouter = require('./siteRouter');
 const router = express.Router();
 
 router.use('/', siteRouter);
+router.use('/user', userRouter);
     
 //router.use('/other', otherRouter);
 
