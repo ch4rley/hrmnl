@@ -7,7 +7,8 @@ router.route('/')
   .get(siteCtrl.index);
 
 router.route('/login')
-  .get(siteCtrl.login);
+  .get(siteCtrl.login)
+  .post(siteCtrl.login_post);
 
 router.route('/register')
   .get(siteCtrl.register);

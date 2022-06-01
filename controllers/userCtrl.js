@@ -17,7 +17,9 @@ module.exports = {
         newUser.save();
         let _id = newUser._id;
 
-        res.redirect('/user/' + _id + '/create-profile');
+        res.redirect('/login');
+
+        // res.redirect('/user/' + _id + '/create-profile');
     },
     profile: (req, res) => {
         res.render('pages/profile', {
@@ -43,19 +45,32 @@ module.exports = {
     create_profile_put: (req, res) => {
         // which user in the database
         const {_id} = req.params;
-        const {name, pronouns, hormone, email_newFeatures} = req.body;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+        console.log(req.body);
 
         // taking current inputs and relabelling them and updating the information in the database
         User.findByIdAndUpdate(_id, {$set: {
             name: name,
             pronouns: pronouns,
             hormone: hormone,
-            email_newFeatures: email_newFeatures
+            hrtDeliveryE: hrtDeliveryE,
+            hrtDoseE: hrtDoseE,
+            hrtConcentrationE: hrtConcentrationE,
+            hrtFrequencyE: hrtFrequencyE,
+            hrtDeliveryT: hrtDeliveryT,
+            hrtDoseT: hrtDoseT,
+            hrtConcentrationT: hrtConcentrationT,
+            hrtFrequencyT: hrtFrequencyT,
+            hrtDeliveryP: hrtDeliveryP,
+            hrtDoseP: hrtDoseP,
+            hrtConcentrationP: hrtConcentrationP,
+            hrtFrequencyP: hrtFrequencyP,
+            // email_newFeatures: email_newFeatures
         }}, {new: true}, error => {
             if(error) {
               return error;
             } else {
-              res.redirect('/user/' + _id + '/');
+                res.redirect('/user/' + _id + '/');
             }
         });
     },

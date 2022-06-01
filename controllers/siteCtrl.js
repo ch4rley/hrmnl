@@ -18,6 +18,10 @@ module.exports = {
         });
     },
 
+    login_post: (req, res) => {
+        res.redirect('/user/' + _id + '/');
+    },
+
     register: (req, res) => {
         res.render('pages/sign-up', {
         signedIn: siteData.signedIn

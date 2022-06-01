@@ -24,8 +24,8 @@
                             </select>
                         <% } %> 
                     </li>
-                    <% const hrtHormone = user.hormone; %>
-                    <% if(hrtHormone === 'testosterone') { %>
+                    
+                    <% if(user.hormone === 'testosterone') { %>
                         <li>
                             <label for="hrtDelivery">delivery method</label>
                                 <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryT %>">
@@ -38,7 +38,7 @@
                             <label for="hrtConcentration">concentration</label>
                             <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationT %>">
                         </li>
-                    <% } else if(hrtHormone === 'estrogen') { %>
+                    <% } else if(user.hormone === 'estrogen') { %>
                         <li>
                             <label for="hrtDelivery">delivery method</label>
                                 <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryE %>">
@@ -51,7 +51,7 @@
                             <label for="hrtConcentration">concentration</label>
                             <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationE %>">
                         </li>
-                    <% } else if(hrtHormone === 'progesterone') { %>
+                    <% } else if(user.hormone === 'progesterone') { %>
                         <li>
                             <label for="hrtDelivery">delivery method</label>
                             <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryP %>">

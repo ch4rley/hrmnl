@@ -11,7 +11,7 @@ const userSchema = new Schema({
     required: [true, 'name is required'],
     minlength:[1,'minimum length is one character']
   },
-  
+
   pronouns: {
     type: String,
     required: false,
@@ -39,41 +39,50 @@ const userSchema = new Schema({
 // create profile
   hormone: {
     type: Array,
-    // {
-    //   delivery: String,
-    //   dose: String,
-    //   concentration: String,
-    //   frequency: String,
-    // }
+  },
+  
+  hrtDeliveryT: {
+    type: String,
+  },
+  hrtDoseT: {
+    type: String,
+  },
+  hrtConcentrationT: {
+    type: String,
+  },
+  hrtFrequencyT: {
+    type: String,
   },
 
-  hrt: {
-      delivery: String,
-      dose: String,
-      concentration: String,
-      frequency: String,
-  }
+  hrtDeliveryE: {
+    type: String,
+  },
+  hrtDoseE: {
+    type: String,
+  },
+  hrtConcentrationE: {
+    type: String,
+  },
+  hrtFrequencyE: {
+    type: String,
+  },
 
-  // hrt: {
-  //   detailsT: {
-  //     delivery: String,
-  //     dose: String,
-  //     concentration: String,
-  //     frequency: String,
-  //   },
-  //   detailsE: {
-  //     delivery: String,
-  //     dose: String,
-  //     concentration: String,
-  //     frequency: String,
-  //   },
-  //   detailsP: {
-  //     delivery: String,
-  //     dose: String,
-  //     concentration: String,
-  //     frequency: String,
-  //   }, 
-  // },
+  hrtDeliveryP: {
+    type: String,
+  },
+  hrtDoseP: {
+    type: String,
+  },
+  hrtConcentrationP: {
+    type: String,
+  },
+  hrtFrequencyP: {
+    type: String,
+  },
+
+  email_newFeatures: {
+    type: Boolean,
+  },
 }, 
   {
   timestamps: true
