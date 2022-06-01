@@ -24,18 +24,46 @@
                             </select>
                         <% } %> 
                     </li>
-                    <li>
-                        <label for="hrtDelivery">delivery method</label>
-                            <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDelivery %>">
-                    </li>
-                    <li>
-                        <label for="hrtDose">dose</label>
-                        <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDose %>">
-                    </li>
-                    <li>    
-                        <label for="hrtConcentration">concentration</label>
-                        <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentration %>">
-                    </li>
+                    <% if(hrtHormone === 'testosterone') { %>
+                        <li>
+                            <label for="hrtDelivery">delivery method</label>
+                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryT %>">
+                        </li>
+                        <li>
+                            <label for="hrtDose">dose</label>
+                            <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDoseT%>">
+                        </li>
+                        <li>    
+                            <label for="hrtConcentration">concentration</label>
+                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationT %>">
+                        </li>
+                    <% } else if(hrtHormone === 'estrogen') { %>
+                        <li>
+                            <label for="hrtDelivery">delivery method</label>
+                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryE %>">
+                        </li>
+                        <li>
+                            <label for="hrtDose">dose</label>
+                            <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDoseE%>">
+                        </li>
+                        <li>    
+                            <label for="hrtConcentration">concentration</label>
+                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationE %>">
+                        </li>
+                    <% } else if(hrtHormone === 'progesterone') { %>
+                        <li>
+                            <label for="hrtDelivery">delivery method</label>
+                            <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryP %>">
+                        </li>
+                        <li>
+                            <label for="hrtDose">dose</label>
+                            <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDoseP %>">
+                        </li>
+                        <li>    
+                            <label for="hrtConcentration">concentration</label>
+                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationP %>">
+                            </li>
+                    <% } %> 
                     <li>
                         <h3 class="form-header">notes</h3>
                         <label for="hrtNotes" class="hidden">notes</label>
