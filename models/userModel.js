@@ -6,16 +6,39 @@ const {Schema} = mongoose;
 // const findOrCreate = require('mongoose-findorcreate');
 
 const userSchema = new Schema({
+  name: {
+    type: String,
+    required: [true, 'name is required'],
+    minlength:[1,'minimum length is one character']
+  },
+  pronouns: {
+    type: String,
+    required: false,
+
+  },
   email: {
     type: String,
+    // makes sure this is not a duplicate email address
+    index: {unique: true},
+    required: [true, 'email is required'],
+    minlength: [7, 'too short, must be a valid email address'],
+    maxlength: [30, 'too long, must be a valid email address']
+
   },
   password: {
     type: String,
+    required: [true, 'password is required'],
+    minlength: [7, 'password must contain at least 7 characters']
   },
   googleId: {
     type: String,
-  }
-});
+  },
+
+}, 
+  {
+  timestamps: true
+  });
+
 
 // userSchema.plugin(passportLocalMongoose);
 // userSchema.plugin(findOrCreate);

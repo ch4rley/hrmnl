@@ -1,8 +1,23 @@
 const siteData = require('../data/siteData');
 const userData = require('../data/userData');
+const User = require('../models/userModel');
+
 //const SchemaName = require('../models/schemanameModel');
 
 module.exports = {
+    create_user: (req, res) => {
+        const {name, pronouns, email, password} = req.body;
+        const newUser = new User ({
+            name: name,
+            pronouns: pronouns,
+            email: email,
+            password: password
+        });
+
+        newUser.save();
+
+        res.redirect('/user/:_id/create-profile');
+    },
     profile: (req, res) => {
         res.render('pages/profile', {
             signedIn: siteData.signedIn,
