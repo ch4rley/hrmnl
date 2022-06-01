@@ -726,7 +726,9 @@ content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 /* MODAL */
-.modal {
+.modal,
+.modal-login,
+.modal-signup {
 display: none;
 position: fixed; 
 padding-top: 50px;
