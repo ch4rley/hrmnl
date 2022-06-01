@@ -1,3 +1,5 @@
+// connects secret information (environment variables)
+require('dotenv').config();
 // import express
 const express = require('express');
 // import morgan
@@ -13,6 +15,8 @@ const app = express();
 // server configuration -- define port
 const PORT = 3000;
 
+// configure node.js to use ejs as views engine
+app.set('view engine', 'ejs');
 
 // use path module to point Node.js to public directory
 app.use(express.static(path.join(__dirname, 'public')));
@@ -26,9 +30,9 @@ app.use(morgan('dev'));
 // tells app that routes exist and where to find them
 app.use(routes);
 
-// require('./config/connection');
-// configure node.js to use ejs as views engine
-app.set('view engine', 'ejs');
+
+require('./config/connection');
+
 
 // make server listen to requests on specified PORT and give feedback
 app.listen(PORT, () => {
