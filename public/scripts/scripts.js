@@ -2,7 +2,7 @@
 
 let modalBtnSignup = document.getElementById('modal-btn-signup');
 let modalSignup = document.querySelector('.modal-signup');
-let closeBtn = document.querySelector('.close-btn');
+let closeBtn = document.querySelector('.modal-signup .close-btn');
 modalBtnSignup.onclick = function(){
   modalSignup.style.display = 'block';
 };
@@ -15,20 +15,20 @@ window.onclick = function(e){
   };
 };
 
-let modalBtnLogin = document.getElementById('modal-btn-login');
-let modalLogin = document.querySelector('.modal-login');
-let closeBtn = document.querySelector('.close-btn');
-modalBtnLogin.onclick = function(){
-  modalLogin.style.display = 'block';
-};
-closeBtn.onclick = function(){
-  modalLogin.style.display = 'none';
-};
-window.onclick = function(e){
-  if(e.target == modalLogin){
-    modalLogin.style.display = 'none';
-  };
-};
+// let modalBtnLogin = document.getElementById('modal-btn-login');
+// let modalLogin = document.querySelector('.modal-login');
+// let closeBtn = document.querySelector('.modal-login .close-btn');
+// modalBtnLogin.onclick = function(){
+//   modalLogin.style.display = 'block';
+// };
+// closeBtn.onclick = function(){
+//   modalLogin.style.display = 'none';
+// };
+// window.onclick = function(e){
+//   if(e.target == modalLogin){
+//     modalLogin.style.display = 'none';
+//   };
+// };
 
 
 // // DISPLAY APPROPRIATE HRT INPUT FIELDS

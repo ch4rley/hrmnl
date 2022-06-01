@@ -11,7 +11,7 @@
                     your
                 <% } %>
                     profile</h2>
-            <form class="create-profile profile form-border" action="/user/_id" method="POST" name="set-up-form" id="set-up-form">
+            <form class="create-profile profile form-border" action="/user/<%= user._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded" name="set-up-form" id="set-up-form">
                 <!-- <input type="hidden" name="redirect" value="./profile" />should redirect to profile page -->
                 <ul class="flex-form">
                     <li>
