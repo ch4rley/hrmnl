@@ -13,8 +13,14 @@ module.exports = {
     },
     // handler that will show login page
     login: (req, res) => {
-        res.render('/pages/login', {
+        res.render('pages/log-in', {
             signedIn: siteData.signedIn
+        });
+    },
+
+    register: (req, res) => {
+        res.render('pages/sign-up', {
+        signedIn: siteData.signedIn
         });
     },
 }
