@@ -10,11 +10,19 @@
                 <ul class="flex-form">
                     <li>
                         <label for="hrtDate">date</label>
-                        <input type="text" id="hrtDate" name="hrtDate" value="<%= new.Date().getFullYear %>" required>
+                        <input type="text" id="hrtDate" name="hrtDate" value="" required>
                     </li>
                     <li>
+                        <% if(user.hormone.length === 1) { %> 
                         <label for="hrtHormone">hormone</label>
-                        <input type="text" id="hrtHormone" name="hrtHormone" value="<%=user.hormone %>" required>
+                        <input type="text" id="hrtHormone" name="hrtHormone" value="<%= user.hormone %>" required>
+                        <% } else { %>
+                            <label for="hrtHormone">hormone</label>
+                            <select name="hrtHormone" id="hrtHormone">
+                                <% for(let i = 0; i < user.hormone.length; i++) { %>
+                                <option value="<%= user.hormone[i] %>"><%= user.hormone[i] %></option><% ;}%> 
+                            </select>
+                        <% } %> 
                     </li>
                     <li>
                         <label for="hrtDelivery">delivery method</label>
