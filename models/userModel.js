@@ -11,29 +11,69 @@ const userSchema = new Schema({
     required: [true, 'name is required'],
     minlength:[1,'minimum length is one character']
   },
+  
   pronouns: {
     type: String,
     required: false,
-
   },
+
   email: {
     type: String,
     // makes sure this is not a duplicate email address
-    index: {unique: true},
+    // unique: true,
     required: [true, 'email is required'],
     minlength: [7, 'too short, must be a valid email address'],
     maxlength: [30, 'too long, must be a valid email address']
-
   },
+
   password: {
     type: String,
     required: [true, 'password is required'],
     minlength: [7, 'password must contain at least 7 characters']
   },
+
   googleId: {
     type: String,
   },
 
+// create profile
+  hormone: {
+    type: Array,
+    // {
+    //   delivery: String,
+    //   dose: String,
+    //   concentration: String,
+    //   frequency: String,
+    // }
+  },
+
+  hrt: {
+      delivery: String,
+      dose: String,
+      concentration: String,
+      frequency: String,
+  }
+
+  // hrt: {
+  //   detailsT: {
+  //     delivery: String,
+  //     dose: String,
+  //     concentration: String,
+  //     frequency: String,
+  //   },
+  //   detailsE: {
+  //     delivery: String,
+  //     dose: String,
+  //     concentration: String,
+  //     frequency: String,
+  //   },
+  //   detailsP: {
+  //     delivery: String,
+  //     dose: String,
+  //     concentration: String,
+  //     frequency: String,
+  //   }, 
+  // },
 }, 
   {
   timestamps: true

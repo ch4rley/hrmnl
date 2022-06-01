@@ -7,7 +7,8 @@ router.route('/')
   .post(userCtrl.create_user);
 
 router.route('/:_id')
-  .get(userCtrl.profile);
+  .get(userCtrl.profile)
+  .put(userCtrl.create_profile_put);
 
 router.route('/:_id/edit-profile')
   .get(userCtrl.edit_profile_get)
@@ -15,7 +16,6 @@ router.route('/:_id/edit-profile')
 
 router.route('/:_id/create-profile')
   .get(userCtrl.create_profile_get)
-  .post(userCtrl.create_profile_post);
 
 router.route('/:_id/history')
   .get(userCtrl.history_get);

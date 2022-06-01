@@ -15,8 +15,9 @@ module.exports = {
         });
 
         newUser.save();
+        let _id = newUser._id;
 
-        res.redirect('/user/:_id/create-profile');
+        res.redirect('/user/' + _id + '/create-profile');
     },
     profile: (req, res) => {
         res.render('pages/profile', {
@@ -26,16 +27,36 @@ module.exports = {
     },
 
     create_profile_get: (req, res) => {
-        res.render('pages/create-profile', {
-            signedIn: siteData.signedIn,
-            user: userData.user
-        });
+        const {_id} = req.params;
+        User.findOne({_id: _id}, (error, foundUser) => {
+            if(error) {
+                return error;
+              } else {
+                res.render('pages/create-profile', {
+                    signedIn: siteData.signedIn,
+                    user: foundUser
+                });
+            }
+        })
     },
 
-    create_profile_post: (req, res) => {
-        res.redirect('pages/profile', {
-            signedIn: siteData.signedIn,
-            user: userData.user
+    create_profile_put: (req, res) => {
+        // which user in the database
+        const {_id} = req.params;
+        const {name, pronouns, hormone, email_newFeatures} = req.body;
+
+        // taking current inputs and relabelling them and updating the information in the database
+        User.findByIdAndUpdate(_id, {$set: {
+            name: name,
+            pronouns: pronouns,
+            hormone: hormone,
+            email_newFeatures: email_newFeatures
+        }}, {new: true}, error => {
+            if(error) {
+              return error;
+            } else {
+              res.redirect('/user/' + _id + '/');
+            }
         });
     },
 
