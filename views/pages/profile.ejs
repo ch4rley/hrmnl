@@ -17,10 +17,9 @@
                     <p class="profile label">pronouns<span class="profile"><%= user.pronouns %> </span></p>
                 </div>
                 <div class="profile loopy">
-                    <p class ="profile label profile-hormone">hormone
+                    <p class ="profile label profile-hormone">hormone</p>
                         <% for (let i = 0; i < user.hormone.length; i++) { %>
                         <span class="profile HRT"><%= user.hormone[i] %></span>
-                    </p>
                     <% const hormone = user.hormone[i];
                     switch (hormone) {
                         case 'testosterone': %>

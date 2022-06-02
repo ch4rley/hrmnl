@@ -22,10 +22,21 @@ module.exports = {
         // res.redirect('/user/' + _id + '/create-profile');
     },
     profile: (req, res) => {
-        res.render('pages/profile', {
-            signedIn: siteData.signedIn,
-            user: userData.user
+        const {_id} = req.params;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+        console.log(req.body);
+        User.findOne({_id: _id}, (error,
+            foundUser) => {
+                if(error) {
+                    return error;
+                } else {
+                    res.render('pages/profile', {
+                        user: foundUser,
+                        signedIn: siteData.signedIn
+                    });
+                }
         });
+
     },
 
     create_profile_get: (req, res) => {
