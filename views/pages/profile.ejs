@@ -4,14 +4,122 @@
     <%- include('../partials/nav') %> 
         <!-- MAIN BODY -->
         <main>
-            <h2 class="gradient-text">THIS IS YOUR PROFILE HELLO</h2>
-            <p class="profile">name: <span class="profile-information"><%= user.name %> </span></p>
-            <p class="profile"><span class="profile_pronouns"><%= user.pronouns %> </span></p>
-            <div class="profile loopy">
-            <% for (let i = 0; i < user.hormone.length; i++) { %>
-                <span class="profile_HRT"><%= user.hormone[i] %></span>
-            <% } %>
-            <p class="profile"><span class="profile_delivery"><%= user.pronouns %> </span></p>
+            <h2 class="gradient-text">
+                <% if(user.name) { %>
+                    <%= user.name + '\'s' %> 
+                <% } else { %> 
+                    your
+                <% } %>
+                    profile</h2>
+            <!-- <p class="profile label">name: <span class="profile information"><%# user.name %> </span></p> --><div class="profile-page form-border">
+                <div class="name-pronouns">
+                    <p class="profile label">name<span class="profile"><%= user.name %> </span></p>
+                    <p class="profile label">pronouns<span class="profile"><%= user.pronouns %> </span></p>
+                </div>
+                <div class="profile loopy">
+                    <p class ="profile label profile-hormone">hormone
+                        <% for (let i = 0; i < user.hormone.length; i++) { %>
+                        <span class="profile HRT"><%= user.hormone[i] %></span>
+                    </p>
+                    <% const hormone = user.hormone[i];
+                    switch (hormone) {
+                        case 'testosterone': %>
+                            <div class="hrtDetails testosterone">
+                                <p class="profile label">
+                                    delivery method
+                                    <span class="profile">
+                                        <%= user.hrtDeliveryT %>
+                                    </span>
+                                </p>
+                                <div class="dose-concentration">
+                                    <p class="profile label">
+                                        dose
+                                        <span class="profile">
+                                            <%= user.hrtDoseT %>
+                                        </span>
+                                    </p>
+                                    <p class="profile label">
+                                        concentration
+                                        <span class="profile">
+                                            <%= user.hrtConcentrationT %>
+                                        </span>
+                                    </p>
+                                </div>
+                                <p class="profile label">
+                                    frequency
+                                    <span class="profile">
+                                        <%= user.hrtFrequencyT %>
+                                    </span>
+                                </p>
+                            </div>
+                            <% console.log('T PARTY');
+                            break;
+                        case 'estrogen': %>
+                            <div class="hrtDetails estrogen">
+                                <p class="profile label">
+                                    delivery method
+                                    <span class="profile">
+                                        <%= user.hrtDeliveryE %>
+                                    </span>
+                                </p>
+                                <div class="dose-concentration">
+                                    <p class="profile label">
+                                        dose
+                                        <span class="profile">
+                                            <%= user.hrtDoseE %>
+                                        </span>
+                                    </p>
+                                    <p class="profile label">
+                                        concentration
+                                        <span class="profile">
+                                            <%= user.hrtConcentrationE %>
+                                        </span>
+                                    </p>
+                                </div>
+                                <p class="profile label">
+                                    frequency
+                                    <span class="profile">
+                                        <%= user.hrtFrequencyE %>
+                                    </span>
+                                </p>
+                            </div>
+                            <% console.log('E PARTY');
+                            break;
+                        case 'progesterone': %>
+                            <div class="hrtDetails progesterone">
+                                    <p class="profile label">
+                                        delivery method
+                                        <span class="profile">
+                                            <%= user.hrtDeliveryP %>
+                                        </span>
+                                    </p>
+                                    <div class="dose-concentration">
+                                        <p class="profile label">
+                                            dose
+                                            <span class="profile">
+                                                <%= user.hrtDoseP %>
+                                            </span>
+                                        </p>
+                                        <p class="profile label">
+                                            concentration
+                                            <span class="profile">
+                                                <%= user.hrtConcentrationP %>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <p class="profile label">
+                                        frequency
+                                        <span class="profile">
+                                            <%= user.hrtFrequencyP %>
+                                        </span>
+                                    </p>
+                                </div>
+                            <% console.log('P PARTY');
+                            break;
+                    } %>
+                <% } %>
+                <p class="profile label">email<span class="profile"><%= user.email %></span></p>
+            </div>
 
             
         </main>

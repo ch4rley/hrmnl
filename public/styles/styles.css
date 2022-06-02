@@ -29,6 +29,7 @@
     --gradient-background-purples: linear-gradient(0deg, var(--deeppurple) 0%, var(--purple) 100%);
     --gradient-pink-purple: linear-gradient(to right, rgb(255, 179, 205) 0%, rgb(198, 160, 204) 85%, rgb(174,149,204) 110%);
     --gradient-purple-blue: linear-gradient(to right, rgb(174,149,204) -10%, rgb(153, 140, 221) 15%, rgb(158, 204, 255) 100%);
+    /* --background-image: url('../images/eyes-on-the-ground.jpg'); */
     /* --yellow: #f9d508;
     --purple: #d55cf7; */
     /*-- FONTS --*/
@@ -38,7 +39,9 @@
     font-family: 'Bitter', serif;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto Slab', serif;
+    --max-width-content: 800px;
 }
+
 
 body {
     font-family: var(--body);
@@ -51,7 +54,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
 header {
@@ -98,8 +100,8 @@ a {
 
 /*--- LOGO ---*/
 .logo img {
-    max-width: 1000px;
     width: 80vw;
+    max-width: var(--max-width-content);
     margin-bottom: 10px;
 }
 .logo a {
@@ -319,7 +321,7 @@ a.menu-icon:active {
 
 main {
     width: 80vw;
-    max-width: 1000px;
+    max-width: var(--max-width-content);
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -427,7 +429,7 @@ footer {
 .footer-content {
     color: var(--footer-text);
     width: 80vw;
-    max-width: 1000px;
+    max-width: var(--max-width-content);
     margin: auto;
     display: flex;
     flex-direction: row-reverse;
@@ -468,7 +470,6 @@ footer {
 .embiggen {
     font-size: 3em;
 }
-
 
 /*--- FORM STYLING ---*/
 ul.flex-form {
@@ -517,7 +518,8 @@ ul.flex-form {
     margin-top: 1rem;
 }
 
-label {
+label,
+.label {
     font-family: var(--sans);
     font-weight: 400;
     color: var(--purple);
@@ -536,7 +538,8 @@ fieldset {
 }
 
 input,
-.submit {
+.submit,
+span.profile {
     width: 100%;
     padding: 7px 14px;
     font-size: 1.125rem;
@@ -682,6 +685,74 @@ textarea:focus {
     outline: none;
     border-color: var(--pink);
 }
+
+/*--- PROFILE PAGE ---*/
+.profile-page {
+    padding: .5rem 1.5rem;
+}
+
+span.profile {
+    padding: 0;
+    border-bottom: none;
+    background-color: none;
+    display: inline-block;
+}
+
+.hrtDetails p.label {
+    padding: .5rem;
+    margin: .25rem;
+    /* border: 1px dashed var(--pink); */
+    /* padding: 0; */
+}
+
+span.HRT {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: .05rem;
+}
+
+.name-pronouns,
+.dose-concentration {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.hrtDetails {
+    border: 1px dashed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: .25rem 0 1rem 0;
+    justify-content: space-between;
+}
+
+.testosterone {
+    border-color: var(--blue);
+}
+
+.estrogen {
+    border-color: var(--pink);
+}
+
+.progesterone {
+    border-color: var(--pinkpurple);
+}
+
+p.caps {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    font-weight: 400;   
+}
+
+.profile-hormone {
+    padding-bottom: .125rem;
+    margin-bottom: 0;
+}
+
 
 /*--- HISTORY PAGE ---*/
 
