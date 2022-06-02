@@ -4,13 +4,18 @@
     <%- include('../partials/nav') %> 
         <!-- MAIN BODY -->
         <main>
-            <h2 class="gradient-text">
-                <% if(user.name) { %>
-                    <%= user.name + '\'s' %> 
-                <% } else { %> 
-                    your
-                <% } %>
-                    profile</h2>
+            <div class="profile-head-button">
+                <h2 class="gradient-text">
+                    <% if(user.name) { %>
+                        <%= user.name + '\'s' %>
+                    <% } else { %>
+                        your
+                    <% } %>
+                        profile
+                </h2>
+                <a href="/user/<%= user.id %>/edit-profile" title="edit profile" class="h2">
+                    <button class="submit rev">edit profile</button></a>
+            </div>
             <div class="profile-page form-border">
                 <div class="name-pronouns">
                     <p class="profile label">name<span class="profile"><%= user.name %> </span></p>
@@ -116,8 +121,6 @@
                 <% } %>
                 <p class="profile label">email<span class="profile"><%= user.email %></span></p>
             </div>
-            <a href="/user/<%= user.id %>/edit-profile">
-            <button class="submit">edit profile</button></a>
 
             
         </main>

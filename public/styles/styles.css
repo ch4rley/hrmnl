@@ -338,7 +338,8 @@ h2 {
     font-size: 2em;
   }
 
-h2.welcome {
+h2.welcome,
+.h2 {
     padding-top: 1.75rem;
     margin: 0;
 }
@@ -687,8 +688,15 @@ textarea:focus {
 }
 
 /*--- PROFILE PAGE ---*/
+.profile-head-button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .profile-page {
-    padding: .5rem 1.5rem 1.5rem 1.5rem;
+    padding: .5rem 1.5rem;
 }
 
 span.profile {
@@ -751,6 +759,14 @@ p.caps {
 .profile-hormone {
     padding-bottom: .125rem;
     margin-bottom: 0;
+}
+
+.rev {
+    background-image: var(--gradient-rev-text);
+}
+
+.rev:hover {
+    background-image: var(--gradient-text);
 }
 
 
