@@ -11,7 +11,7 @@
                     your
                 <% } %>
                     profile</h2>
-            <!-- <p class="profile label">name: <span class="profile information"><%# user.name %> </span></p> --><div class="profile-page form-border">
+            <div class="profile-page form-border">
                 <div class="name-pronouns">
                     <p class="profile label">name<span class="profile"><%= user.name %> </span></p>
                     <p class="profile label">pronouns<span class="profile"><%= user.pronouns %> </span></p>
@@ -51,8 +51,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <% console.log('T PARTY');
-                            break;
+                            <% break;
                         case 'estrogen': %>
                             <div class="hrtDetails estrogen">
                                 <p class="profile label">
@@ -82,8 +81,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <% console.log('E PARTY');
-                            break;
+                            <% break;
                         case 'progesterone': %>
                             <div class="hrtDetails progesterone">
                                     <p class="profile label">
@@ -113,12 +111,13 @@
                                         </span>
                                     </p>
                                 </div>
-                            <% console.log('P PARTY');
-                            break;
+                            <% break;
                     } %>
                 <% } %>
                 <p class="profile label">email<span class="profile"><%= user.email %></span></p>
             </div>
+            <a href="/user/<%= user.id %>/edit-profile">
+            <button class="">edit profile</button></a>
 
             
         </main>

@@ -719,7 +719,7 @@ span.HRT {
 
 }
 
-.hrtDetails {
+.loopy .hrtDetails {
     border: 1px dashed;
     display: flex;
     flex-direction: row;
