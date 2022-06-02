@@ -769,6 +769,10 @@ p.caps {
     background-image: var(--gradient-text);
 }
 
+.right-justify {
+    text-align: right;
+}
+
 
 /*--- HISTORY PAGE ---*/
 

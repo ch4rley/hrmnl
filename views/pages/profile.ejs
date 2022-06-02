@@ -22,7 +22,7 @@
                     <p class="profile label">pronouns<span class="profile"><%= user.pronouns %> </span></p>
                 </div>
                 <div class="profile loopy">
-                    <p class ="profile label profile-hormone">hormone</p>
+                    <p class ="profile label profile-hormone">hormone + HRT details</p>
                         <% for (let i = 0; i < user.hormone.length; i++) { %>
                         <span class="profile HRT"><%= user.hormone[i] %></span>
                     <% const hormone = user.hormone[i];
@@ -117,10 +117,12 @@
                                     </p>
                                 </div>
                             <% break;
-                    } %>
-                <% } %>
-                <p class="profile label">email<span class="profile"><%= user.email %></span></p>
+                        } %>
+                    <% } %>
+                    <p class="profile label">email<span class="profile"><%= user.email %></span></p>
+                </div>
             </div>
+            <h3 class="gradient-rev-text right-justify">so glad you're here</h2>
 
             
         </main>
