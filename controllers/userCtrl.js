@@ -87,10 +87,17 @@ module.exports = {
     },
 
     edit_profile_get: (req, res) => {
-        res.render('pages/edit-profile', {
-            signedIn: siteData.signedIn,
-            user: userData.user
-        });
+        const {_id} = req.params;
+        User.findOne({_id: _id}, (error, foundUser) => {
+            if(error) {
+                return error;
+              } else {
+                res.render('pages/edit-profile', {
+                    signedIn: siteData.signedIn,
+                    user: foundUser
+                });
+            }
+        })
     },
 
     edit_profile_update: (req, res) => {

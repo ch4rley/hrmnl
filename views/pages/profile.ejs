@@ -23,7 +23,7 @@
                     <% const hormone = user.hormone[i];
                     switch (hormone) {
                         case 'testosterone': %>
-                            <div class="hrtDetails testosterone">
+                            <div class="hrtDetails-profile testosterone">
                                 <p class="profile label">
                                     delivery method
                                     <span class="profile">
@@ -53,7 +53,7 @@
                             </div>
                             <% break;
                         case 'estrogen': %>
-                            <div class="hrtDetails estrogen">
+                            <div class="hrtDetails-profile estrogen">
                                 <p class="profile label">
                                     delivery method
                                     <span class="profile">
@@ -83,7 +83,7 @@
                             </div>
                             <% break;
                         case 'progesterone': %>
-                            <div class="hrtDetails progesterone">
+                            <div class="hrtDetails-profile progesterone">
                                     <p class="profile label">
                                         delivery method
                                         <span class="profile">
@@ -117,7 +117,7 @@
                 <p class="profile label">email<span class="profile"><%= user.email %></span></p>
             </div>
             <a href="/user/<%= user.id %>/edit-profile">
-            <button class="">edit profile</button></a>
+            <button class="submit">edit profile</button></a>
 
             
         </main>

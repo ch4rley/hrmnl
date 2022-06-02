@@ -688,7 +688,7 @@ textarea:focus {
 
 /*--- PROFILE PAGE ---*/
 .profile-page {
-    padding: .5rem 1.5rem;
+    padding: .5rem 1.5rem 1.5rem 1.5rem;
 }
 
 span.profile {
@@ -698,7 +698,7 @@ span.profile {
     display: inline-block;
 }
 
-.hrtDetails p.label {
+.hrtDetails-profile p.label {
     padding: .5rem;
     margin: .25rem;
     /* border: 1px dashed var(--pink); */
@@ -719,13 +719,13 @@ span.HRT {
 
 }
 
-.loopy .hrtDetails {
+.hrtDetails-profile {
     border: 1px dashed;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: .25rem 0 1rem 0;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .testosterone {
