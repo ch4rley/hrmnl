@@ -4,7 +4,7 @@ const router = express.Router();
 
 // stores all users in users collection in hrmnl database
 router.route('/')
-  .post(userCtrl.create_user);
+  .post(userCtrl.create_user_post);
 
 router.route('/:_id')
   .get(userCtrl.profile)

@@ -8,23 +8,28 @@ module.exports = {
     res.render('pages/index', {
         name: siteData.userName,
         copyrightYear: siteData.year,
-        signedIn: siteData.signedIn
+        signedIn: siteData.signedIn,
+        title: 'home'
         });
     },
     // handler that will show login page
     login: (req, res) => {
         res.render('pages/log-in', {
-            signedIn: siteData.signedIn
+            signedIn: siteData.signedIn,
+            title: 'log in'
         });
     },
 
     login_post: (req, res) => {
-        res.redirect('/user/' + _id + '/');
+        res.redirect('/user/' + _id + '/', {
+            title: 'log in'
+        });
     },
 
     register: (req, res) => {
         res.render('pages/sign-up', {
-        signedIn: siteData.signedIn
+        signedIn: siteData.signedIn,
+        title: 'register'
         });
     },
 }

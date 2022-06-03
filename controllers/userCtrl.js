@@ -6,7 +6,7 @@ const User = require('../models/userModel');
 //const SchemaName = require('../models/schemanameModel');
 
 module.exports = {
-    create_user: (req, res) => {
+    create_user_post: (req, res) => {
         const {name, pronouns, email, password} = req.body;
         const newUser = new User ({
             name: name,
