@@ -8,12 +8,13 @@ const {Schema} = mongoose;
 const userSchema = new Schema({
   name: {
     type: String,
-    required: [true, 'name is required'],
-    minlength:[1,'minimum length is one character']
+    required:  [true, 'name is required'],
+    minlength: [1,'minimum length is one character']
   },
 
   pronouns: {
     type: String,
+    maxlength: [70, 'please express your pronouns in fewer than 70 characters'],
     required: false,
   },
 
@@ -23,13 +24,14 @@ const userSchema = new Schema({
     // unique: true,
     required: [true, 'email is required'],
     minlength: [7, 'too short, must be a valid email address'],
-    maxlength: [30, 'too long, must be a valid email address']
+    maxlength: [40, 'too long, must be a valid email address. if your email address exceeds 40 characters, please contact the admin']
   },
 
   password: {
     type: String,
     required: [true, 'password is required'],
-    minlength: [7, 'password must contain at least 7 characters']
+    minlength: [7, 'password must contain at least 7 characters'],
+    maxlength: [320, 'too long, surely you can think of a secure password that is fewer than 320 characters']
   },
 
   googleId: {

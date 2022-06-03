@@ -1,6 +1,8 @@
 const siteData = require('../data/siteData');
 const userData = require('../data/userData');
 //const SchemaName = require('../models/schemanameModel');
+const User = require('../models/userModel');
+
 
 module.exports = {
     // handler that will show index page
