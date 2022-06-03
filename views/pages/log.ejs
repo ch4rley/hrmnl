@@ -12,59 +12,43 @@
                         <label for="hrtDate">date</label>
                         <input type="text" id="hrtDate" name="hrtDate" value="" required>
                     </li>
+                    <% if(user.hormone.length === 1) {
+                        console.log(user.hormone + 'test') %>
                     <li>
-                        <% if(user.hormone.length === 1) { %> 
                         <label for="hrtHormone">hormone</label>
-                        <input type="text" id="hrtHormone" name="hrtHormone" value="<%= user.hormone %>" required>
-                        <% } else { %>
-                            <label for="hrtHormone">hormone</label>
-                            <select name="hrtHormone" id="hrtHormone">
-                                <% for(let i = 0; i < user.hormone.length; i++) { %>
-                                <option value="<%= user.hormone[i] %>"><%= user.hormone[i] %></option><% ;}%> 
-                            </select>
-                        <% } %> 
+                        <input type="text" id="hrtHormone" class="selected-hormone" name="hrtHormone" value="<%= user.hormone %>" required>
+                    </li>
+                    <% const hormone = String(user.hormone); %>
+                    <% console.log('test1'); %>
+                    <% switch (hormone) {
+                        case 'testosterone': %>
+                        <% console.log('test2'); %>
+                            <%- include('../partials/hrt-details-T') %>
+                            <% break;
+                        case 'estrogen': %>
+                        <% console.log('test3'); %>
+                            <%- include('../partials/hrt-details-E')%>
+                            <% break;
+                        case 'progesterone': %>
+                        <% console.log('test4'); %>
+                            <%- include('../partials/hrt-details-P') %>
+                            <% break;
+                    } %>
+                    <% } else { %>
+                    <li>
+                        <label for="hrtHormone">hormone</label>
+                        <select name="hrtHormone" id="hrtHormone">
+                            <option value="">select hormone</option> 
+                        <% user.hormone.forEach((hormone) => { %>
+                            <option id="hormone" value="<%= hormone %>"><%= hormone %></option> 
+                        <% }); %>
+                        </select>
                     </li>
                     
-                    <% if(user.hormone === 'testosterone') { %>
-                        <li>
-                            <label for="hrtDelivery">delivery method</label>
-                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryT %>">
-                        </li>
-                        <li>
-                            <label for="hrtDose">dose</label>
-                            <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDoseT %>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentration">concentration</label>
-                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationT %>">
-                        </li>
-                    <% } else if(user.hormone === 'estrogen') { %>
-                        <li>
-                            <label for="hrtDelivery">delivery method</label>
-                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryE %>">
-                        </li>
-                        <li>
-                            <label for="hrtDose">dose</label>
-                            <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDoseE%>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentration">concentration</label>
-                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationE %>">
-                        </li>
-                    <% } else if(user.hormone === 'progesterone') { %>
-                        <li>
-                            <label for="hrtDelivery">delivery method</label>
-                            <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= user.hrtDeliveryP %>">
-                        </li>
-                        <li>
-                            <label for="hrtDose">dose</label>
-                            <input type="text" id="hrtDose" name="hrtDose" value="<%= user.hrtDoseP %>">
-                        </li>
-                        <li>    
-                            <label for="hrtConcentration">concentration</label>
-                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= user.hrtConcentrationP %>">
-                            </li>
-                    <% } %> 
+                        <% } %>
+
+
+                         
                     <li>
                         <h3 class="form-header">notes</h3>
                         <label for="hrtNotes" class="hidden">notes</label>

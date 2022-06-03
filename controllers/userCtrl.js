@@ -33,17 +33,19 @@ module.exports = {
                 } else {
                     // conditional to add user's name to page title?
                     // consider removing for safety reasons
+                    // needs to wrap res.render for scope reasons
                     if (foundUser.name === '') {
                         let pageTitle = 'profile';
                     } else {
                         let thisUser = foundUser.name;
                         let pageTitle = thisUser + '\'s profile';
-                    }
+                    
                     res.render('pages/profile', {
                         user: foundUser,
                         signedIn: siteData.signedIn,
                         title: pageTitle
                     });
+                    }
                 }
         });
 
@@ -138,10 +140,36 @@ module.exports = {
         });
     },
     log_get: (req, res) => {
-        res.render('pages/log', {
-            signedIn: siteData.signedIn,
-            user: userData.user,
-            title: 'add instance'
+        const {_id} = req.params;
+        User.findOne({_id: _id}, (error, foundUser) => {
+            if(error) {
+                return error;
+              } else {
+                res.render('pages/log', {
+                    signedIn: siteData.signedIn,
+                    user: foundUser,
+                    title: 'add instance'
+                    
+                });
+            }
         });
     },
+    history_post: (req, res) => {
+        const {_id} = req.params;
+          const {hrtDate, hrtNotes, hrtHormone, hrtDelivery, hrtDose, hrtConcentration, hrtFrequency} = req.body;
+  
+          const newLog = new Log ({
+            hrtDate: hrtDate,
+            hrtNotes: hrtNotes,
+            hrtHormone: hrtHormone,
+            hrtDelivery: hrtDelivery,
+            hrtDose: hrtDose,
+            hrtConcentration: hrtConcentration,
+            hrtFrequency: hrtFrequency,
+          });
+      
+          newLog.save();
+      
+          res.redirect("/user/" + _id + "/history"); 
+      },
 }

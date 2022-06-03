@@ -19,7 +19,8 @@ router.route('/:_id/create-profile')
   .get(userCtrl.create_profile_get)
 
 router.route('/:_id/history')
-  .get(userCtrl.history_get);
+  .get(userCtrl.history_get)
+  .post(userCtrl.history_post);
 
 router.route('/:_id/log')
   .get(userCtrl.log_get);

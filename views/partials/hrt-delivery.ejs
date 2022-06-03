@@ -1,0 +1,11 @@
+<% switch (hormone) {
+    case 'testosterone': %>
+        <%- include('../partials/hrt-details-T') %>
+        <% break;
+    case 'estrogen': %>
+        <%- include('../partials/hrt-details-E') %>
+        <% break;
+    case 'progesterone': %>
+        <%- include('../partials/hrt-details-P') %>
+        <% break;
+} %>

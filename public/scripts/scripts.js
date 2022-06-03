@@ -35,7 +35,7 @@ window.onclick = function(e){
 let detailsE = document.querySelector('#hrtDetailsE');
 let detailsT = document.querySelector('#hrtDetailsT');
 let detailsP = document.querySelector('#hrtDetailsP');
-let details = document.querySelector('#hrtDetails');
+// let details = document.querySelector('#hrtDetails');
 
 let E = document.querySelector('#checkboxE');
 let T = document.querySelector('#checkboxT');
@@ -57,6 +57,23 @@ let P = document.querySelector('#checkboxP');
 //   }
 // };
 
+
+// const getSelectedHormone = () => {
+//   const selectedHormone = document.getElementById('hrtHormone');
+//   const thisHormone = select.options[select.selectedIndex].text;
+//   console.log(thisHormone + 'works');
+//   return selectedHormone;
+// };
+
+// getSelectedHormone();
+
+const selectHormone = document.querySelector('select#hrtHormone');
+
+selectHormone.addEventListener('change', (e) => {
+  const details = document.querySelector('div.hormoneDetails');
+  details.id = e.target.value;
+});
+
 // // show HRT details input fields for estrogen, if user clicks on estrogen, and hide basic details input fields, if they are not already hidden
 const showHrtDetailsE = function(e) {
   detailsE.classList.toggle('open');
@@ -77,8 +94,15 @@ const showHrtDetailsP = function(e) {
   console.log(e);
 };
 
+
+
 E.addEventListener('click', showHrtDetailsE);
 T.addEventListener('click', showHrtDetailsT);
 P.addEventListener('click', showHrtDetailsP);
+
+
+
+
+
 
 
