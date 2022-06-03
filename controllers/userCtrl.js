@@ -1,4 +1,5 @@
 const siteData = require('../data/siteData');
+const { user } = require('../data/userData');
 const userData = require('../data/userData');
 const User = require('../models/userModel');
 
@@ -17,7 +18,7 @@ module.exports = {
         newUser.save();
         let _id = newUser._id;
 
-        res.redirect('/login');
+        res.redirect('/login', { title: 'welcome', data: data });
 
         // res.redirect('/user/' + _id + '/create-profile');
     },
@@ -30,9 +31,18 @@ module.exports = {
                 if(error) {
                     return error;
                 } else {
+                    // conditional to add user's name to page title?
+                    // consider removing for safety reasons
+                    if (foundUser.name === '') {
+                        let pageTitle = 'profile';
+                    } else {
+                        let thisUser = foundUser.name;
+                        let pageTitle = thisUser + '\'s profile';
+                    }
                     res.render('pages/profile', {
                         user: foundUser,
-                        signedIn: siteData.signedIn
+                        signedIn: siteData.signedIn,
+                        title: pageTitle
                     });
                 }
         });
@@ -47,7 +57,8 @@ module.exports = {
               } else {
                 res.render('pages/create-profile', {
                     signedIn: siteData.signedIn,
-                    user: foundUser
+                    user: foundUser,
+                    title: 'create profile'
                 });
             }
         })
@@ -94,7 +105,9 @@ module.exports = {
               } else {
                 res.render('pages/edit-profile', {
                     signedIn: siteData.signedIn,
-                    user: foundUser
+                    user: foundUser,
+                    title: 'edit profile'
+                    
                 });
             }
         })
@@ -105,24 +118,30 @@ module.exports = {
         const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
 
         const matchUser = userData.find(user => user._id === String(_id));
+        // conditional to add user's name to page title?
+        // consider removing for safety reasons
+  
         const index = userData.indexOf(matchUser);
         userData.splice(index, 1);
         res.redirect('/user/_id', {
             signedIn: siteData.signedIn,
-            user: userData.user
+            user: userData.user,
+            title: 'my profile'
         });
     },
 
     history_get: (req, res) => {
         res.render('pages/history', {
             signedIn: siteData.signedIn,
-            user: userData.user
+            user: userData.user,
+            title: 'history'
         });
     },
     log_get: (req, res) => {
         res.render('pages/log', {
             signedIn: siteData.signedIn,
-            user: userData.user
+            user: userData.user,
+            title: 'add instance'
         });
     },
 }

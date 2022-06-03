@@ -21,7 +21,7 @@ router.route('/:_id/create-profile')
 router.route('/:_id/history')
   .get(userCtrl.history_get);
 
-router.route('/:_id/HRT')
+router.route('/:_id/log')
   .get(userCtrl.log_get);
 
 module.exports = router;
