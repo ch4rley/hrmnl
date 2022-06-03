@@ -44,11 +44,21 @@
                         <% }); %>
                         </select>
                     </li>
-                    
+                    <div class="hormoneDetails">
+                        
+                        <% switch (hormone) {
+                            case 'testosterone': %>
+                                <%- include('../partials/hrt-details-T') %>
+                                <% break;
+                            case 'estrogen': %>
+                                <%- include('../partials/hrt-details-E') %>
+                                <% break;
+                            case 'progesterone': %>
+                                <%- include('../partials/hrt-details-P') %>
+                                <% break;
+                        } %>
+                    </div>
                         <% } %>
-
-
-                         
                     <li>
                         <h3 class="form-header">notes</h3>
                         <label for="hrtNotes" class="hidden">notes</label>
