@@ -1,7 +1,7 @@
 const siteData = require('../data/siteData');
-const { user } = require('../data/userData');
 const userData = require('../data/userData');
 const User = require('../models/userModel');
+const Log = require('../models/logModel');
 
 //const SchemaName = require('../models/schemanameModel');
 
@@ -63,7 +63,7 @@ module.exports = {
                     title: 'create profile'
                 });
             }
-        })
+        });
     },
 
     create_profile_put: (req, res) => {
@@ -133,10 +133,23 @@ module.exports = {
     },
 
     history_get: (req, res) => {
-        res.render('pages/history', {
-            signedIn: siteData.signedIn,
-            user: userData.user,
-            title: 'history'
+        const {_id} = req.params;
+        User.findOne({_id: _id}, (error, foundUser) => {
+            if(error) {
+                return error;
+            } else {
+                foundUser.Log.find({}, (error, allLogs) => {
+                    if(error) {
+                        return error;
+                    } else {
+                        res.render('pages/history', {
+                            signedIn: siteData.signedIn,
+                            history: allLogs,
+                            title: 'history'
+                        });
+                    }
+                })
+            }
         });
     },
     log_get: (req, res) => {

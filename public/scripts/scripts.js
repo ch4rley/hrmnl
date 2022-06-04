@@ -81,7 +81,7 @@ const showHrtDetailsE = function(e) {
   console.log(e);
 };
 
-// // show HRT details input fields for testosterone, if user clicks on testosterone, and hide basic details input fields, if they are not already hidden
+// show HRT details input fields for testosterone, if user clicks on testosterone, and hide basic details input fields, if they are not already hidden
 const showHrtDetailsT = function(e) {
   detailsT.classList.toggle('open');
   // hideDefaultHrtDetails();

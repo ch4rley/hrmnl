@@ -45,8 +45,7 @@
                         </select>
                     </li>
                     <div class="hormoneDetails">
-                        
-                        <% switch (hormone) {
+                        <% switch (user.hormone) {
                             case 'testosterone': %>
                                 <%- include('../partials/hrt-details-T') %>
                                 <% break;
