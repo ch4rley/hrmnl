@@ -13,6 +13,15 @@ router.route('/login')
 router.route('/register')
   .get(siteCtrl.register);
 
+router.route('/logout')
+  .get(siteCtrl.logout);
+
+router.route('/auth/google')
+  .get(siteCtrl.google_get);
+
+router.route('/auth/google/user/_id/')
+  .get(siteCtrl.google_redirect_get);
+
 module.exports = router;
 
 // /user/_id/log = HRT

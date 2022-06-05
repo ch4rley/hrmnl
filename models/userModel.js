@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-// const passport = require('passport');
-// const passportLocalMongoose = require('passport-local-mongoose');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 const {Schema} = mongoose;
-// let GoogleStrategy = require('passport-google-oauth20').Strategy;
-// const findOrCreate = require('mongoose-findorcreate');
+let GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate');
 
 const userSchema = new Schema({
   name: {
@@ -42,7 +42,7 @@ const userSchema = new Schema({
   hormone: {
     type: Array,
   },
-  
+  // testosterone details
   hrtDeliveryT: {
     type: String,
   },
@@ -55,7 +55,7 @@ const userSchema = new Schema({
   hrtFrequencyT: {
     type: String,
   },
-
+  // estrogen details
   hrtDeliveryE: {
     type: String,
   },
@@ -68,7 +68,7 @@ const userSchema = new Schema({
   hrtFrequencyE: {
     type: String,
   },
-
+  // progesterone details
   hrtDeliveryP: {
     type: String,
   },
@@ -80,47 +80,47 @@ const userSchema = new Schema({
   },
   hrtFrequencyP: {
     type: String,
-  },
-
-  email_newFeatures: {
-    type: Boolean,
-  },
+  }
+  // email opt-in
+  // email_newFeatures: {
+  //   type: Boolean,
+  // }
 }, 
   {
   timestamps: true
   });
 
 
-// userSchema.plugin(passportLocalMongoose);
-// userSchema.plugin(findOrCreate);
+userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
 
 const User = mongoose.model('User', userSchema);
 
-// passport.use(User.createStrategy());
+passport.use(User.createStrategy());
 
-// passport.serializeUser(function(user, cb) {
-//   process.nextTick(function() {
-//     cb(null, { id: user.id, username: user.username, name: user.displayName });
-//   });
-// });
+passport.serializeUser(function(user, cb) {
+  process.nextTick(function() {
+    cb(null, { id: user.id, username: user.username, name: user.displayName });
+  });
+});
 
-// passport.deserializeUser(function(user, cb) {
-//   process.nextTick(function() {
-//     return cb(null, user);
-//   });
-// });
+passport.deserializeUser(function(user, cb) {
+  process.nextTick(function() {
+    return cb(null, user);
+  });
+});
 
-// passport.use(new GoogleStrategy({
-//   clientID: process.env.CLIENT_ID,
-//   clientSecret: process.env.CLIENT_SECRET,
-//   callbackURL: "https://carols-book-realm.herokuapp.com/auth/google/admin",
-// },
-// function(accessToken, refreshToken, email, cb) {
-//   console.log(email);
-//   User.findOrCreate({ googleId: email.id, username: email.displayName}, function (err, user) {
-//     return cb(err, user);
-//   });
-// }
-// ));
+passport.use(new GoogleStrategy({
+  clientID: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+  callbackURL: "https://carols-book-realm.herokuapp.com/auth/google/admin",
+},
+function(accessToken, refreshToken, email, cb) {
+  console.log(email);
+  User.findOrCreate({ googleId: email.id, username: email.displayName}, function (err, user) {
+    return cb(err, user);
+  });
+}
+));
 
 module.exports = User;
