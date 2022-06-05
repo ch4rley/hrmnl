@@ -9,7 +9,7 @@
             <i class="fa fa-bars"></i>
             </a>
             <!-- NAVIGATION LINKS -->
-            <% if(signedIn === true) { %>
+            <!-- <%# if(signedIn === true) { %> -->
                 <ul class="navigation" id="navigation" role="list">
                     <li>
                         <a href="/user/:_id" class="nav-link pinkbg pinklink" title="profile">profile</a>
@@ -26,7 +26,7 @@
                         <a href="/logout/" class="nav-link bluebg bluelink" title="log out" id="log-out">log out<!--// log in // sign up --></a>
                     </li>
                 </ul>
-            <% } else { %>
+            <!-- <%# } else { %> -->
             <!-- REGISTER MODAL -->
             <%# include('../partials/register') %> 
             <!-- LOGIN MODAL -->
@@ -40,7 +40,7 @@
                     <a href="/register" class="nav-link gradient-button gradient-purpleblue-bg gradient-purpleblue-link" title="log in" id="modal-btn-login">log in</a>
                 </li>
             </ul>
-            <% } %> 
+            <!-- <%# } %>  -->
         </nav>
     </div>
 </header>
