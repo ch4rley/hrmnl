@@ -131,27 +131,44 @@ module.exports = {
             title: 'my profile'
         });
     },
-
+    // temporarily commented out until models are integrated with one another
+    // history_get: (req, res) => {
+    //     const {_id} = req.params;
+    //     User.findOne({_id: _id}, (error, foundUser) => {
+    //         if(error) {
+    //             return error;
+    //         } else {
+    //             foundUser.Log.find({}, (error, allLogs) => {
+    //                 if(error) {
+    //                     return error;
+    //                 } else {
+    //                     res.render('pages/history', {
+    //                         signedIn: siteData.signedIn,
+    //                         history: allLogs,
+    //                         title: 'history'
+    //                     });
+    //                 }
+    //             })
+    //         }
+    //     });
+    // },
+    // temporary history handler function
     history_get: (req, res) => {
-        const {_id} = req.params;
-        User.findOne({_id: _id}, (error, foundUser) => {
+        // finds all logs
+        Log.find({}, (error, allLogs) => {
             if(error) {
                 return error;
-            } else {
-                foundUser.Log.find({}, (error, allLogs) => {
-                    if(error) {
-                        return error;
-                    } else {
-                        res.render('pages/history', {
-                            signedIn: siteData.signedIn,
-                            history: allLogs,
-                            title: 'history'
-                        });
-                    }
-                })
+              } else {
+                res.render('pages/history', {
+                    signedIn: siteData.signedIn,
+                    history: allLogs,
+                    title: 'history'
+                    
+                });
             }
-        });
+        })
     },
+
     log_get: (req, res) => {
         const {_id} = req.params;
         User.findOne({_id: _id}, (error, foundUser) => {

@@ -20,12 +20,13 @@ router.route('/:_id/create-profile')
 
 router.route('/:_id/history')
   // .get(userCtrl.history_get)
-  //this actually posts the log information to the history page
+  // this actually posts the log information to the history page
   .post(userCtrl.history_post);
 
 router.route('/:_id/log')
   .get(userCtrl.log_get);
 
+  // temporary history route for testing
 router.route('/history')
   .get(userCtrl.history_get);
 
