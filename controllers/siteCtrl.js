@@ -3,6 +3,7 @@ const siteData = require('../data/siteData');
 // const userData = require('../data/userData');
 //const SchemaName = require('../models/schemanameModel');
 const User = require('../models/userModel');
+const passport = require('passport');
 
 
 module.exports = {
