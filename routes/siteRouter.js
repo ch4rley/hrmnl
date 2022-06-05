@@ -11,7 +11,8 @@ router.route('/login')
   .post(siteCtrl.login_post);
 
 router.route('/register')
-  .get(siteCtrl.register);
+  .get(siteCtrl.register)
+  .post(siteCtrl.register_post);
 
 router.route('/logout')
   .get(siteCtrl.logout);

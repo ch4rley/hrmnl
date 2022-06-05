@@ -54,6 +54,19 @@ module.exports = {
             };
         }); 
     },
+    register_post: (req, res) => {
+        const {email, password} = request.body;
+        User.register({email: email}, password, (error, user) => {
+            if (error) {
+                console.log(error);
+                response.redirect('/register');
+            } else {
+                passport.authenticate('local')(request, response, () => {
+                    response.redirect('/login');
+                });
+            };
+        }); 
+    },
     // handler for logout route
     logout: (req, res) => {
         req.logout();
