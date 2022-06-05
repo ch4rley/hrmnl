@@ -4,7 +4,8 @@ const router = express.Router();
 
 // stores all users in users collection in hrmnl database
 router.route('/')
-  .post(userCtrl.create_user_post);
+  .post(userCtrl.create_user_post)
+  .get(userCtrl.history_get);
 
 router.route('/:_id')
   .get(userCtrl.profile)
@@ -27,7 +28,6 @@ router.route('/:_id/log')
   .get(userCtrl.log_get);
 
   // temporary history route for testing
-router.route('/history')
-  .get(userCtrl.history_get);
+// router.route('/history')
 
 module.exports = router;

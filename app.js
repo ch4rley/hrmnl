@@ -27,6 +27,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 // use morgan as middleware
 app.use(morgan('dev'));
+
 // tells app that routes exist and where to find them
 app.use(routes);
 

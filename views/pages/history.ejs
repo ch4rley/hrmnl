@@ -4,35 +4,28 @@
     <%- include('../partials/nav') %> 
         <!-- MAIN BODY -->
         <main>
-            <h2 class="gradient-text"><%= user.name %>'s HRT log</h2>
-            <button class="accordion history"><%= user.HRT.date %> // <%= user.HRT.date.hormone %></button>
-            <div class="panel">
+            <h2 class="gradient-text"><%# user.name %>HRT history</h2>
+            <% for(log of history) { %>
+                <button class="accordion history"><%= log.hrtDate %> // <%= log.hrtHormone %> // <%= log.hrtDose %></button>
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>table title</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    yup there is some data here
+                                </td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            <% } %>
                 <!--this will be a partial with information from the log page-->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>table title</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                yup there is some data here
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-            </div>
-            <button class="accordion">entry 2</button>
-            <div class="panel">
-                <p>Lorem ipsum...</p>
-            </div>
-            <button class="accordion">entry 3</button>
-            <div class="panel">
-                <p>Lorem ipsum...</p>
-            </div>
-        </main>
+                
     <!-- FOOTER PARTIAL -->
     <%- include('../partials/footer') %>
