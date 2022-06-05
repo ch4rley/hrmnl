@@ -19,10 +19,14 @@ router.route('/:_id/create-profile')
   .get(userCtrl.create_profile_get)
 
 router.route('/:_id/history')
-  .get(userCtrl.history_get)
+  // .get(userCtrl.history_get)
+  //this actually posts the log information to the history page
   .post(userCtrl.history_post);
 
 router.route('/:_id/log')
   .get(userCtrl.log_get);
+
+router.route('/history')
+  .get(userCtrl.history_get);
 
 module.exports = router;
