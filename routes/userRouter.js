@@ -8,7 +8,10 @@ router.route('/')
 
 router.route('/:_id')
   .get(userCtrl.profile)
-  .put(userCtrl.create_profile_put)
+  .put(userCtrl.create_profile_put);
+
+  router.route('/:_id/profile')
+  .get(userCtrl.profile)
   .put(userCtrl.edit_profile_update);
 
 router.route('/:_id/edit-profile')

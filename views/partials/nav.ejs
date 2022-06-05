@@ -28,16 +28,16 @@
                 </ul>
             <% } else { %>
             <!-- REGISTER MODAL -->
-            <%- include('../partials/register') %> 
+            <%# include('../partials/register') %> 
             <!-- LOGIN MODAL -->
-            <%- include('../partials/login') %> 
+            <%# include('../partials/login') %> 
             <!-- IF USER IS NOT LOGGED IN -->
             <ul class="navigation simpleNav" id="navigation" role="list">
                 <li>
-                    <a href="#" class="nav-link  gradient-button gradient-pinkpurple-bg gradient-pinkpurple-link" title="sign up" id="modal-btn-signup">sign up</a>
+                    <a href="/register" class="nav-link  gradient-button gradient-pinkpurple-bg gradient-pinkpurple-link" title="sign up" id="modal-btn-signup">sign up</a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link gradient-button gradient-purpleblue-bg gradient-purpleblue-link" title="log in" id="modal-btn-login">log in</a>
+                    <a href="/login" class="nav-link gradient-button gradient-purpleblue-bg gradient-purpleblue-link" title="log in" id="modal-btn-login">log in</a>
                 </li>
             </ul>
             <% } %> 

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 // let GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const findOrCreate = require('mongoose-findorcreate');
+const Log = require('../models/logModel');
 
 const userSchema = new Schema({
   name: {
@@ -81,10 +82,9 @@ const userSchema = new Schema({
   hrtFrequencyP: {
     type: String,
   },
-
   email_newFeatures: {
     type: Boolean,
-  },
+  }
 }, 
   {
   timestamps: true

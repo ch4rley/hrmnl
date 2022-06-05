@@ -1,5 +1,5 @@
 const siteData = require('../data/siteData');
-const userData = require('../data/userData');
+// const userData = require('../data/userData');
 const User = require('../models/userModel');
 const Log = require('../models/logModel');
 
@@ -18,14 +18,15 @@ module.exports = {
         newUser.save();
         let _id = newUser._id;
 
-        res.redirect('/login', { title: 'welcome', data: data });
-
-        // res.redirect('/user/' + _id + '/create-profile');
+        // commented out until authentication is done
+        // res.redirect('/login', { title: 'welcome', data: newUser });
+        // temporarily redirecting to create-profile
+        res.redirect('/user/' + _id + '/create-profile');
     },
     profile: (req, res) => {
         const {_id} = req.params;
-        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
-        console.log(req.body);
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
+        console.log(req.body + 'SUCCESS');
         User.findOne({_id: _id}, (error,
             foundUser) => {
                 if(error) {
@@ -69,8 +70,8 @@ module.exports = {
     create_profile_put: (req, res) => {
         // which user in the database
         const {_id} = req.params;
-        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
-        console.log(req.body);
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
+        console.log(req.body + 'MUCH SUCCESS');
 
         // taking current inputs and relabelling them and updating the information in the database
         User.findByIdAndUpdate(_id, {$set: {
@@ -89,7 +90,6 @@ module.exports = {
             hrtDoseP: hrtDoseP,
             hrtConcentrationP: hrtConcentrationP,
             hrtFrequencyP: hrtFrequencyP,
-            // email_newFeatures: email_newFeatures
         }}, {new: true}, error => {
             if(error) {
               return error;
@@ -117,18 +117,32 @@ module.exports = {
 
     edit_profile_update: (req, res) => {
         const {_id} = req.params;
-        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
+        console.log(req.body + 'it works!');
 
-        const matchUser = userData.find(user => user._id === String(_id));
-        // conditional to add user's name to page title?
-        // consider removing for safety reasons
-  
-        const index = userData.indexOf(matchUser);
-        userData.splice(index, 1);
-        res.redirect('/user/_id', {
-            signedIn: siteData.signedIn,
-            user: userData.user,
-            title: 'my profile'
+        // taking current inputs and relabelling them and updating the information in the database
+        User.findByIdAndUpdate(_id, {$set: {
+            name: name,
+            pronouns: pronouns,
+            hormone: hormone,
+            hrtDeliveryE: hrtDeliveryE,
+            hrtDoseE: hrtDoseE,
+            hrtConcentrationE: hrtConcentrationE,
+            hrtFrequencyE: hrtFrequencyE,
+            hrtDeliveryT: hrtDeliveryT,
+            hrtDoseT: hrtDoseT,
+            hrtConcentrationT: hrtConcentrationT,
+            hrtFrequencyT: hrtFrequencyT,
+            hrtDeliveryP: hrtDeliveryP,
+            hrtDoseP: hrtDoseP,
+            hrtConcentrationP: hrtConcentrationP,
+            hrtFrequencyP: hrtFrequencyP,
+        }}, {new: true}, error => {
+            if(error) {
+              return error;
+            } else {
+                res.redirect('/user/' + _id + '/');
+            }
         });
     },
 
@@ -183,6 +197,7 @@ module.exports = {
       
           newLog.save();
       
-          res.redirect("/user/" + _id + "/history"); 
+        // res.redirect("/user/" + _id + "/history"); 
+        res.redirect("/user/history");
       },
 }

@@ -5,14 +5,11 @@ const {Schema} = mongoose;
 const userSchema = User;
 
 const logSchema = new Schema({
-  postedBy: {
-    type: {type: mongoose.Schema.Types.String, ref: 'User'},
-  },
+  // postedBy: {
+  //   type: {type: mongoose.Schema.Types.String, ref: 'User'},
+  // },
   hrtDate: {
     type: String,
-  },
-  hrtNotes: {
-    type: String
   },
   hrtHormone: {
     type: String,
@@ -29,6 +26,9 @@ const logSchema = new Schema({
   hrtFrequency: {
     type: String,
   },
+  hrtNotes: {
+    type: String
+  } 
 }, 
 {timestamps: true},
 { typeKey: '$type' });
