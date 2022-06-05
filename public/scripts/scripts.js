@@ -1,20 +1,20 @@
-// MODAL BUTTON
-
-let modalBtnSignup = document.getElementById('modal-btn-signup');
-let modalSignup = document.querySelector('.modal-signup');
-let closeBtn = document.querySelector('.modal-signup .close-btn');
-modalBtnSignup.onclick = function(){
-  modalSignup.style.display = 'block';
-};
-closeBtn.onclick = function(){
-  modalSignup.style.display = 'none';
-};
-window.onclick = function(e){
-  if(e.target == modalSignup){
-    modalSignup.style.display = 'none';
-  };
-};
-
+// ~~~~ MODAL BUTTON ~~~~
+// ---- for sign up/register ----
+// let modalBtnSignup = document.getElementById('modal-btn-signup');
+// let modalSignup = document.querySelector('.modal-signup');
+// let closeBtn = document.querySelector('.modal-signup .close-btn');
+// modalBtnSignup.onclick = function(){
+//   modalSignup.style.display = 'block';
+// };
+// closeBtn.onclick = function(){
+//   modalSignup.style.display = 'none';
+// };
+// window.onclick = function(e){
+//   if(e.target == modalSignup){
+//     modalSignup.style.display = 'none';
+//   };
+// };
+// ---- for log in ----
 // let modalBtnLogin = document.getElementById('modal-btn-login');
 // let modalLogin = document.querySelector('.modal-login');
 // let closeBtn = document.querySelector('.modal-login .close-btn');
@@ -30,18 +30,25 @@ window.onclick = function(e){
 //   };
 // };
 
+// ~~~ ATTEMPTS AT GETTING SELECTED HORMONE (value of selected option of select dropdown)
+// ---- for log page ----
+// const getSelectedHormone = () => {
+//   const selectedHormone = document.getElementById('hrtHormone');
+//   const thisHormone = select.options[select.selectedIndex].text;
+//   console.log(thisHormone + 'works');
+//   return selectedHormone;
+// };
+// getSelectedHormone();
 
-// DISPLAY APPROPRIATE HRT INPUT FIELDS
-let detailsE = document.querySelector('#hrtDetailsE');
-let detailsT = document.querySelector('#hrtDetailsT');
-let detailsP = document.querySelector('#hrtDetailsP');
-// let details = document.querySelector('#hrtDetails');
+// const selectHormone = document.querySelector('select#hrtHormone');
 
-let E = document.querySelector('#checkboxE');
-let T = document.querySelector('#checkboxT');
-let P = document.querySelector('#checkboxP');
+// selectHormone.addEventListener('change', (e) => {
+//   const details = document.querySelector('div.hormoneDetails');
+//   details.id = e.target.value;
+// });
 
 // function will hide hrt details by default when other details show
+// #### we decided this was not necessary or helpful #####
 // const hideDefaultHrtDetails = () => {
 //   if(details.classList.contains('hidden') === false) {
 //     details.classList.toggle('hidden');
@@ -57,52 +64,39 @@ let P = document.querySelector('#checkboxP');
 //   }
 // };
 
+// ~~~~ DISPLAY APPROPRIATE HRT INPUT FIELDS ~~~~
+// ---- create profile + edit profile pages ----
 
-// const getSelectedHormone = () => {
-//   const selectedHormone = document.getElementById('hrtHormone');
-//   const thisHormone = select.options[select.selectedIndex].text;
-//   console.log(thisHormone + 'works');
-//   return selectedHormone;
-// };
+let detailsE = document.querySelector('#hrtDetailsE');
+let detailsT = document.querySelector('#hrtDetailsT');
+let detailsP = document.querySelector('#hrtDetailsP');
+// let details = document.querySelector('#hrtDetails');
 
-// getSelectedHormone();
+let E = document.querySelector('#checkboxE');
+let T = document.querySelector('#checkboxT');
+let P = document.querySelector('#checkboxP');
 
-const selectHormone = document.querySelector('select#hrtHormone');
-
-selectHormone.addEventListener('change', (e) => {
-  const details = document.querySelector('div.hormoneDetails');
-  details.id = e.target.value;
-});
-
-// // show HRT details input fields for estrogen, if user clicks on estrogen, and hide basic details input fields, if they are not already hidden
+// show HRT details input fields for estrogen, if user clicks on estrogen
 const showHrtDetailsE = function(e) {
   detailsE.classList.toggle('open');
   // hideDefaultHrtDetails();
   console.log(e);
 };
 
-// show HRT details input fields for testosterone, if user clicks on testosterone, and hide basic details input fields, if they are not already hidden
+// show HRT details input fields for testosterone, if user clicks on testosterone
 const showHrtDetailsT = function(e) {
   detailsT.classList.toggle('open');
   // hideDefaultHrtDetails();
   console.log(e);
 };
-
+// show HRT details input fields for progesterone, if user clicks on progesterone
 const showHrtDetailsP = function(e) {
   detailsP.classList.toggle('open');
   // hideDefaultHrtDetails();
   console.log(e);
 };
 
-
-
+// event listeners for checkbox click to toggle appropriate hrt details
 E.addEventListener('click', showHrtDetailsE);
 T.addEventListener('click', showHrtDetailsT);
 P.addEventListener('click', showHrtDetailsP);
-
-
-
-
-
-
-
