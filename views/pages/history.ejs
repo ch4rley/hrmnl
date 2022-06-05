@@ -8,21 +8,25 @@
             <% for(log of history) { %>
                 <button class="accordion history"><%= log.hrtDate %> // <%= log.hrtHormone %> // <%= log.hrtDose %></button>
                 <div class="panel">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>table title</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    yup there is some data here
-                                </td>
-                            </tr>
-    
-                        </tbody>
-                    </table>
+                    <div id="hrtDetails_container">
+                        <li>
+                            <label for="hrtDelivery">delivery method</label>
+                                <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= log.hrtDelivery %>">
+                        </li>
+                        <li>
+                            <label for="hrtDose">dose</label>
+                            <input type="text" id="hrtDose" name="hrtDose" value="<%= log.hrtDose %>">
+                        </li>
+                        <li>
+                            <label for="hrtConcentration">concentration</label>
+                            <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= log.hrtConcentration %>">
+                        </li>
+                        <li>
+                            <label for="hrtFrequency">frequency</label>
+                            <input type="text" id="hrtFrequency" name="hrtFrequency" value="<%= log.hrtFrequency %>">
+                        </li>
+                        <p><%= log.hrtNotes %></p>
+                    </div>
                 </div>
             <% } %>
                 <!--this will be a partial with information from the log page-->

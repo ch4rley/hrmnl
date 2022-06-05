@@ -801,6 +801,7 @@ padding: 0 18px;
 background-color: white;
 display: none;
 overflow: hidden;
+
 }
 
 /* accordion icons to indicate open and closed */
@@ -817,7 +818,7 @@ content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 /* MODAL */
-.modal,
+/* .modal,
 .modal-login,
 .modal-signup {
 display: none;
@@ -889,7 +890,7 @@ to {top:0; opacity:1}
 @keyframes animatetop {
 from {top:-300px; opacity:0}
 to {top:0; opacity:1}
-}
+} */
 /* ----------------------------------------------- */
 
 /* FOR TESTING ONLY */
