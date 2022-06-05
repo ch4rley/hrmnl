@@ -778,6 +778,19 @@ p.caps {
 
 /* - accordion - from w3schools - */
 /* style the buttons that are used to open and close the accordion panel */
+.history {
+    font-family: var(--serif);
+    color: var(--lightmode-text);
+    font-size: 1.125rem;
+    padding: 0 .75rem .75rem 0;
+    margin: 0;
+}
+
+.panel .label {
+    padding: 0 0 .375rem 0;
+    margin: 0;
+}
+
 .accordion {
     background-color: var(--lightmode-background);
     color: var(--purple);

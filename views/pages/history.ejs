@@ -9,15 +9,42 @@
                 <button class="accordion history"><span class="accordionDate"><%= log.hrtDate %></span><span class="divider"> // </span><%= log.hrtHormone %><span class="divider"> // </span><%= log.hrtDose %></button>
                 <div class="panel">
                     <div id="hrtDetails_container">
-                        <label for="hrtDelivery">delivery method</label>
-                        <input type="text" id="hrtDelivery" name="hrtDelivery" value="<%= log.hrtDelivery %>">
-                        <label for="hrtDose">dose</label>
-                        <input type="text" id="hrtDose" name="hrtDose" value="<%= log.hrtDose %>">
-                        <label for="hrtConcentration">concentration</label>
-                        <input type="text" id="hrtConcentration" name="hrtConcentration" value="<%= log.hrtConcentration %>">
-                        <label for="hrtFrequency">frequency</label>
-                        <input type="text" id="hrtFrequency" name="hrtFrequency" value="<%= log.hrtFrequency %>">
-                        <p><%= log.hrtNotes %></p>
+                        <span class="label">
+                            delivery method
+                        </span>
+                        <p class="history">
+                            <%= log.hrtDelivery %>
+                        </p>
+                        <div class="dose-concentration">
+                            <div>
+                                <span class="label">
+                                    dose
+                                </span>
+                                <p class="history">
+                                    <%= log.hrtDose %>
+                                </p>
+                            </div>
+                            <div>
+                                <span class="label">
+                                    concentration
+                                </span>
+                                <p class="history">
+                                    <%= log.hrtConcentration %>
+                                </p>
+                            </div>
+                        </div>
+                        <span class="label">
+                            frequency
+                        </span>
+                        <p class="history">
+                            <%= log.hrtFrequency %>
+                        </p>
+                        <span class="label">
+                            notes
+                        </span>
+                        <p class="history">
+                            <%= log.hrtNotes %>
+                        </p>
                     </div>
                 </div>
             <% } %>
