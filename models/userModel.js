@@ -113,7 +113,7 @@ passport.deserializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "https://carols-book-realm.herokuapp.com/auth/google/admin",
+  callbackURL: "http://localhost:3000/auth/google/home",
 },
 function(accessToken, refreshToken, email, cb) {
   console.log(email);

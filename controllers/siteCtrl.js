@@ -1,6 +1,6 @@
 const siteData = require('../data/siteData');
-const { user } = require('../data/userData');
-const userData = require('../data/userData');
+// const { user } = require('../data/userData');
+// const userData = require('../data/userData');
 //const SchemaName = require('../models/schemanameModel');
 const User = require('../models/userModel');
 
@@ -9,7 +9,7 @@ module.exports = {
     // handler that will show index page
     index: (req, res) => {
     res.render('pages/index', {
-        name: siteData.userName,
+        // name: siteData.userName,
         copyrightYear: siteData.year,
         signedIn: siteData.signedIn,
         title: 'home'
@@ -18,22 +18,41 @@ module.exports = {
     // handler that will show login page
     login: (req, res) => {
         res.render('pages/log-in', {
-            signedIn: siteData.signedIn,
             title: 'log in'
         });
     },
-    // handler function for login redirect
+    // handler function for login + redirect
     login_post: (req, res) => {
-        res.redirect('/user/' + _id + '/', {
-            title: 'log in'
+        const {email, password} = req.body;
+        const user = new User({
+            email: email,
+            password: password
+        });
+
+        req.login(user, (error) => {
+            if (error) {
+                console.log(error)
+                response.redirect('/login');
+            } else {
+                passport.authenticate('local')(req, res, () => {
+                    response.redirect('/user/' + user._id + '/');
+                });
+            }
         });
     },
     // handler function for register route
     register: (req, res) => {
-        res.render('pages/sign-up', {
-        signedIn: siteData.signedIn,
-        title: 'register'
-        });
+        const {email, password} = req.body;
+        User.register({email: email}, password, (error, user) => {
+            if (error) {
+                console.log(error);
+                res.redirect('/register');
+            } else {
+                passport.authenticate('local')(req, res, () => {
+                res.redirect('/login');
+                });
+            };
+        }); 
     },
     // handler for logout route
     logout: (req, res) => {
@@ -45,7 +64,7 @@ module.exports = {
     google_redirect_get: [
     passport.authenticate('google', {failureRedirect: '/login'}),
     function(req, res) {
-      res.redirect('/user/' + _id + '/');
+      res.redirect('/');
     }
     ]
 }

@@ -19,7 +19,7 @@ router.route('/logout')
 router.route('/auth/google')
   .get(siteCtrl.google_get);
 
-router.route('/auth/google/user/_id/')
+router.route('/auth/google/home')
   .get(siteCtrl.google_redirect_get);
 
 module.exports = router;
