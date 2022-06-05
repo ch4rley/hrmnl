@@ -24,9 +24,9 @@ module.exports = {
     },
     // handler function for login + redirect
     login_post: (req, res) => {
-        const {email, password} = req.body;
+        const {username, password} = req.body;
         const user = new User({
-            email: email,
+            username: username,
             password: password
         });
 
@@ -43,8 +43,8 @@ module.exports = {
     },
     // handler function for register route
     register: (req, res) => {
-        const {email, password} = req.body;
-        User.register({email: email}, password, (error, user) => {
+        const {username, password} = req.body;
+        User.register({username: username}, password, (error, user) => {
             if (error) {
                 console.log(error);
                 res.redirect('/register');
@@ -57,7 +57,7 @@ module.exports = {
     },
     register_post: (req, res) => {
         const {email, password} = request.body;
-        User.register({email: email}, password, (error, user) => {
+        User.register({username: username}, password, (error, user) => {
             if (error) {
                 console.log(error);
                 response.redirect('/register');
