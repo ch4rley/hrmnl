@@ -7,6 +7,7 @@ const Log = require('../models/logModel');
 
 module.exports = {
     create_user_post: (req, res) => {
+        if(req.isAuthenticated()){
         const {name, pronouns, email, password} = req.body;
         const newUser = new User ({
             name: name,
@@ -21,37 +22,44 @@ module.exports = {
         res.redirect('/login', { title: 'welcome', data: data });
 
         // res.redirect('/user/' + _id + '/create-profile');
+        } else {
+        res.redirect('/login')
+        };
     },
     profile: (req, res) => {
+        if(req.isAuthenticated()){
         const {_id} = req.params;
         const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
         console.log(req.body);
-        User.findOne({_id: _id}, (error,
-            foundUser) => {
-                if(error) {
-                    return error;
+        User.findOne({_id: _id}, (error, foundUser) => {
+            if(error) {
+                return error;
+            } else {
+                // conditional to add user's name to page title?
+                // consider removing for safety reasons
+                // needs to wrap res.render for scope reasons
+                if (foundUser.name === '') {
+                    let pageTitle = 'profile';
                 } else {
-                    // conditional to add user's name to page title?
-                    // consider removing for safety reasons
-                    // needs to wrap res.render for scope reasons
-                    if (foundUser.name === '') {
-                        let pageTitle = 'profile';
-                    } else {
-                        let thisUser = foundUser.name;
-                        let pageTitle = thisUser + '\'s profile';
-                    
-                    res.render('pages/profile', {
-                        user: foundUser,
-                        signedIn: siteData.signedIn,
-                        title: pageTitle
-                    });
-                    }
-                }
+                    let thisUser = foundUser.name;
+                    let pageTitle = thisUser + '\'s profile';
+                
+                res.render('pages/profile', {
+                    user: foundUser,
+                    signedIn: siteData.signedIn,
+                    title: pageTitle
+                });
+                };
+            }
         });
+        } else {
+            res.redirect('/login')
+        }
 
     },
 
     create_profile_get: (req, res) => {
+        if(req.isAuthenticated()){
         const {_id} = req.params;
         User.findOne({_id: _id}, (error, foundUser) => {
             if(error) {
@@ -64,9 +72,13 @@ module.exports = {
                 });
             }
         });
+        } else {
+            res.redirect('/login')
+        }
     },
 
     create_profile_put: (req, res) => {
+        if(req.isAuthenticated()){
         // which user in the database
         const {_id} = req.params;
         const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
@@ -97,9 +109,13 @@ module.exports = {
                 res.redirect('/user/' + _id + '/');
             }
         });
+        } else {
+            res.redirect('/login')
+        }
     },
 
     edit_profile_get: (req, res) => {
+        if(req.isAuthenticated()){
         const {_id} = req.params;
         User.findOne({_id: _id}, (error, foundUser) => {
             if(error) {
@@ -113,9 +129,13 @@ module.exports = {
                 });
             }
         })
+        } else {
+            res.redirect('/login')
+        }
     },
 
     edit_profile_update: (req, res) => {
+        if(req.isAuthenticated()){
         const {_id} = req.params;
         const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
 
@@ -130,9 +150,13 @@ module.exports = {
             user: userData.user,
             title: 'my profile'
         });
+        } else {
+            res.redirect('/login')
+        }
     },
     // temporarily commented out until models are integrated with one another
     // history_get: (req, res) => {
+    //     if(req.isAuthenticated()){
     //     const {_id} = req.params;
     //     User.findOne({_id: _id}, (error, foundUser) => {
     //         if(error) {
@@ -151,9 +175,13 @@ module.exports = {
     //             })
     //         }
     //     });
+    //     } else {
+    //         res.redirect('/login')
+    //     }
     // },
     // temporary history handler function
     history_get: (req, res) => {
+        if(req.isAuthenticated()){
         // finds all logs
         Log.find({}, (error, allLogs) => {
             if(error) {
@@ -167,9 +195,13 @@ module.exports = {
                 });
             }
         })
+        } else {
+            res.redirect('/login')
+        }
     },
 
     log_get: (req, res) => {
+        if(req.isAuthenticated()){
         const {_id} = req.params;
         User.findOne({_id: _id}, (error, foundUser) => {
             if(error) {
@@ -183,8 +215,12 @@ module.exports = {
                 });
             }
         });
+        } else {
+            res.redirect('/login')
+        }
     },
     history_post: (req, res) => {
+        if(req.isAuthenticated()){
         const {_id} = req.params;
           const {hrtDate, hrtNotes, hrtHormone, hrtDelivery, hrtDose, hrtConcentration, hrtFrequency} = req.body;
   
@@ -200,6 +236,10 @@ module.exports = {
       
           newLog.save();
       
-          res.redirect("/user/" + _id + "/history"); 
-      },
+          res.redirect("/user/" + _id + "/history");
+        } else {
+            res.redirect('/login')
+        }
+    },
+      
 }
