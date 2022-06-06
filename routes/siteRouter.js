@@ -17,10 +17,10 @@ router.route('/register')
 router.route('/logout')
   .get(siteCtrl.logout);
 
-router.route('/auth/google')
-  .get(siteCtrl.google_get);
+// router.route('/auth/google')
+//   .get(siteCtrl.google_get);
 
-router.route('/auth/google/home')
-  .get(siteCtrl.google_redirect_get);
+// router.route('/auth/google/home')
+//   .get(siteCtrl.google_redirect_get);
 
 module.exports = router;
