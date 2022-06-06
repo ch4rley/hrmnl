@@ -1,10 +1,16 @@
 <!-- HEAD PARTIAL -->
 <%- include('../partials/head') %> 
     <!-- NAV PARTIAL -->
-    <%- include('../partials/nav-user') %> 
+    <%- include('../partials/nav-user', {user: user}) %> 
         <!-- MAIN BODY -->
         <main>
-            <h2 class="gradient-text"><%# user.name %>HRT history</h2>
+            <h2 class="gradient-text">
+                <% if(user.name) { %>
+                    <%= user.name + '\'s' %>
+                <% } else { %>
+                    your
+                <% } %>
+                    HRT history</h2>
             <% for(log of history) { %>
                 <button class="accordion history"><span class="accordionDate"><%= log.hrtDate %></span><span class="divider"> // </span><%= log.hrtHormone %><span class="divider"> // </span><%= log.hrtDose %></button>
                 <div class="panel">

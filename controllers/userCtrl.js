@@ -205,6 +205,7 @@ module.exports = {
                     } else {
                         res.render('pages/history', {
                             // everything from userModel except for logs
+                            user: userLogs,
                             thisUser: userLogs,
                             // specifically the referenced logs
                             history: userLogs.logs,
