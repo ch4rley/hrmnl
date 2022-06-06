@@ -328,6 +328,8 @@ main {
     align-content: flex-start;
     text-align: start;
     margin: 0 auto;
+    /* FOR STICKY FOOTER */
+    flex: 1 0 auto;
 }
 
 .fa-solid {
@@ -422,6 +424,12 @@ footer {
     align-content: center;
     font-family: var(--display);
     margin-top: 2.5em;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    bottom: 0;
+    /* STICKY FOOTER */
+    flex: 1 0 auto;
+    max-height: 115px;
 }
 
 .gradient-background {
