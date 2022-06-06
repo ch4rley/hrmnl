@@ -140,19 +140,31 @@ module.exports = {
         const {_id} = req.params;
         const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
 
-        const matchUser = userData.find(user => user._id === String(_id));
-        // conditional to add user's name to page title?
-        // consider removing for safety reasons
-  
-        const index = userData.indexOf(matchUser);
-        userData.splice(index, 1);
-        res.redirect('/user/_id', {
-            signedIn: siteData.signedIn,
-            user: userData.user,
-            title: 'my profile'
+        User.findByIdAndUpdate(_id, {$set: {
+            name: name,
+            pronouns: pronouns,
+            hormone: hormone,
+            hrtDeliveryE: hrtDeliveryE,
+            hrtDoseE: hrtDoseE,
+            hrtConcentrationE: hrtConcentrationE,
+            hrtFrequencyE: hrtFrequencyE,
+            hrtDeliveryT: hrtDeliveryT,
+            hrtDoseT: hrtDoseT,
+            hrtConcentrationT: hrtConcentrationT,
+            hrtFrequencyT: hrtFrequencyT,
+            hrtDeliveryP: hrtDeliveryP,
+            hrtDoseP: hrtDoseP,
+            hrtConcentrationP: hrtConcentrationP,
+            hrtFrequencyP: hrtFrequencyP,
+        }}, {new: true}, error => {
+            if(error) {
+              return error;
+            } else {
+                res.redirect('/user/' + _id + '/');
+            }
         });
         } else {
-            res.redirect('/login')
+            res.redirect('/login');
         }
     },
     // temporarily commented out until models are integrated with one another
