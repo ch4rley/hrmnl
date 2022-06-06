@@ -126,7 +126,6 @@ module.exports = {
                     signedIn: siteData.signedIn,
                     user: foundUser,
                     title: 'edit profile'
-                    
                 });
             }
         })
@@ -221,10 +220,9 @@ module.exports = {
                 return error;
               } else {
                 res.render('pages/log', {
-                    signedIn: siteData.signedIn,
+                    // signedIn: siteData.signedIn,
                     user: foundUser,
-                    title: 'add instance'
-                    
+                    title: 'add instance'  
                 });
             }
         });
@@ -232,24 +230,53 @@ module.exports = {
             res.redirect('/login')
         }
     },
-    history_post: (req, res) => {
+    log_post: (req, res) => {
         if(req.isAuthenticated()){
         const {_id} = req.params;
-          const {hrtDate, hrtNotes, hrtHormone, hrtDelivery, hrtDose, hrtConcentration, hrtFrequency} = req.body;
+        Log.create(req.body, (error, newLog) => {
+            if(error) {
+                console.log('error all up in the log_post');
+                return error;
+            } else {
+                // who is the userr that should receive log?
+                // enter log into log array
+                User.findById({_id: _id})
+                    // found user, and posts log into logs array for this user because of ref in userModel
+                    // uses key from userSchema
+                    .populate('logs')
+                    // execute (instead of a callback function)
+                    // 2 arguments: error and userEntry (user._id + newLog all bundled)
+                    .exec((error, userEntry) => {
+                        userEntry.logs.push(newLog);
+                        userEntry.save((error) => {
+                            if(error) {
+                                console.log('inception error in log_post');
+                                return error;
+                            } else {
+                                res.redirect('/user/' + _id + '/history');
+                            };
+                        });
+                    });
+
+            };
+            
+        });
+        // OLD CODE FOR LOG_POST 
+        //   const {hrtDate, hrtNotes, hrtHormone, hrtDelivery, hrtDose, hrtConcentration, hrtFrequency} = req.body;
   
-          const newLog = new Log ({
-            hrtDate: hrtDate,
-            hrtNotes: hrtNotes,
-            hrtHormone: hrtHormone,
-            hrtDelivery: hrtDelivery,
-            hrtDose: hrtDose,
-            hrtConcentration: hrtConcentration,
-            hrtFrequency: hrtFrequency,
-          });
+        //   const newLog = new Log ({
+        //     hrtDate: hrtDate,
+        //     hrtNotes: hrtNotes,
+        //     hrtHormone: hrtHormone,
+        //     hrtDelivery: hrtDelivery,
+        //     hrtDose: hrtDose,
+        //     hrtConcentration: hrtConcentration,
+        //     hrtFrequency: hrtFrequency,
+        //   });
       
-          newLog.save();
+        //   newLog.save();
       
-          res.redirect("/user/" + _id + "/history");
+        //   res.redirect("/user/" + _id + "/history");
         } else {
             res.redirect('/login')
         }

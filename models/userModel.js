@@ -75,7 +75,14 @@ const userSchema = new Schema({
   },
   hrtFrequencyP: {
     type: String,
-  }
+  },
+  logs: [{
+    // ObjectId of each log document is stored here
+    type: Schema.Types.ObjectId,
+    // referring to Log Schema within logModel
+    // log form creates it's own document for each log, which is referenced below
+    ref: "Log"
+  }]
   // email opt-in
   // email_newFeatures: {
   //   type: Boolean,

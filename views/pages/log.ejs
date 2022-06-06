@@ -6,7 +6,7 @@
         <main>
             <h2 class="gradient-text">log HRT</h2>
             <!-- HRT LOG FORM -->
-            <form class="form-border short-form" action="./history.html" method="POST" name="log-form" id="log-form">
+            <form class="form-border short-form" action="/user/<%= user._id %>/log" method="POST" name="log-form" id="log-form">
                 <ul class="flex-form">
                     <li>
                         <label for="hrtDate">date</label>
