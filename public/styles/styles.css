@@ -798,6 +798,20 @@ p.caps {
     margin: 0;
 }
 
+.T .divider { 
+    color: var(--blue);
+}
+.E .divider {
+    color: var(--pink);
+}
+.P .divider {
+    color: var(--darkmode-text);
+}
+
+.padding-r {
+    padding: 0 1rem 0 0;
+}
+
 .accordion {
     background-color: var(--lightmode-background);
     color: var(--purple);
@@ -836,8 +850,20 @@ p.caps {
 }
 
 .panel #hrtDetails_container {
-    border: 1px solid var(--blue);
+    border: 1px solid;
     padding: 1rem;
+}
+
+.T #hrtDetails_container {
+    border-color: var(--blue);
+}
+
+.E #hrtDetails_container {
+    border-color: var(--pink);
+}
+
+.P #hrtDetails_container {
+    border-color: var(--purple);
 }
 
 /* accordion icons to indicate open and closed */

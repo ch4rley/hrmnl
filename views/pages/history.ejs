@@ -12,7 +12,20 @@
                 <% } %>
                     HRT history</h2>
             <% for(log of history) { %>
-                <button class="accordion history"><span class="accordionDate"><%= log.hrtDate %></span><span class="divider"> // </span><%= log.hrtHormone %><span class="divider"> // </span><%= log.hrtDose %></button>
+                <% let hormone = String(log.hrtHormone); %>
+                    <% switch (hormone) {
+                        case 'testosterone': %>
+                            <div class="T">
+                            <% break;
+                        case 'estrogen': %>
+                            <div class="E">
+                            <% break;
+                        case 'progesterone': %>
+                            <div class="P">
+                            <% break;
+                    } %>
+                <button class="accordion history"><span class="accordionDate"><%= log.hrtDate %></span><span class="divider"> // </span><%= log.hrtHormone %><span class="divider"> // </span>
+                    <%= log.hrtDose %></button>
                 <div class="panel">
                     <div id="hrtDetails_container">
                         <span class="label">
@@ -22,7 +35,7 @@
                             <%= log.hrtDelivery %>
                         </p>
                         <div class="dose-concentration">
-                            <div>
+                            <div class="padding-r">
                                 <span class="label">
                                     dose
                                 </span>
@@ -52,6 +65,7 @@
                             <%= log.hrtNotes %>
                         </p>
                     </div>
+                </div>
                 </div>
             <% } %>
                 <!--this will be a partial with information from the log page-->
