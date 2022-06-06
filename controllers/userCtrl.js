@@ -2,6 +2,7 @@ const siteData = require('../data/siteData');
 const userData = require('../data/userData');
 const User = require('../models/userModel');
 const Log = require('../models/logModel');
+const { user } = require('../data/userData');
 
 //const SchemaName = require('../models/schemanameModel');
 
@@ -241,11 +242,17 @@ module.exports = {
             if(error) {
                 return error;
               } else {
-                res.render('pages/log', {
-                    // signedIn: siteData.signedIn,
-                    user: foundUser,
-                    title: 'add instance'  
-                });
+                    if(foundUser.hormone.length === 1) {
+                        res.render('pages/log', {
+                            user: foundUser,
+                            title: 'add instance'  
+                        });
+                    } else {
+                        res.render('pages/log-hormones', {
+                            user: foundUser,
+                            title: 'select hormone to log'
+                        });
+                    }
             }
         });
         } else {
