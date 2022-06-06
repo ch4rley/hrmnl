@@ -26,13 +26,13 @@ router.route('/:_id/log')
   .get(userCtrl.log_get)
   .post(userCtrl.log_post);
 
-router.route('/:_id/log/testosterone')
+router.route('/:_id/log/T')
   .get(userCtrl.log_T_get);
 
-router.route('/:_id/log/estrogen')
+router.route('/:_id/log/E')
   .get(userCtrl.log_E_get);
 
-router.route('/:_id/log/progesterone')
+router.route('/:_id/log/P')
   .get(userCtrl.log_P_get);
 
 module.exports = router;

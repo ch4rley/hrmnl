@@ -267,7 +267,7 @@ module.exports = {
                     console.log('there is an error afoot loading this here log page');
                     return error;
                 } else {
-                    res.render('pages/NAMEHERE', {
+                    res.render('pages/log-T', {
                         user: foundUser,
                         title: 'add instance'
                     });
@@ -283,7 +283,7 @@ module.exports = {
                     console.log('there is an error afoot loading this here log page');
                     return error;
                 } else {
-                    res.render('pages/NAMEHERE', {
+                    res.render('pages/log-E', {
                         user: foundUser,
                         title: 'add instance'
                     });
@@ -299,7 +299,7 @@ module.exports = {
                     console.log('there is an error afoot loading this here log page');
                     return error;
                 } else {
-                    res.render('pages/NAMEHERE', {
+                    res.render('pages/log-P', {
                         user: foundUser,
                         title: 'add instance'
                     });
