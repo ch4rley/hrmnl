@@ -7,29 +7,31 @@ const Log = require('../models/logModel');
 
 module.exports = {
     create_user_post: (req, res) => {
-        if(req.isAuthenticated()){
-        const {name, pronouns, email, password} = req.body;
+        // if(req.isAuthenticated()){
+        const {name, pronouns, username, password} = req.body;
         const newUser = new User ({
             name: name,
             pronouns: pronouns,
-            email: email,
+            username: username,
             password: password
         });
 
         newUser.save();
         let _id = newUser._id;
+        console.log('maybe the new user was saved idk');
+        console.log(_id);
 
-        res.redirect('/login', { title: 'welcome', data: data });
+        res.redirect('/login');
 
         // res.redirect('/user/' + _id + '/create-profile');
-        } else {
-        res.redirect('/login')
-        };
+        // } else {
+        // res.redirect('/login')
+        // };
     },
     profile: (req, res) => {
         if(req.isAuthenticated()){
         const {_id} = req.params;
-        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
         console.log(req.body);
         User.findOne({_id: _id}, (error, foundUser) => {
             if(error) {
@@ -81,7 +83,7 @@ module.exports = {
         if(req.isAuthenticated()){
         // which user in the database
         const {_id} = req.params;
-        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
         console.log(req.body);
 
         // taking current inputs and relabelling them and updating the information in the database
@@ -101,7 +103,6 @@ module.exports = {
             hrtDoseP: hrtDoseP,
             hrtConcentrationP: hrtConcentrationP,
             hrtFrequencyP: hrtFrequencyP,
-            // email_newFeatures: email_newFeatures
         }}, {new: true}, error => {
             if(error) {
               return error;
@@ -137,7 +138,7 @@ module.exports = {
     edit_profile_update: (req, res) => {
         if(req.isAuthenticated()){
         const {_id} = req.params;
-        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP, email_newFeatures} = req.body;
+        const {name, pronouns, hormone, hrtDeliveryE, hrtDoseE, hrtConcentrationE, hrtFrequencyE, hrtDeliveryT, hrtDoseT, hrtConcentrationT, hrtFrequencyT, hrtDeliveryP, hrtDoseP, hrtConcentrationP, hrtFrequencyP} = req.body;
 
         const matchUser = userData.find(user => user._id === String(_id));
         // conditional to add user's name to page title?

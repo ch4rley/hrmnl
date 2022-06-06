@@ -27,43 +27,39 @@ module.exports = {
         const {username, password} = req.body;
         const user = new User({
             username: username,
-            password: password
+            password: password,
         });
 
         req.login(user, (error) => {
             if (error) {
-                console.log(error)
-                response.redirect('/login');
+                console.log('fucking login_post');
+                console.log(error);
+                res.redirect('/login');
             } else {
-                passport.authenticate('local')(req, res, () => {
-                    response.redirect('/user/' + user._id + '/');
-                });
+                // passport.authenticate('local')(req, res, () => {
+                    res.redirect('/user/create-profile');
+                // });
             }
         });
     },
     // handler function for register route
     register: (req, res) => {
-        const {username, password} = req.body;
-        User.register({username: username}, password, (error, user) => {
-            if (error) {
-                console.log(error);
-                res.redirect('/register');
-            } else {
-                passport.authenticate('local')(req, res, () => {
-                res.redirect('/login');
-                });
-            };
-        }); 
+        res.render('pages/sign-up', {
+            title: 'register'
+        });
     },
     register_post: (req, res) => {
-        const {email, password} = request.body;
+        const {username, password} = request.body;
         User.register({username: username}, password, (error, user) => {
             if (error) {
                 console.log(error);
+                console.log('fuuuuuuuuck register_post')
                 response.redirect('/register');
             } else {
+                console.log('ok but will it fail at authentication');
                 passport.authenticate('local')(request, response, () => {
-                    response.redirect('/login');
+                    response.redirect('/user/');
+                    console.log('this is authentication');
                 });
             };
         }); 
