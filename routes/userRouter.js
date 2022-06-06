@@ -9,15 +9,17 @@ router.route('/')
 
 router.route('/:_id')
   .get(userCtrl.profile)
-  .put(userCtrl.create_profile_put)
   .put(userCtrl.edit_profile_update);
 
+router.route('/:_id/profile')
+  .put(userCtrl.create_profile_put)
+
 router.route('/:_id/edit-profile')
-  .get(userCtrl.edit_profile_get)
+  .get(userCtrl.edit_profile_get);
   // .put(userCtrl.edit_profile_update);
 
 router.route('/create-profile')
-  .get(userCtrl.create_profile_get)
+  .get(userCtrl.create_profile_get);
 
 router.route('/:_id/history')
   // .get(userCtrl.history_get)

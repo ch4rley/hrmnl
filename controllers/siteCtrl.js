@@ -33,12 +33,12 @@ module.exports = {
         req.login(user, (error) => {
             if (error) {
                 console.log('fucking login_post');
-                console.log(error);
+                return error;
                 res.redirect('/login');
             } else {
-                // passport.authenticate('local')(req, res, () => {
-                    res.redirect('/user/create-profile');
-                // });
+                passport.authenticate('local')(req, res, () => {
+                    res.redirect('/user/' + _id + '/');
+                });
             }
         });
     },
@@ -49,16 +49,16 @@ module.exports = {
         });
     },
     register_post: (req, res) => {
-        const {username, password} = request.body;
+        const {username, password} = req.body;
         User.register({username: username}, password, (error, user) => {
             if (error) {
                 console.log(error);
                 console.log('fuuuuuuuuck register_post')
-                response.redirect('/register');
+                res.redirect('/register');
             } else {
                 console.log('ok but will it fail at authentication');
-                passport.authenticate('local')(request, response, () => {
-                    response.redirect('/user/');
+                passport.authenticate('local')(req, res, () => {
+                    res.redirect('/login');
                     console.log('this is authentication');
                 });
             };
@@ -74,7 +74,7 @@ module.exports = {
     google_redirect_get: [
     passport.authenticate('google', {failureRedirect: '/login'}),
     function(req, res) {
-      res.redirect('/user/create-profile');
+      res.redirect('/');
     }
     ]
 }
