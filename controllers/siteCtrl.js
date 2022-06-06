@@ -1,4 +1,3 @@
-const siteData = require('../data/siteData');
 const User = require('../models/userModel');
 const passport = require('passport');
 
@@ -6,9 +5,6 @@ module.exports = {
     // handler that will show index page
     index: (req, res) => {
     res.render('pages/index', {
-        // name: siteData.userName,
-        copyrightYear: siteData.year,
-        signedIn: siteData.signedIn,
         title: 'home'
         });
     },
