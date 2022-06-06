@@ -424,13 +424,11 @@ footer {
     align-content: center;
     font-family: var(--display);
     margin-top: 2.5em;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    bottom: 0;
     /* STICKY FOOTER */
-    flex: 1 0 auto;
-    max-height: 135px;
+    flex-shrink: 0;
+
 }
+
 
 .gradient-background {
     background-image: var(--gradient-background-purples);
@@ -890,21 +888,7 @@ p.caps {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
-@media (min-width:550px){
-    footer {
-        /* STICKY FOOTER */
-        flex: 1 0 auto;
-        max-height: 115px;
-    }
-}
 
-@media (max-width:450px){
-    footer {
-        /* STICKY FOOTER */
-        flex: 1 0 auto;
-        max-height: 150px;
-    }
-}
 /* MODAL */
 /* .modal,
 .modal-login,
