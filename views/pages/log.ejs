@@ -12,7 +12,30 @@
                         <label for="hrtDate">date</label>
                         <input type="text" id="hrtDate" name="hrtDate" value="" required>
                     </li>
-                    <% if(user.hormone.length === 1) {
+                    <% if(user.hormone.length > 1) { %>
+                    <li>
+                        <label for="hrtHormone">hormone</label>
+                        <select name="hrtHormone" id="hrtHormone">
+                            <option value="">select hormone</option> 
+                        <% user.hormone.forEach((hormone) => { %>
+                            <option id="<%= hormone %>" value="<%= hormone %>"><%= hormone %></option> 
+                        <% }); %>
+                        </select>
+                    </li>
+                    <div class="hormoneDetails">
+                        <% switch (user.hormone) {
+                            case 'testosterone': %>
+                                <%- include('../partials/hrt-details-T') %>
+                                <% break;
+                            case 'estrogen': %>
+                                <%- include('../partials/hrt-details-E') %>
+                                <% break;
+                            case 'progesterone': %>
+                                <%- include('../partials/hrt-details-P') %>
+                                <% break;
+                        } %>
+                    </div>                        
+                    <% } else if(user.hormone.length === 1) { %>
                         console.log(user.hormone + 'test') %>
                     <li>
                         <label for="hrtHormone">hormone</label>
@@ -34,30 +57,7 @@
                             <%- include('../partials/hrt-details-P') %>
                             <% break;
                     } %>
-                    <% } else { %>
-                    <li>
-                        <label for="hrtHormone">hormone</label>
-                        <select name="hrtHormone" id="hrtHormone">
-                            <option value="">select hormone</option> 
-                        <% user.hormone.forEach((hormone) => { %>
-                            <option id="hormone" value="<%= hormone %>"><%= hormone %></option> 
-                        <% }); %>
-                        </select>
-                    </li>
-                    <div class="hormoneDetails">
-                        <% switch (user.hormone) {
-                            case 'testosterone': %>
-                                <%- include('../partials/hrt-details-T') %>
-                                <% break;
-                            case 'estrogen': %>
-                                <%- include('../partials/hrt-details-E') %>
-                                <% break;
-                            case 'progesterone': %>
-                                <%- include('../partials/hrt-details-P') %>
-                                <% break;
-                        } %>
-                    </div>
-                        <% } %>
+                    <% } %>
                     <li>
                         <h3 class="form-header">notes</h3>
                         <label for="hrtNotes" class="hidden">notes</label>
