@@ -429,7 +429,7 @@ footer {
     bottom: 0;
     /* STICKY FOOTER */
     flex: 1 0 auto;
-    max-height: 115px;
+    max-height: 135px;
 }
 
 .gradient-background {
@@ -890,6 +890,21 @@ p.caps {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
+@media (min-width:550px){
+    footer {
+        /* STICKY FOOTER */
+        flex: 1 0 auto;
+        max-height: 115px;
+    }
+}
+
+@media (max-width:450px){
+    footer {
+        /* STICKY FOOTER */
+        flex: 1 0 auto;
+        max-height: 150px;
+    }
+}
 /* MODAL */
 /* .modal,
 .modal-login,
