@@ -74,7 +74,7 @@ module.exports = {
     google_redirect_get: [
     passport.authenticate('google', {failureRedirect: '/login'}),
     function(req, res) {
-      res.redirect('/');
+      res.redirect('/user/create-profile');
     }
     ]
 }

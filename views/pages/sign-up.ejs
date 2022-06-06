@@ -7,7 +7,8 @@
             <h2 class="gradient-text modal-heading">create an account</h2>
             <p class="modal-p">already have a <span class="gradient-text">hrmnl</span> account? <span class="light-grey">//</span> <a href="/login"><span class="embolden">log in</span></a></p>
             <!-- SIGN UP FORM -->
-            <form class="form-border short-form" action="/user/" method="POST" name="sign-up-form" id="sign-up-form">
+            <div class="form-border">
+            <form class="short-form" action="/user/" method="POST" name="sign-up-form" id="sign-up-form">
                 <ul class="flex-form">
                     <li>
                         <label for="name">what should we call you?</label>
@@ -19,7 +20,7 @@
                     </li>
                     <li>
                         <label for="username">email</label>
-                        <input type="text" id="email" name="username"
+                        <input type="text" id="username" name="username"
                         placeholder="yourname@email.com", minlength="7" maxlength="40" required>
                     </li>
                     <li>
@@ -29,16 +30,16 @@
                     <li>
                         <input type="submit" value="register with hrmnl" class="submit first-button" />
                     </li>
-                </ul>
-                <div class="auth">
-                    <a href="/auth/google" role="button" class="btn">
-                        <button class="simple-btn">
-                            log in with google
-                            </button>
-                        </a>  
-                </div>
-                <!-- <p>already have a <span class="gradient-text">hrmnl</span> account? <span class="light-grey">//</span> <a href="/login"><span class="embolden">log in</span></a></p> -->
+                </ul>               
             </form>
+            <div class="auth">
+                <a href="/auth/google" role="button" class="btn">
+                    <button class="simple-btn">
+                        log in with google
+                        </button>
+                    </a>  
+            </div>
+        </div>
         </main>
     <!-- FOOTER PARTIAL -->
     <%- include('../partials/footer') %>
