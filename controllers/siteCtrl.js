@@ -35,7 +35,11 @@ module.exports = {
                     } else {
                         let _id = foundUser._id;
                         passport.authenticate('local')(req, res, () => {
-                            res.redirect('/user/' + _id + '/');
+                            if (foundUser.hormone.length < 1) {
+                                res.redirect('/user/' + _id + '/create-profile');
+                            } else if (foundUser.hormone.length >= 1){
+                                res.redirect('/user/' + _id + '/');
+                            }
                         });
                     }
                 })
