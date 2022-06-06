@@ -339,6 +339,7 @@ h2 {
   }
 
 h2.welcome,
+h2.page-heading,
 .h2 {
     padding-top: 1.75rem;
     margin: 0;
@@ -499,6 +500,12 @@ ul.flex-form {
 }
 
 .short-form {
+    margin: 0;
+    padding: 0;
+}
+
+.short-form.form-border {
+    /* if .form-border is on the same form */
     margin-top: 1.5rem;
     padding-bottom: .75rem;
 }
