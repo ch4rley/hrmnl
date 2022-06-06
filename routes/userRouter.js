@@ -16,7 +16,7 @@ router.route('/:_id/profile')
 router.route('/:_id/edit-profile')
   .get(userCtrl.edit_profile_get);
 
-router.route('/create-profile')
+router.route('/:_id/create-profile')
   .get(userCtrl.create_profile_get);
 
 router.route('/:_id/history')
