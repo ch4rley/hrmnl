@@ -4,28 +4,28 @@
         <%- include('../partials/logo')  %> 
         <nav>
             <!-- HAMBURGER NAV, CURRENTLY NOT USING -->
-            <a href="javascript:void(0);"
+            <!-- <a href="javascript:void(0);"
             class="menu-icon hamburger">
             <i class="fa fa-bars"></i>
-            </a>
+            </a> -->
             <!-- NAVIGATION LINKS -->
             <!-- <%# if(signedIn === true) { %> -->
-                <ul class="navigation" id="navigation" role="list">
+                <!-- <ul class="navigation" id="navigation" role="list">
                     <li>
-                        <a href="/user/<%= user._id %>" class="nav-link pinkbg pinklink" title="profile">profile</a>
+                        <a href="/user/<%# user._id %>" class="nav-link pinkbg pinklink" title="profile">profile</a>
                     </li>
                     <li>
-                        <a href="/user/<%= user._id %>/log" class="nav-link pinkpurplebg pinkpurplelink" title="log-treatment">log treatment</a>
+                        <a href="/user/<%# user._id %>/log" class="nav-link pinkpurplebg pinkpurplelink" title="log-treatment">log treatment</a>
                     </li>
                     <li>
-                        <a href="/user/<%= user._id %>/history" class="nav-link purplebg purplelink" title="history">history</a>
+                        <a href="/user/<%# user._id %>/history" class="nav-link purplebg purplelink" title="history">history</a>
                     </li>
                     <!-- this link should say log in / log out / sign up, depending on user, and correspond to the appropriate link -->
                     <!-- MODAL (LOGIN/SIGNUP) HERE -->
-                    <li>
-                        <a href="/logout/" class="nav-link bluebg bluelink" title="log out" id="log-out">log out<!--// log in // sign up --></a>
+                    <!-- <li>
+                        <a href="/logout/" class="nav-link bluebg bluelink" title="log out" id="log-out">log out</a>
                     </li>
-                </ul>
+                </ul> -->
             <!-- <%# } else { %> -->
             <!-- REGISTER MODAL -->
             <%# include('../partials/register') %> 
