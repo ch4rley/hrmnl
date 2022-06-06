@@ -34,11 +34,20 @@ module.exports = {
             if (error) {
                 console.log('fucking login_post');
                 return error;
-                res.redirect('/login');
+                // res.redirect('/login');
             } else {
-                passport.authenticate('local')(req, res, () => {
-                    res.redirect('/user/' + _id + '/');
-                });
+                User.findOne({username: username}, (error, foundUser) => {
+                    if(error) {
+                        console.log('yeah this did not work login_post findOne');
+                        return error;
+                    } else {
+                        let _id = foundUser._id;
+                        passport.authenticate('local')(req, res, () => {
+                            res.redirect('/user/' + _id + '/');
+                        });
+                    }
+                })
+                
             }
         });
     },
@@ -49,8 +58,8 @@ module.exports = {
         });
     },
     register_post: (req, res) => {
-        const {username, password} = req.body;
-        User.register({username: username}, password, (error, user) => {
+        const {name, pronouns, username, password} = req.body;
+        User.register({username: username, name: name, pronouns: pronouns}, password, (error, user) => {
             if (error) {
                 console.log(error);
                 console.log('fuuuuuuuuck register_post')
@@ -58,8 +67,8 @@ module.exports = {
             } else {
                 console.log('ok but will it fail at authentication');
                 passport.authenticate('local')(req, res, () => {
-                    res.redirect('/login');
                     console.log('this is authentication');
+                    res.redirect('/login');
                 });
             };
         }); 

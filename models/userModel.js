@@ -11,13 +11,11 @@ const userSchema = new Schema({
     required:  [false, 'name is required'],
     minlength: [1,'minimum length is one character']
   },
-
   pronouns: {
     type: String,
     maxlength: [70, 'please express your pronouns in fewer than 70 characters'],
     required: false,
   },
-
  username: {
     type: String,
     // makes sure this is not a duplicate email address
@@ -26,18 +24,15 @@ const userSchema = new Schema({
     minlength: [7, 'too short, must be a valid email address'],
     maxlength: [40, 'too long, must be a valid email address. if your email address exceeds 40 characters, please contact the admin']
   },
-
   password: {
     type: String,
     required: [false, 'password is required'],
     minlength: [7, 'password must contain at least 7 characters'],
     maxlength: [320, 'too long, surely you can think of a secure password that is fewer than 320 characters']
   },
-
   // googleId: {
   //   type: String,
   // },
-
 // create profile
   hormone: {
     type: Array,

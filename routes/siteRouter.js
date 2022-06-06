@@ -12,7 +12,7 @@ router.route('/login')
 
 router.route('/register')
   .get(siteCtrl.register)
-  // .post(siteCtrl.register_post);
+  .post(siteCtrl.register_post);
 
 router.route('/logout')
   .get(siteCtrl.logout);
