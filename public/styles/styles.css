@@ -786,6 +786,33 @@ p.caps {
     text-align: right;
 }
 
+/* --- LOG HORMONES PAGE ---*/
+div.hormone-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hormone-link,
+.hormone-link:visited {
+    max-width: 48%;
+    font-family: var(--serif);
+    text-align: center;
+    font-size: 1.5rem; 
+    padding: 1rem;
+
+}
+
+.hormone-link:hover {
+    max-width: 48%;
+    font-family: var(--serif);
+    text-align: center;
+    font-size: 1.5rem; 
+    padding: 1rem;
+}
+
+
 
 /*--- HISTORY PAGE ---*/
 

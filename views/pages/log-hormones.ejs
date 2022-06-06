@@ -6,11 +6,12 @@
         <main>
             <h2 class="gradient-text">select hormone to log</h2>
             <!-- HRT LOG FORM -->
-                        <% user.hormone.forEach((hormone) => { %>
-                            <% let H = hormone.charAt(0).toUpperCase() %>
-                            <a href="/user/<%= user._id %>/log/<%= H %>" class="hormone-link" id="<%= hormone %>-link" title="<%= hormone %>"><%= hormone %></a>
-                        <% }); %>
-            </form>
+            <div class="hormone-links">
+                <% user.hormone.forEach((hormone) => { %>
+                    <% let H = hormone.charAt(0).toUpperCase() %>
+                    <a href="/user/<%= user._id %>/log/<%= H %>" class="hormone-link simple-btn" id="<%= hormone %>-link" title="<%= hormone %>"><%= hormone %></a>
+                <% }); %>
+            </div>
             <h3 class="gradient-rev-text right-justify">select your fighter</h2>
             </main>
         </main>
