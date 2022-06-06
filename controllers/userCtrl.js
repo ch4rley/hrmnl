@@ -237,10 +237,15 @@ module.exports = {
                             user: foundUser,
                             title: 'add instance'  
                         });
-                    } else {
+                    } else if(foundUser.hormone.length > 1){
                         res.render('pages/log-hormones', {
                             user: foundUser,
                             title: 'select hormone'
+                        });
+                    } else {
+                        res.render('pages/log', {
+                            user: foundUser,
+                            title: 'add instance'  
                         });
                     }
             }
