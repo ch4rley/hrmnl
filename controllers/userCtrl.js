@@ -44,7 +44,6 @@ module.exports = {
                 
                 res.render('pages/profile', {
                     user: foundUser,
-                    signedIn: siteData.signedIn,
                     title: pageTitle
                 });
                 };
@@ -64,7 +63,6 @@ module.exports = {
                 return error;
               } else {
                 res.render('pages/create-profile', {
-                    signedIn: siteData.signedIn,
                     user: foundUser,
                     title: 'create profile'
                 });
@@ -119,7 +117,6 @@ module.exports = {
                 return error;
               } else {
                 res.render('pages/edit-profile', {
-                    signedIn: siteData.signedIn,
                     user: foundUser,
                     title: 'edit profile'
                 });
@@ -175,7 +172,6 @@ module.exports = {
     //                     return error;
     //                 } else {
     //                     res.render('pages/history', {
-    //                         signedIn: siteData.signedIn,
     //                         history: allLogs,
     //                         title: 'history'
     //                     });
@@ -218,7 +214,6 @@ module.exports = {
         //         return error;
         //       } else {
         //         res.render('pages/history', {
-        //             signedIn: siteData.signedIn,
         //             history: allLogs,
         //             title: 'history'
                     
