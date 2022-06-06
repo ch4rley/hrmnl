@@ -74,9 +74,11 @@ module.exports = {
         }); 
     },
     // handler for logout route
-    logout: (req, res) => {
-        req.logout();
-        res.redirect('/');
+    logout:(req, res) => {
+        req.logout(function(err) {
+            if (err) { return next(err); }
+            res.redirect('/');
+          });
     },
     // handlers for google oauth
     google_get: passport.authenticate('google', {scope: ['openid', 'profile', 'email']}),
