@@ -194,19 +194,40 @@ module.exports = {
     // temporary history handler function
     history_get: (req, res) => {
         if(req.isAuthenticated()){
-        // finds all logs
-        Log.find({}, (error, allLogs) => {
-            if(error) {
-                return error;
-              } else {
-                res.render('pages/history', {
-                    signedIn: siteData.signedIn,
-                    history: allLogs,
-                    title: 'history'
+            const {_id} = req.params;
+            User.findById({_id: _id})
+                .populate('logs')
+                // userLogs is specific (current) user plus logs from populate method, ref'd in userModel 
+                .exec((error, userLogs) => {
+                    if(error) {
+                        console.log('this is an error in the history_get handler')
+                        return error;
+                    } else {
+                        res.render('pages/history', {
+                            // everything from userModel except for logs
+                            thisUser: userLogs,
+                            // specifically the referenced logs
+                            history: userLogs.logs,
+                            title: 'history'
+                        })
+                    }
                     
-                });
-            }
-        })
+                })
+
+
+        // finds all logs
+        // Log.find({}, (error, allLogs) => {
+        //     if(error) {
+        //         return error;
+        //       } else {
+        //         res.render('pages/history', {
+        //             signedIn: siteData.signedIn,
+        //             history: allLogs,
+        //             title: 'history'
+                    
+        //         });
+        //     }
+        // })
         } else {
             res.redirect('/login')
         }
