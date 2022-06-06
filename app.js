@@ -17,7 +17,8 @@ const routes = require('./routes/index');
 // create new express app and save it as 'app'
 const app = express();
 // server configuration -- define port
-const PORT = 3000;
+// use PORT in environment (.env) file, OR PORT 3000
+const PORT = process.env.PORT || 3000;
 
 // configure node.js to use ejs as views engine
 app.set('view engine', 'ejs');

@@ -16,10 +16,16 @@
     "hormone",
     "testosterone",
     "estrogen",
+    "progesterone",
+    "HRT",
+    "hormone replacement therapy",
     "gay",
     "trans",
     "queer"
   ],
+  "engines": {
+    "node": "16.15.0"
+  },
   "author": "charley lightstone",
   "license": "ISC",
   "bugs": {
