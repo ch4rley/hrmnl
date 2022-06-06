@@ -88,38 +88,38 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-} else if (window.location.href.includes("/log")) {
-  console.log('this is the log page');
+// } else if (window.location.href.includes("/log")) {
+//   console.log('this is the log page');
 
 // ~~~~ DISPLAY APPROPRIATE HRT INPUT FIELDS ~~~~
 // ---- log page ----
 
-let selectField = document.querySelector('#hrtHormone');
-const pSelected = document.querySelector('#hrtDetails_P_container');
-const eSelected = document.querySelector('#hrtDetails_E_container');
-const tSelected = document.querySelector('#hrtDetails_T_container');
+// let selectField = document.querySelector('#hrtHormone');
+// const pSelected = document.querySelector('#hrtDetails_P_container');
+// const eSelected = document.querySelector('#hrtDetails_E_container');
+// const tSelected = document.querySelector('#hrtDetails_T_container');
 
-function getOption() {
-  switch (selectField.value) {
-    case 'testosterone': 
-      tSelected.removeAttribute('class');
-      eSelected.classList.add('hidden');
-      pSelected.classList.add('hidden');
-      break;
-    case 'estrogen': 
-      eSelected.removeAttribute('class') 
-      tSelected.classList.add('hidden');
-      pSelected.classList.add('hidden');
-      break;
-    case 'progesterone': 
-      pSelected.removeAttribute('class')  
-      tSelected.classList.add('hidden');
-      eSelected.classList.add('hidden');
-      break;
-  }
-}
+// function getOption() {
+//   switch (selectField.value) {
+//     case 'testosterone': 
+//       tSelected.removeAttribute('class');
+//       eSelected.classList.add('hidden');
+//       pSelected.classList.add('hidden');
+//       break;
+//     case 'estrogen': 
+//       eSelected.removeAttribute('class') 
+//       tSelected.classList.add('hidden');
+//       pSelected.classList.add('hidden');
+//       break;
+//     case 'progesterone': 
+//       pSelected.removeAttribute('class')  
+//       tSelected.classList.add('hidden');
+//       eSelected.classList.add('hidden');
+//       break;
+//   }
+// }
   
-selectField.addEventListener('change', getOption)
+// selectField.addEventListener('change', getOption)
 } else if (window.location.href.includes("create-profile") || window.location.href.includes("edit-profile") ) {
   console.log('this is the edit page')
   // ~~~~ DISPLAY APPROPRIATE HRT INPUT FIELDS ~~~~

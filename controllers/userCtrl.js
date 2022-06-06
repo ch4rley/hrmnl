@@ -250,13 +250,61 @@ module.exports = {
                     } else {
                         res.render('pages/log-hormones', {
                             user: foundUser,
-                            title: 'select hormone to log'
+                            title: 'select hormone'
                         });
                     }
             }
         });
         } else {
             res.redirect('/login')
+        }
+    },
+    log_T_get: (req, res) => {
+        if(req.isAuthenticated()){
+            const{_id} = req.params;
+            User.findOne({_id: _id}, (error, foundUser) => {
+                if(error) {
+                    console.log('there is an error afoot loading this here log page');
+                    return error;
+                } else {
+                    res.render('pages/NAMEHERE', {
+                        user: foundUser,
+                        title: 'add instance'
+                    });
+                }
+            })
+        }
+    },
+    log_E_get: (req, res) => {
+        if(req.isAuthenticated()){
+            const{_id} = req.params;
+            User.findOne({_id: _id}, (error, foundUser) => {
+                if(error) {
+                    console.log('there is an error afoot loading this here log page');
+                    return error;
+                } else {
+                    res.render('pages/NAMEHERE', {
+                        user: foundUser,
+                        title: 'add instance'
+                    });
+                }
+            })
+        }
+    },
+    log_P_get: (req, res) => {
+        if(req.isAuthenticated()){
+            const{_id} = req.params;
+            User.findOne({_id: _id}, (error, foundUser) => {
+                if(error) {
+                    console.log('there is an error afoot loading this here log page');
+                    return error;
+                } else {
+                    res.render('pages/NAMEHERE', {
+                        user: foundUser,
+                        title: 'add instance'
+                    });
+                }
+            })
         }
     },
     log_post: (req, res) => {

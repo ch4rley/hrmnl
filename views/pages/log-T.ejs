@@ -4,7 +4,7 @@
     <%- include('../partials/nav-user') %> 
         <!-- MAIN BODY -->
         <main>
-            <h2 class="gradient-text">log <%= user.hormone.[0] %></h2>
+            <h2 class="gradient-text">log testosterone</h2>
             <form class="form-border short-form" action="/user/<%= user._id %>/log" method="POST" name="log-form" id="log-form">
                 <ul class="flex-form">
                     <li>
@@ -13,24 +13,9 @@
                     </li>
                     <li>
                         <label for="hrtHormone">hormone</label>
-                        <input type="text" id="hrtHormone" class="selected-hormone" name="hrtHormone" value="<%= user.hormone %>" required>
+                        <input type="text" id="hrtHormone" class="selected-hormone" name="hrtHormone" value="estrogen" required>
                     </li>
-                    <% const hormone = String(user.hormone); %>
-                    <% console.log('test1'); %>
-                    <% switch (hormone) {
-                        case 'testosterone': %>
-                        <% console.log('test2'); %>
-                            <%- include('../partials/hrt-details-T') %>
-                            <% break;
-                        case 'estrogen': %>
-                        <% console.log('test3'); %>
-                            <%- include('../partials/hrt-details-E')%>
-                            <% break;
-                        case 'progesterone': %>
-                        <% console.log('test4'); %>
-                            <%- include('../partials/hrt-details-P') %>
-                            <% break;
-                    } %>
+                    <%- include('../partials/hrt-details-T')%>
                     <li>
                         <h3 class="form-header">notes</h3>
                         <label for="hrtNotes" class="hidden">notes</label>
@@ -42,7 +27,6 @@
                         <input type="submit" value="add to log" class="submit first-button" />
                     </li>
                 </ul>
-                <!-- <p>already have a <span class="gradient-text">hrmnl</span> account? <span class="light-grey">//</span> <a href="/login"><span class="embolden">log in</span></a></p> -->
             </form>
             <h3 class="gradient-rev-text right-justify">i am being the change i wish to see in the world</h2>
             </main>

@@ -15,20 +15,24 @@ router.route('/:_id/profile')
 
 router.route('/:_id/edit-profile')
   .get(userCtrl.edit_profile_get);
-  // .put(userCtrl.edit_profile_update);
 
 router.route('/create-profile')
   .get(userCtrl.create_profile_get);
 
 router.route('/:_id/history')
   .get(userCtrl.history_get)
-  // this actually posts the log information to the history page
 
 router.route('/:_id/log')
   .get(userCtrl.log_get)
   .post(userCtrl.log_post);
 
-  // temporary history route for testing
-// router.route('/history')
+router.route('/:_id/log/testosterone')
+  .get(userCtrl.log_T_get);
+
+router.route('/:_id/log/estrogen')
+  .get(userCtrl.log_E_get);
+
+router.route('/:_id/log/progesterone')
+  .get(userCtrl.log_P_get);
 
 module.exports = router;

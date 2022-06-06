@@ -7,7 +7,8 @@
             <h2 class="gradient-text">select hormone to log</h2>
             <!-- HRT LOG FORM -->
                         <% user.hormone.forEach((hormone) => { %>
-                            <a href="/user/<%= user._id%>/log/<%= hormone %>" class="hormone-link" id="<%= hormone %>-link" title="<%= hormone %>"><%= hormone %></a>
+                            <%# let h = hormone.charAt(0) %>
+                            <a href="/user/<%= user._id %>/log/<%= hormone %>" class="hormone-link" id="<%= hormone %>-link" title="<%= hormone %>"><%= hormone %></a>
                         <% }); %>
             </form>
             <h3 class="gradient-rev-text right-justify">i am being the change i wish to see in the world</h2>
