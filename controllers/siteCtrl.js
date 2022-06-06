@@ -1,10 +1,6 @@
 const siteData = require('../data/siteData');
-// const { user } = require('../data/userData');
-// const userData = require('../data/userData');
-//const SchemaName = require('../models/schemanameModel');
 const User = require('../models/userModel');
 const passport = require('passport');
-
 
 module.exports = {
     // handler that will show index page
@@ -79,13 +75,13 @@ module.exports = {
             if (err) { return next(err); }
             res.redirect('/');
           });
-    },
-    // handlers for google oauth
-    google_get: passport.authenticate('google', {scope: ['openid', 'profile', 'email']}),
-    google_redirect_get: [
-    passport.authenticate('google', {failureRedirect: '/login'}),
-    function(req, res) {
-      res.redirect('/');
     }
-    ]
+    // handlers for google oauth
+    // google_get: passport.authenticate('google', {scope: ['openid', 'profile', 'email']}),
+    // google_redirect_get: [
+    // passport.authenticate('google', {failureRedirect: '/login'}),
+    // function(req, res) {
+    //   res.redirect('/');
+    // }
+    // ]
 }

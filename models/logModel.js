@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const logSchema = new Schema({
-  // postedBy: {
-  //   type: {type: mongoose.Schema.Types.String, ref: 'User'},
-  // },
   hrtDate: {
     type: String,
   },

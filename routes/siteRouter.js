@@ -24,9 +24,3 @@ router.route('/auth/google/home')
   .get(siteCtrl.google_redirect_get);
 
 module.exports = router;
-
-// /user/_id/log = HRT
-
-// /user/_id/history
-
-// do i need admin to be able to help people with their profiles?

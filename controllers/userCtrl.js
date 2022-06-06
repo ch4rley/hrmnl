@@ -1,10 +1,5 @@
-const siteData = require('../data/siteData');
-const userData = require('../data/userData');
 const User = require('../models/userModel');
 const Log = require('../models/logModel');
-const { user } = require('../data/userData');
-
-//const SchemaName = require('../models/schemanameModel');
 
 module.exports = {
     create_user_post: (req, res) => {
@@ -338,22 +333,6 @@ module.exports = {
             };
             
         });
-        // OLD CODE FOR LOG_POST 
-        //   const {hrtDate, hrtNotes, hrtHormone, hrtDelivery, hrtDose, hrtConcentration, hrtFrequency} = req.body;
-  
-        //   const newLog = new Log ({
-        //     hrtDate: hrtDate,
-        //     hrtNotes: hrtNotes,
-        //     hrtHormone: hrtHormone,
-        //     hrtDelivery: hrtDelivery,
-        //     hrtDose: hrtDose,
-        //     hrtConcentration: hrtConcentration,
-        //     hrtFrequency: hrtFrequency,
-        //   });
-      
-        //   newLog.save();
-      
-        //   res.redirect("/user/" + _id + "/history");
         } else {
             res.redirect('/login')
         }
