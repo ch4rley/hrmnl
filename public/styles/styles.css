@@ -171,7 +171,7 @@ ul.simpleNav {
     color: var(--white);
     box-sizing: border-box;
     border: 2px solid var(--lightmode-background);
-    transition: background-color .75s, color .75s, border .75s, border-bottom .75s, border-top .5s;
+    transition: background-color .75s, color .75s, border .75s, border-bottom .75s, border-top .25s;
 }
 
 .simpleNav a,
@@ -182,12 +182,12 @@ ul.simpleNav {
 }
 
 .gradient-button {
-    transition: 0.5s;
     background-size: 200% auto;
     color: var(--white);
     /* box-shadow: 0 0 20px #eee; */
     /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.75s cubic-bezier(.25,.8,.25,1);
+    /* transition: background-image .75s, color .75s, border .75s, border-bottom .75s, border-top .25s; */
     cursor: pointer;
     display: inline-block;
 }
