@@ -5,7 +5,7 @@ module.exports = {
     // handler that will show index page
     index: (req, res) => {
     res.render('pages/index', {
-        title: 'home'
+        title: ''
         });
     },
     // handler that will show login page
