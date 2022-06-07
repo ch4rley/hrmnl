@@ -25,8 +25,8 @@ module.exports = {
         req.login(user, (error) => {
             if (error) {
                 console.log('fucking login_post');
+                res.redirect('/login');
                 return error;
-                // res.redirect('/login');
             } else {
                 User.findOne({username: username}, (error, foundUser) => {
                     if(error) {
@@ -34,6 +34,7 @@ module.exports = {
                         return error;
                     } else {
                         let _id = foundUser._id;
+                        console.log(foundUser._id + 'is this user');
                         passport.authenticate('local')(req, res, () => {
                             if (foundUser.hormone.length < 1) {
                                 res.redirect('/user/' + _id + '/create-profile');
@@ -58,7 +59,7 @@ module.exports = {
         User.register({username: username, name: name, pronouns: pronouns}, password, (error, user) => {
             if (error) {
                 console.log(error);
-                console.log('fuuuuuuuuck register_post')
+                console.log('oh no register_post')
                 res.redirect('/register');
             } else {
                 console.log('ok but will it fail at authentication');
