@@ -5,6 +5,12 @@ web application for tracking hormone replacement therapy (pronounced: hormonal)
 hrmnl is live on heroku! i am excited to continue adding functionality, and have a list of great ideas to implement. 
 (coming soon to this readme)
 
+## project status (update)
+hrmnl is currently offline, due to housing instability. would love support re-launching this, and possibly moving the idea forwards <3
+contact me to collaborate, and please be very patient. i hope to work on this again, and have other ideas for trans-affirming tech!
+
+
+
 
 
 <!--H1/## Project Screenshots Screen 1 [] <!---commented out-->
